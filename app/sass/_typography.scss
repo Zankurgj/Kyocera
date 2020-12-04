@@ -1,0 +1,37 @@
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 0;
+  font-family: $mainfamily;
+}
+.h1-base {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: rem(30);
+  line-height: lh(35, 30);
+  color: #000;
+}
+.h2-base {
+  font-size: rem(24);
+  color: #272727;
+  text-transform: uppercase;
+}
+p {
+  margin: 0;
+}
+label {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  transition: color $base-duration $base-timing;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}

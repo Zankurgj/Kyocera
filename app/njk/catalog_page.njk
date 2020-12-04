@@ -1,0 +1,68 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <div class="container">
+    {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['Каталог']]) }}
+  </div>
+  <div class="container">
+    <div class="row row--wrap catalog-inner">
+
+      <div class="catalog-sidebar-col">
+        <aside class="catalog-sidebar">
+          <p class="catalog-sidebar-head">ФИЛЬТРЫ</p>
+          <div class="catalog-sidebar-block">
+            <p class="catalog-sidebar-title">ТИП УСТРОЙСТВА</p>
+            <label class="checkbox-wrapper catalog-sidebar-checkbox">
+              <input type="checkbox" class="checkbox-input">
+              <span class="checkbox"></span>
+              <span class="checkbox-text">Принтер</span>
+            </label>
+
+            <label class="checkbox-wrapper catalog-sidebar-checkbox">
+              <input type="checkbox" class="checkbox-input" checked>
+              <span class="checkbox"></span>
+              <span class="checkbox-text">МФУ</span>
+            </label>
+          </div>
+
+          <div class="catalog-sidebar-block">
+            <p class="catalog-sidebar-title">ЦВЕТНОСТЬ ПЕЧАТИ</p>
+            <label class="checkbox-wrapper catalog-sidebar-checkbox">
+              <input type="checkbox" class="checkbox-input">
+              <span class="checkbox"></span>
+              <span class="checkbox-text">Чёрно - белая</span>
+            </label>
+
+            <label class="checkbox-wrapper catalog-sidebar-checkbox">
+              <input type="checkbox" class="checkbox-input" checked>
+              <span class="checkbox"></span>
+              <span class="checkbox-text">Цвет</span>
+            </label>
+          </div>
+
+          <div class="catalog-sidebar-block">
+            <p class="catalog-sidebar-title">ФОРМАТ</p>
+            <label class="checkbox-wrapper catalog-sidebar-checkbox">
+              <input type="checkbox" class="checkbox-input">
+              <span class="checkbox"></span>
+              <span class="checkbox-text">A4</span>
+            </label>
+
+            <label class="checkbox-wrapper catalog-sidebar-checkbox">
+              <input type="checkbox" class="checkbox-input" checked>
+              <span class="checkbox"></span>
+              <span class="checkbox-text">A3</span>
+            </label>
+          </div>
+
+        </aside>
+      </div>
+
+      <div class="catalog-items-col">
+        <div class="row row--wrap">
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

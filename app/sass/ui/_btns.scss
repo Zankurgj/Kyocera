@@ -1,0 +1,33 @@
+button,
+.btn,
+input[type='submit'] {
+  display: inline-block;
+  background-color: transparent;
+  border-style: none;
+  border-width: none;
+  border-color: transparent;
+  font-family: $mainfamily;
+  transition: all $base-duration $base-timing;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  padding: 0;
+  text-decoration: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn--main {
+  padding: 8px 12px;
+  background-color: #0a9bcd;
+  font-size: rem(14);
+  font-weight: 500;
+  color: #fff;
+  border-radius: 4px;
+  line-height: 1;
+  &:hover {
+    color: #fff;
+    background-color: rgba($color: #0a9bcd, $alpha: 0.8);
+  }
+}

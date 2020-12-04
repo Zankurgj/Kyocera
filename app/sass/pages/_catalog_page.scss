@@ -1,0 +1,37 @@
+.catalog-sidebar-col {
+  width: 225px;
+  flex: 0 0 auto;
+}
+.catalog-sidebar {
+  padding: 13px 15px 30px 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+}
+.catalog-sidebar-head {
+  display: block;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.13em;
+  color: #000;
+  text-transform: uppercase;
+  border-bottom: 2px solid #000;
+  margin-bottom: 20px;
+}
+.catalog-sidebar-title {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.13em;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.catalog-sidebar-checkbox {
+  margin-bottom: 10px;
+  .checkbox {
+    margin-top: 2px;
+  }
+}
+.catalog-sidebar-block {
+  margin-bottom: 20px;
+}
