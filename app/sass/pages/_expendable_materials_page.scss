@@ -1,0 +1,136 @@
+.page-materials {
+  padding: 0 0 200px 0;
+  @media screen and (max-width: $mobile-bp) {
+    padding: 0 0 50px 0;
+  }
+}
+.page-materials-h1 {
+  margin: 50px 0 20px;
+  text-align: center;
+}
+.page-materials-head-text {
+  margin-bottom: 80px;
+}
+.series-h2 {
+  margin-bottom: 50px;
+}
+.materials-series-block {
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  @media screen and (max-width: $mobile-bp) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.materials-series-item {
+  margin-right: 65px;
+  cursor: pointer;
+  @media screen and (max-width: $mobile-bp) {
+    margin-right: 0;
+    margin-bottom: 65px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  img {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+.materials-series-input {
+  @extend .visually-hidden;
+  &:checked + .materials-series-text {
+    border-color: #0a9bcd;
+  }
+}
+.materials-series-text {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000;
+  padding-bottom: 10px;
+  border-bottom: 3px solid transparent;
+  transition: border-color $base-duration $base-timing;
+}
+.model-h2 {
+  margin-bottom: 50px;
+}
+.materials-model-container {
+  margin-bottom: 74px;
+  max-width: 988px;
+}
+.materials-model-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.materials-model-btn {
+  display: block;
+  margin: 0 auto;
+}
+.materials-model-item {
+  flex: 0 0 auto;
+  margin: 0 5px 10px 5px;
+  cursor: pointer;
+}
+.materials-model-input {
+  @extend .visually-hidden;
+  &:checked + .materials-model-text {
+    border-color: #0a9bcd;
+    color: #0a9bcd;
+  }
+}
+.materials-model-text {
+  display: block;
+  padding: 7px 8px 5px;
+  border: 1px solid #282828;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+  color: #000;
+  border: 1px solid #282828;
+  border-radius: 3px;
+  transition: color $base-duration $base-timing,
+    border-color $base-duration $base-timing;
+  &:hover {
+    border-color: #0a9bcd;
+  }
+}
+.container-materials-reccomend {
+  max-width: 988px;
+}
+.materials-reccomend-h2 {
+  margin-bottom: 70px;
+  @media screen and (max-width: 480px) {
+    margin-bottom: 30px;
+  }
+  span {
+    color: #0a9bcd;
+  }
+}
+.materials-reccomend-block {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -14px;
+}
+
+.materials-reccomend-col {
+  max-width: 25%;
+  flex-basis: 25%;
+  padding: 0 14px;
+  margin-bottom: 28px;
+  @media screen and (max-width: $mobile-bp) {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  @media screen and (max-width: 480px) {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}

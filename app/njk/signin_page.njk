@@ -1,0 +1,36 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <div class="container">
+    {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['Корзина'],['Оформление заказа']]) }}
+  </div>
+  <div class="page-signin page--image">
+    <h3 class="h3-base page-signin-h3 text-center">Оформление заказа</h3>
+    <div class="container container--signin">
+      <div class="row row--wrap">
+        <div class="page-signin-col-form">
+          <form class="signin-form">
+            <p class="signin-form-title">Вход или регистрация</p>
+            <label class="signin-input-wrapper">
+              <span>Логин</span>
+              <input type="text" class="signin-input">
+            </label>
+
+            <label class="signin-input-wrapper">
+              <span>Пароль</span>
+              <input type="text" class="signin-input">
+            </label>
+
+            <button class="btn--main signin-btn">Авторизоваться</button>
+            <button class="btn--orange-underline">Зарегистрироваться</button>
+          </form>
+        </div>
+        <div class="page-signin-col-msg">
+          <p class="signin-form-title">Оформить заказ как гость</p>
+          <p class="signin-text">Получить Бонусные баллы вы сможете при оформлении заказа как авторизованный пользователь.</p>
+          <a href="#" class="btn btn--gray page-signin-btn-msg">Продолжить без авторизации</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

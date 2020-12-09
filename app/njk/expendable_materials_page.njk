@@ -1,0 +1,60 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <div class="page-materials">
+    <div class="container">
+      {% from "app/njk/macro.njk" import breadcrumbs %}
+        {{ breadcrumbs([['Каталог'],['Подбор расходных материалов']]) }}
+    </div>
+    <div class="container">
+      <h1 class="h1-base page-materials-h1">ПОДБОР РАСХОДНЫХ МАТЕРИАЛОВ</h1>
+      <p class="base-text text-center page-materials-head-text">Воспользуйтесь данным помошником, для того чтобы подобрать оригинальные расходные материалы для своего устройства </p>
+    </div>
+    <div class="container">
+      <h2 class="h2-base normalcase text-center series-h2">Выберите серию печатающего устройства</h2>
+      <div class="materials-series-block row">
+        <label class="materials-series-item">
+          <img src="./images/dest/img/series1.png" alt="FS">
+          <input type="radio" class="materials-series-input" name="series">
+          <span class="materials-series-text">FS</span>
+        </label>
+
+        <label class="materials-series-item">
+          <img src="./images/dest/img/series2.png" alt="Ecosys">
+          <input type="radio" class="materials-series-input" name="series">
+          <span class="materials-series-text">Ecosys</span>
+        </label>
+
+        <label class="materials-series-item">
+          <img src="./images/dest/img/series3.png" alt="TASKalfa">
+          <input type="radio" class="materials-series-input" name="series">
+          <span class="materials-series-text">TASKalfa</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="container materials-model-container">
+      <h2 class="h2-base normalcase text-center model-h2">Выберите модель</h2>
+      <div class="materials-model-block">
+        {% for i in range(0, 11) %}
+          <label class="materials-model-item">
+            <input type="radio" class="materials-model-input" name="model">
+            <span class="materials-model-text"> ECOSYS M2235dn</span>
+          </label>
+        {% endfor %}
+      </div>
+      <button class="btn--main materials-model-btn">Показать ещё модели</button>
+    </div>
+
+    <div class="container container-materials-reccomend">
+      <h2 class="h2-base normalcase text-center materials-reccomend-h2">К модели <span>ECOSYS M5521cdw</span> подходят</h2>
+      <div class="materials-reccomend-block">
+        {% for i in range(0, 6) %}
+          <div class="materials-reccomend-col">
+            {% from "app/njk/macro.njk" import productCard %}
+            {{ productCard(false, false, "./images/dest/img/product_card2.png", "Чёрный тонер", "TK-1120 для FS1160DN", "4 800") }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,11 +1,38 @@
+.page-catalog {
+  padding-bottom: 110px;
+}
+.container--catalog {
+  margin-bottom: 90px;
+}
 .catalog-sidebar-col {
   width: 225px;
   flex: 0 0 auto;
+  @media screen and (max-width: $mobile-bp) {
+    width: 100%;
+  }
+}
+.catalog-items-col {
+  padding-left: 20px;
+  @media screen and (max-width: $mobile-bp) {
+    padding-left: 0;
+    margin: 0 -10px;
+  }
 }
 .catalog-sidebar {
-  padding: 13px 15px 30px 15px;
+  position: sticky;
+  top: 10px;
+  padding: 13px 13px 30px 13px;
   border: 1px solid #dcdcdc;
   border-radius: 3px;
+  margin-bottom: 20px;
+  @media screen and (max-width: $mobile-bp) {
+    position: static;
+    padding: 13px 13px 0 13px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 .catalog-sidebar-head {
   display: block;
@@ -17,6 +44,9 @@
   text-transform: uppercase;
   border-bottom: 2px solid #000;
   margin-bottom: 20px;
+  @media screen and (max-width: $mobile-bp) {
+    flex-basis: 100%;
+  }
 }
 .catalog-sidebar-title {
   font-size: 14px;
@@ -34,4 +64,66 @@
 }
 .catalog-sidebar-block {
   margin-bottom: 20px;
+  @media screen and (max-width: $mobile-bp) {
+    margin-right: 40px;
+  }
+}
+.catalog-range-inputs {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.catalog-range-input-wrapper {
+  display: flex;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000;
+  margin-bottom: 6px;
+}
+.catalog-range-input {
+  width: 30px;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000;
+  border: none;
+  text-align: center;
+}
+.catalog-range {
+  height: 2px;
+  .ui-slider-handle {
+    height: 10px;
+    width: 10px;
+    background-color: #0a9bcd;
+    border-radius: 3px;
+    cursor: pointer;
+    &:focus,
+    .ui-state-focus,
+    .ui-state-active {
+      outline: none;
+    }
+  }
+}
+.catalog-item-col {
+  max-width: 25%;
+  flex-basis: 25%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  @media screen and (max-width: 1150px) {
+    max-width: calc(100% / 3);
+    flex-basis: calc(100% / 3);
+  }
+  @media screen and (max-width: $mobile-bp) {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  @media screen and (max-width: 480px) {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+.catalog-text {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000;
 }

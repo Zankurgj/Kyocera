@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Kyocera</title>
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" href="img/favicon.png" /> -->
+    <link rel="stylesheet" href="css/app.min.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="main-header-top">
+            <div class="container main-header-top-inner">
+                <button class="main-header-top-btn">Регистрация</button>
+                <button class="main-header-top-btn">Вход</button>
+            </div>
+        </div>
+        <div class="main-header-middle">
+            <div class="container main-header-middle-inner">
+                <a href="#" class="main-header-logo">
+                    <span class="visually-hidden">Главная страница Koycera</span>
+                    <img src="./images/dest/icons/logo.png" alt="Логотип Koycera">
+                </a>
+                <label class="header-search-inpit-wrapper">
+                    <input type="text" placeholder="Поиск товара" class="header-search-inpit">
+                </label>
+                <div class="main-header-text">
+                    <p>График работы:
+                        <br>ПН - ВС
+                        <br>с 9:00 - 18.00
+                    </p>
+                </div>
+                <div class="main-header-text">
+                    <span>Контакты:</span> 
+                    <br>
+                    <a href="" tel:+7 999 99 99 "">Телефон: +7 999 99 99</a>
+                    <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
+                </div>
+                <button class="main-header-search-btn" onclick="onShowSearch()"></button>
+                <div class="main-header-basket main-header-basket--dropdown">
+                    <a href="#" class="main-header-basket-link">
+                        <span class="main-header-basket-counter">2</span>
+                    </a>
+                    <div class="main-header-basket-text">
+                        <p>Товаров: <span>2</span>
+                        </p>
+                        <p>На сумму <span>102 500</span> руб.</p>
+                    </div>
+                    <div class="main-header-basket-inner">
+                        <div class="main-header-basket-item-list">
+                            <a href="#" class="main-header-basket-item">
+                                <div class="main-header-basket-item-img">
+                                    <img src="./images/dest/img/product1.png" alt="Продукт">
+                                </div>
+                                <div class="main-header-basket-item-text">
+                                    <p class="main-header-basket-item-title">Цветное МФУ</p>
+                                    <p class="main-header-basket-item-desc">Ecosys 2035 cdn</p>
+                                    <p class="main-header-basket-item-cost">
+                                        12 500 ₽
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="main-header-basket-item">
+                                <div class="main-header-basket-item-img">
+                                    <img src="./images/dest/img/product2.png" alt="Продукт">
+                                </div>
+                                <div class="main-header-basket-item-text">
+                                    <p class="main-header-basket-item-title">Монохромное МФУ</p>
+                                    <p class="main-header-basket-item-desc">TASKalfa 3212i</p>
+                                    <p class="main-header-basket-item-cost">
+                                        90 000 ₽
+                                        <span class="main-header-basket-item-cost-discount">100 000 ₽</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="main-header-basket-sum">
+                            <div class="main-header-basket-sum-text">
+                                <p>Итого:</p>
+                                <span class="main-header-basket-sum-cost">102 500 ₽</span>
+                                <span class="main-header-basket-sum-cost-discount">112 500 ₽</span>
+                            </div>
+                            <a href="#" class="btn btn--main main-header-basket-btn">В корзину</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-hamburger main-header-hamburger" onclick="onToggleMobileMenu()">
+                    <span class="btn-hamburger-icon"></span>
+                    <span class="visually-hidden">меню</span>
+                </button>
+            </div>
+        </div>
+        <div class="main-header-bottom">
+            <nav class="container main-header-nav">
+                <div class="main-header-nav-dropdown">
+                    <a href="#" class="main-header-nav-item main-header-nav-item--icon main-header-nav-item--accent">
+                        <svg class="svg-icon main-header-nav-item-icon">
+                            <use xlink:href="./images/sprites/svg/sprite.symbol.svg#catalog"></use>
+                        </svg>
+                        КАТАЛОГ ТОВАРОВ
+                    </a>
+                    <button class="main-header-nav-item-icon-m" onclick="onShowSubMenu()">
+                    </button>
+                    <div class="main-header-nav-dropdown-inner">
+                        <div class="container main-header-nav--container">
+                            <button class="main-header-nav-back" onclick="onShowSubMenu()">
+                            </button>
+                            <div class="main-header-submenu">
+                                <div class="main-header-submenu-promo">
+                                    <p>Благодаря широкой линейке устройств Kyocera вы сможете подобрать в нашем интернет магазине именно то, что будет отвечать нуждам вашего бизнеса.</p>
+                                    <a href="#" class="btn btn--main main-header-submenu-promo-btn">Подобрать устройство</a>
+                                </div>
+                                <ul class="main-header-submenu-list">
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">Принтеры</a>
+                                    </li>
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A4 ЧБ</a>
+                                    </li>
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A4 Цвет</a>
+                                    </li>
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A3 ЧБ</a>
+                                    </li>
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A3 Цвет</a>
+                                    </li>
+                                </ul>
+                                <ul class="main-header-submenu-list">
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">МФУ</a>
+                                    </li>
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A4 ЧБ</a>
+                                    </li>
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A4 Цвет</a>
+                                    </li>
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A3 ЧБ</a>
+                                    </li>
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A3 Цвет</a>
+                                    </li>
+                                </ul>
+                                <ul class="main-header-submenu-list">
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">Расходные материалы</a>
+                                    </li>
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner">Тонер ЧБ</a>
+                                    </li>
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner-c">Тонер Цвет</a>
+                                    </li>
+                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--ink ">Чернила</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="main-header-nav-item">РЕШЕНИЯ</a>
+                <a href="#" class="main-header-nav-item">АКЦИИ</a>
+                <a href="#" class="main-header-nav-item">ДОСТАВКА И ОПЛАТА</a>
+                <a href="#" class="main-header-nav-item">НОВОСТИ</a>
+                <a href="#" class="main-header-nav-item">О МАГАЗИНЕ</a>
+                <a href="#" class="main-header-nav-item">КОНТАКТЫ</a>
+                <div class="row row--wrap main-header-nav-row">
+                    <div class="main-header-nav-col">
+                        <div class="main-header-text main-header-text--mobile">
+                            <p>График работы:
+                                <br>ПН - ВС с 9:00 - 18.00
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main-header-nav-col">
+                        <div class="main-header-text main-header-text--mobile">
+                            <span>Контакты:</span> 
+                            <br>
+                            <a href="" tel:+7 999 99 99 "">Телефон: +7 999 99 99</a>
+                            <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="page">
+
+        <div class="page-product">
+            <div class="container">
+
+
+                <ul class="breadcrumb-item-wrapper">
+                    <li>
+                        <a href="./main_page.html" class="breadcrumb-item">
+      Главная
+    </a>
+                        /
+                    </li>
+
+
+                    <li>
+                        <a href="#" class="breadcrumb-item">
+          Каталог
+        </a>
+                        /
+                    </li>
+
+
+
+                    <li>
+                        <a href="#" class="breadcrumb-item">
+          МФУ
+        </a>
+                        /
+                    </li>
+
+
+
+                    <li>
+                        <span href="#" aria-current="page" class="breadcrumb-item">
+            Ecosys 2035 cdn
+        </span>
+                    </li>
+
+
+                </ul>
+
+            </div>
+            <div class="container container--page-product page-product-inner">
+                <div class="row row--wrap">
+                    <div class="product-slider-col">
+                        <div class="product-slider-main">
+
+                            <div class="product-slide-main">
+                                <div class="product-slide-main-item" style="background-image: url('./images/dest/img/product_slide.png');"></div>
+                            </div>
+
+                            <div class="product-slide-main">
+                                <div class="product-slide-main-item" style="background-image: url('./images/dest/img/product_slide.png');"></div>
+                            </div>
+
+                            <div class="product-slide-main">
+                                <div class="product-slide-main-item" style="background-image: url('./images/dest/img/product_slide.png');"></div>
+                            </div>
+
+                            <div class="product-slide-main">
+                                <div class="product-slide-main-item" style="background-image: url('./images/dest/img/product_slide.png');"></div>
+                            </div>
+
+                            <div class="product-slide-main">
+                                <div class="product-slide-main-item" style="background-image: url('./images/dest/img/product_slide.png');"></div>
+                            </div>
+
+                            <div class="product-slide-main">
+                                <div class="product-slide-main-item" style="background-image: url('./images/dest/img/product_slide.png');"></div>
+                            </div>
+
+                        </div>
+                        <div class="product-slider-nav slider--middel-arrow">
+
+                            <div class="product-slide-nav">
+                                <div class="product-slide-nav-item" style="background-image: url('./images/dest/img/product_slide.png');">
+                                </div>
+                            </div>
+
+                            <div class="product-slide-nav">
+                                <div class="product-slide-nav-item" style="background-image: url('./images/dest/img/product_slide.png');">
+                                </div>
+                            </div>
+
+                            <div class="product-slide-nav">
+                                <div class="product-slide-nav-item" style="background-image: url('./images/dest/img/product_slide.png');">
+                                </div>
+                            </div>
+
+                            <div class="product-slide-nav">
+                                <div class="product-slide-nav-item" style="background-image: url('./images/dest/img/product_slide.png');">
+                                </div>
+                            </div>
+
+                            <div class="product-slide-nav">
+                                <div class="product-slide-nav-item" style="background-image: url('./images/dest/img/product_slide.png');">
+                                </div>
+                            </div>
+
+                            <div class="product-slide-nav">
+                                <div class="product-slide-nav-item" style="background-image: url('./images/dest/img/product_slide.png');">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="product-description-col">
+                        <p class="product-description-title">Цветное МФУ Ecosys 2035 cdn</p>
+                        <div class="product-description-cost">
+                            <p class="product-description-current-cost">
+                                <span>12 500</span>₽
+                            </p>
+                            <p class="product-description-old-wrappper">
+                                <span class="product-description-badge">Акция -10%</span>
+                                <span class="product-description-old-cost">15 500 </span>
+                            </p>
+                        </div>
+                        <div class="product-description-list">
+                            <p class="product-description-list-title">Коротко о товаре:</p>
+                            <ul>
+                                <li><span>До 35 страниц формата А4 в минуту</span>
+                                </li>
+                                <li><span>Время выхода первой копии - 6,9 сек.</span>
+                                </li>
+                                <li><span>Качество печати - 1 200 точек на дюйм</span>
+                                </li>
+                                <li><span>Дуплекс для экономичной двусторонней печати</span>
+                                </li>
+                                <li><span>Возможность копирования двусторонних ID-карт на одной странице</span>
+                                </li>
+                                <li><span>Компактный дизайн и низкий уровень шума</span>
+                                </li>
+                                <li><span>Исключительно низкие затраты на печать в своем классе</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn--orange product-description-btn">Купить</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container container--page-product page-product-tabs-block">
+                <h3 class="h3-base page-product-tabs-block-h3 text-center">Характеристики</h3>
+                <div class="page-product-tabs">
+                    <div class="page-product-tabs-title-block">
+
+
+                        <label class="product-tab-title-item">
+
+                            <input type="radio" checked class="product-tab-input js-tab-input" name="productTab" tabId="#productTab1" onchange="onShowTab(this)">
+
+                            <span class="product-tab-title">Описание</span>
+                        </label>
+
+                        <label class="product-tab-title-item">
+
+                            <input type="radio" class="product-tab-input js-tab-input" name="productTab" tabId="#productTab2" onchange="onShowTab(this)">
+
+                            <span class="product-tab-title">Общие</span>
+                        </label>
+
+                        <label class="product-tab-title-item">
+
+                            <input type="radio" class="product-tab-input js-tab-input" name="productTab" tabId="#productTab3" onchange="onShowTab(this)">
+
+                            <span class="product-tab-title">Обработка бумаги</span>
+                        </label>
+
+                        <label class="product-tab-title-item">
+
+                            <input type="radio" class="product-tab-input js-tab-input" name="productTab" tabId="#productTab4" onchange="onShowTab(this)">
+
+                            <span class="product-tab-title">Печать</span>
+                        </label>
+
+                        <label class="product-tab-title-item">
+
+                            <input type="radio" class="product-tab-input js-tab-input" name="productTab" tabId="#productTab5" onchange="onShowTab(this)">
+
+                            <span class="product-tab-title">Копирование</span>
+                        </label>
+
+                        <label class="product-tab-title-item">
+
+                            <input type="radio" class="product-tab-input js-tab-input" name="productTab" tabId="#productTab6" onchange="onShowTab(this)">
+
+                            <span class="product-tab-title">Сканирование</span>
+                        </label>
+
+                        <label class="product-tab-title-item">
+
+                            <input type="radio" class="product-tab-input js-tab-input" name="productTab" tabId="#productTab7" onchange="onShowTab(this)">
+
+                            <span class="product-tab-title">Факс</span>
+                        </label>
+
+                    </div>
+                    <div class="page-product-tabs-inner">
+                        <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab1">
+                            <p class="base-text">
+                                МФУ M2135dn и M2635dn - наиболее доступные модели нашей новой линейки устройств серии ECOSYS, однако не менее функциональные. Устройства отличаются чрезвычайной надежностью и предлагают отдельным пользователям и небольшим рабочим группам качественную
+                                черно-белую печать с разрешением до 1 200 точек на дюйм, двустороннюю печать, гигабитное сетевое соединение, а также высокую скорость сканирования и копирования. Вы можете разместить эти МФУ в офисах открытого типа, не
+                                опасаясь того, что устройства займут много места или станут источниками шума. Благодаря многочисленным опциям для обработки бумаги, устройства можно настраивать под любые задачи.
+                            </p>
+                        </div>
+                        <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab2">
+                            <p class="base-text page-product-title">Тип устройства</p>
+                            <p class="base-text">МОНОХРОМНЫЕ МФУ ФОРМАТА A4</p>
+
+                            <p class="base-text page-product-title">Скорость печати</p>
+                            <p class="base-text">До 35 страниц формата А4 в минуту</p>
+
+                            <p class="base-text page-product-title">Время выхода первой страницы</p>
+                            <p class="base-text">До 17 секунд</p>
+
+                            <p class="base-text page-product-title">Потребление электроэнергии</p>
+                            <p class="base-text">Копирование/печать: 661 Вт
+                                <br>В режиме ожидания: 21 Вт
+                                <br>Спящий режим: 1 Вт</p>
+
+                            <p class="base-text page-product-title">Стандартная гарантия</p>
+                            <p class="base-text">Стандартная гарантия - 2 года. Гарантия KYOCERA на барабан и проявитель – 3 года или макс. 100 000 страниц (в зависимости от того, что наступит раньше), при условии эксплуатации устройства и ухода за ним в соответствии с инструкциями
+                                по техническому обслуживанию.</p>
+                        </div>
+                        <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab3">
+                            <div class="row row--wrap">
+                                <div class="page-product-tabs-col2">
+                                    <p class="base-text page-product-title">Входная емкость</p>
+                                    <p class="base-text">Универсальный податчик на 100 листов плотностью 60-220 г/м² и форматов A4, A5, A6, B5, B6, Letter, Legal, Custom (от 70 x 148 до 216 x 356 мм). Универсальная кассета для бумаги на 250 листов плотностью 60-163 г/м² и
+                                        форматов A4, A5, A6, B5, Letter, Legal, Custom (от 105 x 148 до 216 x 356 мм). Максимальный объем подачи бумаги с дополнительным оборудованием: 850 листов</p>
+
+                                    <p class="base-text page-product-title">Дуплекс</p>
+                                    <p class="base-text">Двусторонняя печать на бумаге плотностью 60-163 г/м² и форматов A4, A5, B5, Letter, Legal</p>
+
+                                    <p class="base-text page-product-title">Устройство автоматической подачи оригиналов</p>
+                                    <p class="base-text">50 листов плотностью 50-160 г/м² и форматов A4, A5, A6, B5, B6, Letter, Legal, Custom (от 100 x 148 до 216 x 356 мм)</p>
+                                </div>
+                                <div class="page-product-tabs-col2">
+                                    <p class="base-text page-product-title">Макс. обьем подачи бумаги с дополнительными устройствами</p>
+                                    <p class="base-text">850 листов</p>
+
+                                    <p class="base-text page-product-title">Выходной лоток</p>
+                                    <p class="base-text">Макс. 150 листов лицевой стороной вниз с датчиком заполнения бумаги</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab4">
+                            <p class="base-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. At officiis velit quae odio molestias consectetur ad quasi dolores. Odio rem consequatur nobis et exercitationem, architecto a ratione officiis aliquam veritatis possimus nulla commodi debitis
+                                vel provident porro quis perspiciatis, eius eligendi est. Quos exercitationem minus aliquid natus mollitia iste labore ratione soluta, doloribus fuga voluptatibus explicabo, est vero. Quos officia, veritatis veniam quaerat
+                                molestias delectus illo quo possimus! Quis, dolores dolor perspiciatis sunt velit consectetur, soluta saepe error odit repellat, autem illo maiores repudiandae. Assumenda expedita neque, quos, maiores quaerat saepe placeat
+                                et ad accusantium explicabo vel suscipit. Placeat, cum.
+                            </p>
+                        </div>
+                        <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab5">
+                            <p class="base-text">
+                                МФУ M2135dn и M2635dn - наиболее доступные модели нашей новой линейки устройств серии ECOSYS, однако не менее функциональные. Устройства отличаются чрезвычайной надежностью и предлагают отдельным пользователям и небольшим рабочим группам качественную
+                                черно-белую печать с разрешением до 1 200 точек на дюйм, двустороннюю печать, гигабитное сетевое соединение, а также высокую скорость сканирования и копирования. Вы можете разместить эти МФУ в офисах открытого типа, не
+                                опасаясь того, что устройства займут много места или станут источниками шума. Благодаря многочисленным опциям для обработки бумаги, устройства можно настраивать под любые задачи.
+                            </p>
+                        </div>
+                        <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab6">
+                            <p class="base-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto exercitationem atque in itaque, magnam enim rerum pariatur adipisci rem. Culpa enim a nobis repellat accusamus modi! Nostrum sapiente iste laborum! Distinctio sed similique, doloribus,
+                                itaque perferendis animi dolores temporibus eveniet esse corporis inventore minima qui veritatis sunt eaque molestiae iusto?
+                            </p>
+                        </div>
+                        <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab7">
+                            <p class="base-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sapiente perspiciatis blanditiis, placeat, id aliquid eos nemo quis necessitatibus expedita facilis hic iure neque praesentium voluptates accusamus dolores iusto cum vero harum, accusantium
+                                suscipit repellat saepe quidem! Assumenda cum dolor, deleniti aperiam tempora rem, eos illo cumque autem quam enim maiores error eius suscipit, libero numquam fuga quidem vel odio possimus magni. Mollitia pariatur praesentium
+                                quidem voluptate hic quod beatae, quam at illum nisi molestiae deserunt, earum impedit? Culpa sed rem cupiditate porro impedit maiores ipsa quibusdam neque, fugit quas laudantium consectetur possimus earum odio alias assumenda
+                                molestias quidem quis ipsam deserunt illo itaque dolore obcaecati dolores? Voluptas voluptates consectetur culpa amet, iure accusantium mollitia voluptatum dolor velit repellat ipsam sapiente autem odio! Deserunt voluptatum
+                                veritatis excepturi nihil placeat, cum officiis dicta numquam! Rem odit non tempore, maxime vel quis veritatis voluptatibus dolore perspiciatis assumenda qui. Recusandae cumque natus vero. Blanditiis corrupti vitae ut porro.
+                                Nobis, porro? Nam vel voluptatum error suscipit eos id labore dolore nulla excepturi tempore assumenda, officiis dignissimos omnis quibusdam magni autem, natus obcaecati rem explicabo! Beatae ex placeat alias libero quia,
+                                praesentium suscipit nam blanditiis, fugiat vitae inventore sunt deserunt necessitatibus soluta ad rerum autem.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="h3-base page-product-recommend-h3 text-center">C этим товаром покупают</h3>
+                <div class="product-slider slider--middel-arrow-black">
+
+                    <div class="product-slide">
+
+
+                        <div class="product-card">
+                            <p class="product-card-category">
+                                <span>Чёрный тонер</span>
+                                <span class="card-arrow card-arrow--product"></span>
+                            </p>
+
+                            <span class="product-card-badge">Акция -10%</span>
+
+                            <div class="product-card-img">
+                                <img src="./images/dest/img/product_card2.png" alt="Продукт">
+                            </div>
+                            <p class="product-card-name">TK-1120 для FS1160DN</p>
+                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+
+                            <p class="product-card-cost-strike">100 000</p>
+
+                            <div class="product-card-btns">
+                                <button class="product-card-btn product-card-btn--compare">
+                                    <span class="visually-hidden">Сравнить</span>
+                                </button>
+                                <button class="product-card-btn product-card-btn--like">
+                                    <span class="visually-hidden">Избранное</span>
+                                </button>
+                            </div>
+                            <div class="product-card-overlay">
+                                <button class="product-card-overlay-btn">
+                                    <img src="./images/dest/icons/basket_white.png" alt="Иконка корзины">
+                                    <span>В корзину</span>
+                                </button>
+                                <a href="#" class="btn product-card-overlay-btn">
+        Подробнее
+      </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="product-slide">
+
+
+                        <div class="product-card">
+                            <p class="product-card-category">
+                                <span>Чёрный тонер</span>
+                                <span class="card-arrow card-arrow--product"></span>
+                            </p>
+
+                            <span class="product-card-badge">Акция -10%</span>
+
+                            <div class="product-card-img">
+                                <img src="./images/dest/img/product_card2.png" alt="Продукт">
+                            </div>
+                            <p class="product-card-name">TK-1120 для FS1160DN</p>
+                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+
+                            <p class="product-card-cost-strike">100 000</p>
+
+                            <div class="product-card-btns">
+                                <button class="product-card-btn product-card-btn--compare">
+                                    <span class="visually-hidden">Сравнить</span>
+                                </button>
+                                <button class="product-card-btn product-card-btn--like">
+                                    <span class="visually-hidden">Избранное</span>
+                                </button>
+                            </div>
+                            <div class="product-card-overlay">
+                                <button class="product-card-overlay-btn">
+                                    <img src="./images/dest/icons/basket_white.png" alt="Иконка корзины">
+                                    <span>В корзину</span>
+                                </button>
+                                <a href="#" class="btn product-card-overlay-btn">
+        Подробнее
+      </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="product-slide">
+
+
+                        <div class="product-card">
+                            <p class="product-card-category">
+                                <span>Чёрный тонер</span>
+                                <span class="card-arrow card-arrow--product"></span>
+                            </p>
+
+                            <span class="product-card-badge">Акция -10%</span>
+
+                            <div class="product-card-img">
+                                <img src="./images/dest/img/product_card2.png" alt="Продукт">
+                            </div>
+                            <p class="product-card-name">TK-1120 для FS1160DN</p>
+                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+
+                            <p class="product-card-cost-strike">100 000</p>
+
+                            <div class="product-card-btns">
+                                <button class="product-card-btn product-card-btn--compare">
+                                    <span class="visually-hidden">Сравнить</span>
+                                </button>
+                                <button class="product-card-btn product-card-btn--like">
+                                    <span class="visually-hidden">Избранное</span>
+                                </button>
+                            </div>
+                            <div class="product-card-overlay">
+                                <button class="product-card-overlay-btn">
+                                    <img src="./images/dest/icons/basket_white.png" alt="Иконка корзины">
+                                    <span>В корзину</span>
+                                </button>
+                                <a href="#" class="btn product-card-overlay-btn">
+        Подробнее
+      </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="product-slide">
+
+
+                        <div class="product-card">
+                            <p class="product-card-category">
+                                <span>Чёрный тонер</span>
+                                <span class="card-arrow card-arrow--product"></span>
+                            </p>
+
+                            <span class="product-card-badge">Акция -10%</span>
+
+                            <div class="product-card-img">
+                                <img src="./images/dest/img/product_card2.png" alt="Продукт">
+                            </div>
+                            <p class="product-card-name">TK-1120 для FS1160DN</p>
+                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+
+                            <p class="product-card-cost-strike">100 000</p>
+
+                            <div class="product-card-btns">
+                                <button class="product-card-btn product-card-btn--compare">
+                                    <span class="visually-hidden">Сравнить</span>
+                                </button>
+                                <button class="product-card-btn product-card-btn--like">
+                                    <span class="visually-hidden">Избранное</span>
+                                </button>
+                            </div>
+                            <div class="product-card-overlay">
+                                <button class="product-card-overlay-btn">
+                                    <img src="./images/dest/icons/basket_white.png" alt="Иконка корзины">
+                                    <span>В корзину</span>
+                                </button>
+                                <a href="#" class="btn product-card-overlay-btn">
+        Подробнее
+      </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="product-slide">
+
+
+                        <div class="product-card">
+                            <p class="product-card-category">
+                                <span>Чёрный тонер</span>
+                                <span class="card-arrow card-arrow--product"></span>
+                            </p>
+
+                            <span class="product-card-badge">Акция -10%</span>
+
+                            <div class="product-card-img">
+                                <img src="./images/dest/img/product_card2.png" alt="Продукт">
+                            </div>
+                            <p class="product-card-name">TK-1120 для FS1160DN</p>
+                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+
+                            <p class="product-card-cost-strike">100 000</p>
+
+                            <div class="product-card-btns">
+                                <button class="product-card-btn product-card-btn--compare">
+                                    <span class="visually-hidden">Сравнить</span>
+                                </button>
+                                <button class="product-card-btn product-card-btn--like">
+                                    <span class="visually-hidden">Избранное</span>
+                                </button>
+                            </div>
+                            <div class="product-card-overlay">
+                                <button class="product-card-overlay-btn">
+                                    <img src="./images/dest/icons/basket_white.png" alt="Иконка корзины">
+                                    <span>В корзину</span>
+                                </button>
+                                <a href="#" class="btn product-card-overlay-btn">
+        Подробнее
+      </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="product-slide">
+
+
+                        <div class="product-card">
+                            <p class="product-card-category">
+                                <span>Чёрный тонер</span>
+                                <span class="card-arrow card-arrow--product"></span>
+                            </p>
+
+                            <span class="product-card-badge">Акция -10%</span>
+
+                            <div class="product-card-img">
+                                <img src="./images/dest/img/product_card2.png" alt="Продукт">
+                            </div>
+                            <p class="product-card-name">TK-1120 для FS1160DN</p>
+                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+
+                            <p class="product-card-cost-strike">100 000</p>
+
+                            <div class="product-card-btns">
+                                <button class="product-card-btn product-card-btn--compare">
+                                    <span class="visually-hidden">Сравнить</span>
+                                </button>
+                                <button class="product-card-btn product-card-btn--like">
+                                    <span class="visually-hidden">Избранное</span>
+                                </button>
+                            </div>
+                            <div class="product-card-overlay">
+                                <button class="product-card-overlay-btn">
+                                    <img src="./images/dest/icons/basket_white.png" alt="Иконка корзины">
+                                    <span>В корзину</span>
+                                </button>
+                                <a href="#" class="btn product-card-overlay-btn">
+        Подробнее
+      </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="product-slide">
+
+
+                        <div class="product-card">
+                            <p class="product-card-category">
+                                <span>Чёрный тонер</span>
+                                <span class="card-arrow card-arrow--product"></span>
+                            </p>
+
+                            <span class="product-card-badge">Акция -10%</span>
+
+                            <div class="product-card-img">
+                                <img src="./images/dest/img/product_card2.png" alt="Продукт">
+                            </div>
+                            <p class="product-card-name">TK-1120 для FS1160DN</p>
+                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+
+                            <p class="product-card-cost-strike">100 000</p>
+
+                            <div class="product-card-btns">
+                                <button class="product-card-btn product-card-btn--compare">
+                                    <span class="visually-hidden">Сравнить</span>
+                                </button>
+                                <button class="product-card-btn product-card-btn--like">
+                                    <span class="visually-hidden">Избранное</span>
+                                </button>
+                            </div>
+                            <div class="product-card-overlay">
+                                <button class="product-card-overlay-btn">
+                                    <img src="./images/dest/icons/basket_white.png" alt="Иконка корзины">
+                                    <span>В корзину</span>
+                                </button>
+                                <a href="#" class="btn product-card-overlay-btn">
+        Подробнее
+      </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row row--wrap main-footer-inner">
+                <div class="main-footer-col">
+                    <a href="#" class="main-footer-logo">
+                        <img src="./images/dest/icons/footer_logo.png" alt="Логотип">
+                    </a>
+                    <div class="main-footer-address">
+                        <p class="main-footer-text">
+                            Единый Call Center
+                            <br>Бесплатные звонки по всей Росии
+                            <br>
+                            <a class="main-footer-text" href="tel:+7 999 99 99"><strong>8 800 888 88 88</strong></a>
+                        </p>
+                    </div>
+                    <div class="main-footer-email">
+                        <p class="main-footer-text">
+                            Наша электронная почта
+                            <br>
+                            <a class="main-footer-text" href="mailto:info@kyocera-shop.ru"><strong>info@kyocera-shop.ru</strong></a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="main-footer-col">
+                    <p class="main-footer-title">КАТАЛОГ</p>
+                    <ul class="main-footer-list">
+                        <li><a href="#" class="main-footer-text">Принтеры</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">МФУ</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Расходные материалы</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Опции</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Решения</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Акции</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Бонусы</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="main-footer-col">
+                    <p class="main-footer-title">ИНТЕРНЕТ - МАГАЗИН</p>
+                    <ul class="main-footer-list">
+                        <li><a href="#" class="main-footer-text">Как сделать заказ</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Доставка и оплата</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Условия возврата и обменаы</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Корпоративные продажи</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Кредит в интернет-магазине</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="main-footer-col">
+                    <p class="main-footer-title">СПОСОБЫ ОПЛАТЫ</p>
+                    <div class="main-footer-payment">
+                        <img src="./images/dest/icons/payment.png" alt="Платежные системы">
+                    </div>
+                </div>
+                <div class="main-footer-col">
+                    <div class="main-footer-social-block">
+                        <a href="#" class="main-footer-social main-footer-social--fb" target="_blank"><span class="visually-hidden">Фейсбук</span></a>
+                        <a href="#" class="main-footer-social main-footer-social--inst" target="_blank"><span class="visually-hidden">Инстаграм</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

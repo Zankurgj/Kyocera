@@ -1,0 +1,21 @@
+.page-news {
+  padding-bottom: 165px;
+  @media screen and (max-width: $mobile-bp) {
+    padding-bottom: 65px;
+  }
+}
+.page-news-h3 {
+  margin-bottom: 70px;
+}
+
+.page-news-img {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+.page-news-block {
+  .base-text {
+    margin-bottom: 0.6em;
+  }
+}

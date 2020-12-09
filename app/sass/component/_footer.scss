@@ -4,6 +4,8 @@
 }
 .main-footer-inner {
   justify-content: space-between;
+  @media screen and (max-width: $mobile-bp) {
+  }
 }
 .main-footer-text {
   font-size: 15px;
@@ -46,6 +48,20 @@ a.main-footer-text {
 }
 .main-footer-col {
   margin-right: 20px;
+  @media screen and (max-width: $mobile-bp) {
+    flex-basis: calc((100% - 20px) / 2);
+    max-width: calc((100% - 20px) / 2);
+    margin-bottom: 40px;
+    margin-right: 20px;
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
   &:last-child {
     margin-right: 0;
   }
@@ -58,6 +74,9 @@ a.main-footer-text {
 .main-footer-payment {
   display: table;
   margin: 0 auto;
+  @media screen and (max-width: $mobile-bp) {
+    margin: 0;
+  }
   img {
     display: block;
   }

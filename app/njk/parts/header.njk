@@ -25,6 +25,7 @@
           <a href=""tel:+7 999 99 99"">Телефон: +7 999 99 99</a>
           <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
         </div>
+        <button class="main-header-search-btn" onclick="onShowSearch()"></button>
         <div class="main-header-basket main-header-basket--dropdown">
           <a href="#" class="main-header-basket-link">
             <span class="main-header-basket-counter">2</span>
@@ -73,6 +74,13 @@
               </div>
           </div>
         </div>
+        <button
+          class="btn-hamburger main-header-hamburger"
+          onclick="onToggleMobileMenu()"
+        >
+          <span class="btn-hamburger-icon"></span>
+          <span class="visually-hidden">меню</span>
+        </button>
       </div>
     </div>
     <div class="main-header-bottom">
@@ -86,8 +94,12 @@
               </svg>
               КАТАЛОГ ТОВАРОВ
             </a>
+            <button class="main-header-nav-item-icon-m" onclick="onShowSubMenu()">
+            </button>
             <div class="main-header-nav-dropdown-inner">
-              <div class="container">
+              <div class="container main-header-nav--container">
+                <button class="main-header-nav-back" onclick="onShowSubMenu()">
+                </button>
                 <div class="main-header-submenu">
                   <div class="main-header-submenu-promo">
                     <p>Благодаря широкой линейке устройств Kyocera вы сможете подобрать в нашем интернет магазине именно то, что будет отвечать нуждам вашего бизнеса.</p>
@@ -123,6 +135,22 @@
           <a href="#" class="main-header-nav-item">НОВОСТИ</a>
           <a href="#" class="main-header-nav-item">О МАГАЗИНЕ</a>
           <a href="#" class="main-header-nav-item">КОНТАКТЫ</a>
+          <div class="row row--wrap main-header-nav-row">
+            <div class="main-header-nav-col">
+              <div class="main-header-text main-header-text--mobile">
+                <p>График работы: <br>
+                    ПН - ВС с 9:00 - 18.00
+                </p>
+              </div>
+            </div>
+            <div class="main-header-nav-col">
+              <div class="main-header-text main-header-text--mobile">
+                <span>Контакты:</span> <br>
+                <a href=""tel:+7 999 99 99"">Телефон: +7 999 99 99</a>
+                <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
+              </div>
+            </div>
+          </div>
       </nav>
     </div>
 </header>

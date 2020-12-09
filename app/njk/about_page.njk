@@ -1,0 +1,53 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <div class="container">
+    {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['О магазине']]) }}
+  </div>
+  <div class="page-about page--image">
+    <div class="container">
+      <h3 class="h3-base page-about-h3 text-center">О магазине</h3>
+      <p class="base-text">Мы являемся авторизованным диллером компании Kyocera. А это значит, что покупая печатающую технику в нашем интернет магазине Вы получаете высокий уровень сервиса всегда только оригинальную и сертифицированную технику на территории Российской Феденрации, а так же компетентные консультации наших специалистов.</p>
+      <p class="base-text">Если вы ещё не определились с выбором печатающей техники вы можете позвонить по нашему номеру телефона +7 495 999 99 99 и получить консультацию по выбору техники от наших специалистов. Они помогут вам выбрать устройство, которое будет отвечать всем требованиям вашео бизнеса.</p>
+      <p class="base-text">На нашем интернет магазине печатающей техники Kyocera представлена широкая линейка устройств, опци и расходных материалов к ним.</p>
+    </div>
+
+    <div class="container">
+      <div class="about-feature row row--wrap">
+        <div class="about-feature-item">
+          <svg class="svg-icon about-feature-item-img">
+            <use xlink:href="./images/sprites/svg/sprite.symbol.svg#feature1"></use>
+          </svg>
+          <p class="about-feature-item-text">Официальный <br> дилер Kyocera</p>
+        </div>
+
+        <div class="about-feature-item">
+          <svg class="svg-icon about-feature-item-img">
+            <use xlink:href="./images/sprites/svg/sprite.symbol.svg#feature2"></use>
+          </svg>
+          <p class="about-feature-item-text">Сервисная <br> поддержка 24/7</p>
+        </div>
+
+        <div class="about-feature-item">
+          <svg class="svg-icon about-feature-item-img">
+            <use xlink:href="./images/sprites/svg/sprite.symbol.svg#feature3"></use>
+          </svg>
+          <p class="about-feature-item-text">Гарантия <br> качества</p>
+        </div>
+
+        <div class="about-feature-item">
+          <svg class="svg-icon about-feature-item-img">
+            <use xlink:href="./images/sprites/svg/sprite.symbol.svg#feature4"></use>
+          </svg>
+          <p class="about-feature-item-text">Быстрая <br> доставка</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="base-text">Мы являемся авторизованным диллером компании Kyocera. А это значит, что покупая печатающую технику в нашем интернет магазине Вы получаете высокий уровень сервиса всегда только оригинальную и сертифицированную технику на территории Российской Феденрации, а так же компетентные консультации наших специалистов.</p>
+      <p class="base-text">Если вы ещё не определились с выбором печатающей техники вы можете позвонить по нашему номеру телефона +7 495 999 99 99 и получить консультацию по выбору техники от наших специалистов. Они помогут вам выбрать устройство, которое будет отвечать всем требованиям вашео бизнеса.</p>
+      <p class="base-text">На нашем интернет магазине печатающей техники Kyocera представлена широкая линейка устройств, опци и расходных материалов к ним.</p>
+    </div>
+  </div>
+{% endblock %}

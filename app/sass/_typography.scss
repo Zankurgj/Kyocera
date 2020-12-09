@@ -11,11 +11,34 @@ h4 {
   font-size: rem(30);
   line-height: lh(35, 30);
   color: #000;
+  @media screen and (max-width: $mobile-bp) {
+    font-size: rem(22);
+  }
 }
 .h2-base {
+  font-weight: 400;
   font-size: rem(24);
-  color: #272727;
+  color: #000;
   text-transform: uppercase;
+}
+.h3-base {
+  font-weight: 500;
+  font-size: rem(24);
+  color: #000;
+}
+.h4-base {
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+  color: #000;
+  font-weight: normal;
+}
+.h5-base {
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.03em;
+  color: #000;
+  font-weight: normal;
 }
 p {
   margin: 0;
@@ -34,4 +57,16 @@ a {
   &:focus {
     text-decoration: none;
   }
+}
+.base-text {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.normalcase {
+  text-transform: inherit;
 }

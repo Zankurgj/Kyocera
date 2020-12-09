@@ -31,3 +31,86 @@ input[type='submit'] {
     background-color: rgba($color: #0a9bcd, $alpha: 0.8);
   }
 }
+.btn--orange {
+  padding: 8px 12px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+  background-color: #f06400;
+  border-radius: 4px;
+  &:hover {
+    color: #fff;
+    background-color: rgba($color: #f06400, $alpha: 0.8);
+  }
+}
+
+.btn--orange-underline {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #f06400;
+  text-decoration: underline;
+  &:hover {
+    color: rgba($color: #f06400, $alpha: 0.8);
+  }
+}
+
+.btn--gray {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 13px;
+  border: 1px solid #828282;
+  border-radius: 3px;
+  background: #f2f2f2;
+  color: #282828;
+  &:hover {
+    color: #282828;
+    opacity: 0.8;
+  }
+}
+
+.btn-hamburger {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  &.btn-hamburger--active {
+    .btn-hamburger-icon {
+      &::before {
+        transform: scaleX(0.5) translate(-1px, 7px) rotate(-28deg);
+      }
+      &::after {
+        transform: scaleX(0.5) translate(-2px, -7px) rotate(28deg);
+      }
+    }
+  }
+}
+.btn-hamburger-icon {
+  display: none;
+  width: 20px;
+  height: 2px;
+  position: relative;
+  background-color: #282828;
+  @media screen and (max-width: $mobile-bp) {
+    display: block;
+  }
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background-color: #282828;
+    transition: transform $base-duration $base-timing;
+    transform-origin: left;
+  }
+  &::before {
+    top: -7px;
+  }
+  &::after {
+    bottom: -7px;
+  }
+}

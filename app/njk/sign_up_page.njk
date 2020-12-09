@@ -1,0 +1,56 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <div class="container">
+    {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['Регистрация']]) }}
+  </div>
+  <div class="page-signup page--image">
+    <h3 class="h3-base page-signup-h3 text-center">Регистрация</h3>
+    <div class="container container--signup">
+      <form class="signup-form">
+        <h5 class="h5-base signup-h5 text-center">Заполните форму регистрации</h5>
+        <div class="row row--wrap">
+          <label class="input-thin-wrapper signup-form-col2">
+            <input type="text" class="input-thin" placeholder="Ваше Имя*" reqared>
+          </label>
+
+          <label class="input-thin-wrapper signup-form-col2">
+            <input type="text" class="input-thin" placeholder="Email*" reqared>
+          </label>
+
+          <label class="input-thin-wrapper signup-form-col2">
+            <input type="text" class="input-thin" placeholder="Телефон*" reqared>
+          </label>
+
+          <div class="signup-form-col2">
+            <button class="btn--main" type="button">Подтвердить номер телефона</button>
+            <span class="signup-sub-text">Мы отправим вам SMS c кодом</span>
+          </div>
+
+          <label class="input-thin-wrapper signup-form-col2">
+            <input type="text" class="input-thin" placeholder="Придумайте пароль*" reqared>
+          </label>
+
+          <label class="input-thin-wrapper signup-form-col2">
+            <input type="text" class="input-thin" placeholder="Повторите пароль*" reqared>
+          </label>
+          <div class="signup-checkbox-block">
+            <label class="base-checkbox-wrapper">
+              <input type="checkbox" class="base-checkbox-input">
+              <span class="base-checkbox"></span>
+              <span class="base-checkbox-text">Я хочу знать о скидках и акциях</span>
+            </label>
+            <label class="base-checkbox-wrapper">
+              <input type="checkbox" class="base-checkbox-input">
+              <span class="base-checkbox"></span>
+              <span class="base-checkbox-text">Я соглашаюсь с <a href="#" target="_blank" class="btn--orange-underline signup-link">политикой обработки персональных данных</a></span>
+            </label>
+          </div>
+           <div class="signup-form-col2">
+            <button class="btn--main signup-submit-btn" type="submit">Зареристрироваться</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -4,65 +4,117 @@
     {% from "app/njk/macro.njk" import breadcrumbs %}
       {{ breadcrumbs([['Каталог']]) }}
   </div>
-  <div class="container">
-    <div class="row row--wrap catalog-inner">
+  <div class="page-catalog">
+    <div class="container container--catalog">
+      <div class="row row--wrap catalog-inner">
 
-      <div class="catalog-sidebar-col">
-        <aside class="catalog-sidebar">
-          <p class="catalog-sidebar-head">ФИЛЬТРЫ</p>
-          <div class="catalog-sidebar-block">
-            <p class="catalog-sidebar-title">ТИП УСТРОЙСТВА</p>
-            <label class="checkbox-wrapper catalog-sidebar-checkbox">
-              <input type="checkbox" class="checkbox-input">
-              <span class="checkbox"></span>
-              <span class="checkbox-text">Принтер</span>
-            </label>
+        <div class="catalog-sidebar-col">
+          <aside class="catalog-sidebar">
+            <p class="catalog-sidebar-head">ФИЛЬТРЫ</p>
+            <div class="catalog-sidebar-block">
+              <p class="catalog-sidebar-title">ТИП УСТРОЙСТВА</p>
+              <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                <input type="checkbox" class="checkbox-input">
+                <span class="checkbox"></span>
+                <span class="checkbox-text">Принтер</span>
+              </label>
 
-            <label class="checkbox-wrapper catalog-sidebar-checkbox">
-              <input type="checkbox" class="checkbox-input" checked>
-              <span class="checkbox"></span>
-              <span class="checkbox-text">МФУ</span>
-            </label>
+              <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                <input type="checkbox" class="checkbox-input" checked>
+                <span class="checkbox"></span>
+                <span class="checkbox-text">МФУ</span>
+              </label>
+            </div>
+
+            <div class="catalog-sidebar-block">
+              <p class="catalog-sidebar-title">ЦВЕТНОСТЬ ПЕЧАТИ</p>
+              <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                <input type="checkbox" class="checkbox-input">
+                <span class="checkbox"></span>
+                <span class="checkbox-text">Чёрно - белая</span>
+              </label>
+
+              <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                <input type="checkbox" class="checkbox-input" checked>
+                <span class="checkbox"></span>
+                <span class="checkbox-text">Цвет</span>
+              </label>
+            </div>
+
+            <div class="catalog-sidebar-block">
+              <p class="catalog-sidebar-title">ФОРМАТ</p>
+              <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                <input type="checkbox" class="checkbox-input">
+                <span class="checkbox"></span>
+                <span class="checkbox-text">A4</span>
+              </label>
+
+              <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                <input type="checkbox" class="checkbox-input" checked>
+                <span class="checkbox"></span>
+                <span class="checkbox-text">A3</span>
+              </label>
+            </div>
+
+            <div class="catalog-sidebar-block">
+              <p class="catalog-sidebar-title">СКОРОСТЬ ПЕЧАТИ</p>
+              <div class="catalog-range-wrapper">
+                <div class="catalog-range-inputs">
+                  <label class="catalog-range-input-wrapper">
+                    от
+                    <input class="catalog-range-input" type="text" id="firstVal" readonly>
+                  </label>
+                  <label class="catalog-range-input-wrapper">
+                    до
+                    <input class="catalog-range-input" type="text" id="nextVal" readonly>
+                  </label>
+                </div>
+                <div class="catalog-range"></div>
+              </div>
+            </div>
+
+            <div class="catalog-sidebar-block">
+              <p class="catalog-sidebar-title">ДВУСТОРОННЯЯ ПЕЧАТЬ</p>
+              <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                <input type="checkbox" class="checkbox-input">
+                <span class="checkbox"></span>
+                <span class="checkbox-text">Да</span>
+              </label>
+
+              <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                <input type="checkbox" class="checkbox-input" checked>
+                <span class="checkbox"></span>
+                <span class="checkbox-text">Нет</span>
+              </label>
+
+              <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                <input type="checkbox" class="checkbox-input">
+                <span class="checkbox"></span>
+                <span class="checkbox-text">Неважно</span>
+              </label>
+            </div>
+
+          </aside>
+        </div>
+
+        <div class="catalog-items-col">
+          <div class="row row--wrap">
+              {% for i in range(0, 16) %}
+                <div class="catalog-item-col">
+                  {% from "app/njk/macro.njk" import productCard %}
+                  {{ productCard(false, false, "./images/dest/img/product_card1.png") }}
+                </div>
+              {% endfor %}
           </div>
-
-          <div class="catalog-sidebar-block">
-            <p class="catalog-sidebar-title">ЦВЕТНОСТЬ ПЕЧАТИ</p>
-            <label class="checkbox-wrapper catalog-sidebar-checkbox">
-              <input type="checkbox" class="checkbox-input">
-              <span class="checkbox"></span>
-              <span class="checkbox-text">Чёрно - белая</span>
-            </label>
-
-            <label class="checkbox-wrapper catalog-sidebar-checkbox">
-              <input type="checkbox" class="checkbox-input" checked>
-              <span class="checkbox"></span>
-              <span class="checkbox-text">Цвет</span>
-            </label>
-          </div>
-
-          <div class="catalog-sidebar-block">
-            <p class="catalog-sidebar-title">ФОРМАТ</p>
-            <label class="checkbox-wrapper catalog-sidebar-checkbox">
-              <input type="checkbox" class="checkbox-input">
-              <span class="checkbox"></span>
-              <span class="checkbox-text">A4</span>
-            </label>
-
-            <label class="checkbox-wrapper catalog-sidebar-checkbox">
-              <input type="checkbox" class="checkbox-input" checked>
-              <span class="checkbox"></span>
-              <span class="checkbox-text">A3</span>
-            </label>
-          </div>
-
-        </aside>
-      </div>
-
-      <div class="catalog-items-col">
-        <div class="row row--wrap">
-
         </div>
       </div>
+    </div>
+    <div class="container">
+      <p class="catalog-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor sociis morbi faucibus orci aliquet aliquet id est. Scelerisque aliquet tristique ultrices vitae, sed elementum nunc. Dolor lectus nulla est ac. Et morbi pulvinar dui pellentesque fusce nisl ut amet. Nisi scelerisque posuere diam vehicula duis id gravida. Dui integer varius sit integer massa faucibus. Donec adipiscing sagittis cursus orci egestas quam mauris arcu. Commodo congue nibh in molestie cursus. Leo faucibus cursus tincidunt in quisque quam ornare enim.
+  Scelerisque etiam vitae euismod quisque enim nisl et. Interdum eget augue pellentesque scelerisque est. Quisque aliquet egestas leo elit dolor nec eleifend cursus venenatis. Felis neque dictumst ipsum fringilla purus facilisi imperdiet enim, pharetra. Magna sed fusce sem nullam nullam sagittis sed enim. At netus non amet ac amet feugiat eget non ipsum. Quis integer sed accumsan est facilisi pretium. Pulvinar lacus in magna ut. Mauris, et ac, amet nunc imperdiet ultrices fermentum. Amet, ultrices viverra magna egestas amet. At purus dictumst ac amet tellus, senectus eget urna diam. Sodales facilisis semper libero tristique.
+  Pretium donec nunc, sit eget nunc malesuada a, rhoncus at. Ut euismod mauris nec in netus. Faucibus consectetur enim, est nisi hac diam venenatis, condimentum. Vel lobortis mauris donec facilisis morbi nam nec. Imperdiet volutpat facilisis pretium, cursus fames integer mattis ut imperdiet. At donec amet integer tempus ornare id. Elit vel, sit nisl, feugiat est tempor feugiat sed. Urna lacus, scelerisque purus arcu, nunc, vestibulum id commodo.
+  Iaculis mattis pretium tristique non, scelerisque amet sem. Ultricies nibh egestas aenean congue eget id. In tincidunt vulputate facilisis dignissim porttitor orci, ac elit potenti. Mi in sed nulla libero, nec consectetur in volutpat. Dolor lectus morbi turpis cursus. Pellentesque aenean luctus fermentum sollicitudin nulla mauris aenean. Enim quisque vestibulum magna diam ullamcorper cursus egestas pellentesque nibh. Nisl lectus vulputate aliquam massa eget pharetra, gravida senectus tristique. Est, vitae porta rhoncus mi, ultrices urna, placerat. Velit dolor tempor consectetur posuere nascetur habitant urna. Euismod vehicula ligula donec nisl ipsum nunc suspendisse mollis.
+  Dui massa tellus mi posuere. Sed sit in ultrices quis morbi bibendum. Leo eu commodo nec aliquam laoreet. Dolor, faucibus malesuada odio fermentum pulvinar vestibulum ornare libero. Leo integer ut pharetra adipiscing sodales.</p>
     </div>
   </div>
 {% endblock %}

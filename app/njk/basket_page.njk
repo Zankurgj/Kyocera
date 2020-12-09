@@ -1,0 +1,53 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <div class="container">
+    {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['Корзина']]) }}
+  </div>
+  <div class="page-basket page--image">
+    <h3 class="h3-base page-basket-h3 text-center">Моя корзина</h3>
+    <div class="container">
+      <div class="row row--wrap basket-row">
+        <div class="basket-products-col">
+            {% for i in range(0, 4) %}
+            <div class="basket-products-item">
+              <div class="basket-products-item-top">
+                <div class="basket-products-item-img" style="background-image: url('./images/dest/img/basked_product.png');"></div>
+                <div class="basket-products-item-text">
+                  <p class="basket-products-item-title">Цветное МФУ</p>
+                  <p class="basket-products-item-name">Ecosys 2035 cdn</p>
+                </div>
+              </div>
+              <div class="basket-products-item-bottom">
+                <div class="basket-products-item-counter">
+                  <button class="btn-item-counter btn-item-counter--minus" onclick="onCounterMinus('counter{{loop.index}}')"></button>
+                  <input class="item-counter-input" type="text"  value="0" size="2" readonly id="counter{{loop.index}}">
+                  <button class="btn-item-counter btn-item-counter--plus" onclick="onCounterPlus('counter{{loop.index}}')"><span>+</span></button>
+                </div>
+                <div class="basket-products-item-price-wrapper">
+                    <span class="basket-products-item-old-price">200 000 ₽</span>
+                    <span class="basket-products-item-price">180 000 ₽</span>
+                    <span class="basket-products-item-price-quantity">2 х 90 000 ₽</span>
+                </div>
+              </div>
+              <button class="basket-products-item-del"><span class="visually-hidden">Удалить из корзины</span></button>
+            </div>
+            {% endfor%}
+        </div>
+        <div class="basket-form-col">
+          <div class="basket-form">
+            <p class="basket-form-title">В корзине</p>
+            <p class="basket-quantity">3 товара</p>
+            <button class="btn--orange-underline basket-promocode-btn">Ввести промокод</button>
+            <p class="basket-price"><span>195 000</span><span class="basket-currency">₽</span></p>
+            <button class="btn--main basket-pay-btn">Перейти к оформлению</button>
+            <div class="basket-info-block">
+              <p class="basket-info-text">Если у вас уже есть клубная карта, то  <a href="#">авторизируйтесь</a> , чтобы воспользоваться.</p>
+              <p class="basket-info-text">А если у вас ещё нет клубной карты, можете: <a href="#">получить</a>, или <a href="#">активировать клубную карту</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
