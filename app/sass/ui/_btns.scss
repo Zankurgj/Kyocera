@@ -114,3 +114,39 @@ input[type='submit'] {
     bottom: -7px;
   }
 }
+.add-recipients-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+  padding: 8px 12px;
+  margin: 0 auto;
+  &:hover {
+    .add-recipients-btn-icon {
+      background-color: rgba($color: #dcdcdc, $alpha: 0.8);
+    }
+  }
+}
+.add-recipients-btn-icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #dcdcdc;
+  color: #828282;
+  font-size: 48px;
+  line-height: 56px;
+  margin-bottom: 4px;
+  transition: background-color $base-duration $base-timing;
+}
+.add-recipients-btn-text {
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: #828282;
+}

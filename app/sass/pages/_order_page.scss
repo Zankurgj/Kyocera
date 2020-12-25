@@ -24,8 +24,8 @@
   margin-bottom: 38px;
 }
 .order-form-col {
-  flex-basis: 440px;
-  max-width: 440px;
+  flex-basis: 460px;
+  max-width: 460px;
 }
 .order-form-col2 {
   flex-basis: calc(50% - 26px);
@@ -294,4 +294,14 @@
   font-size: 28px;
   line-height: 32px;
   color: #282828;
+}
+.order-form-delivery {
+  display: none;
+  &.show {
+    display: flex;
+  }
+}
+
+.order-recipients-block {
+  display: inline-block;
 }

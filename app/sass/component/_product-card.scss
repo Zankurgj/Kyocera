@@ -7,7 +7,7 @@
   padding: 14px 16px;
   background-color: #fff;
   border-radius: 3px;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
   transition: transform $base-duration $base-timing;
   &:hover {
     transform: scale(1.1);
@@ -27,17 +27,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
+}
+.product-card-category-name {
+  display: block;
   font-weight: 300;
   font-size: rem(14);
   line-height: lh(16, 14);
   color: #000;
   white-space: nowrap;
-  margin-bottom: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card-arrow {
   flex-grow: 1;
   position: relative;
   display: block;
+  min-width: 18px;
   max-width: 40px;
   margin-left: 5px;
   height: 1px;
@@ -87,6 +93,10 @@
   }
 }
 .product-card-name {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: rem(16);
   line-height: lh(19, 16);
   color: #000;
@@ -113,22 +123,25 @@
 }
 .product-card-btn {
   flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   margin-right: 4px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 18px;
   opacity: 0.6;
+  transform: translate3d(0, 0, 0);
+  color: #bbbcbb;
   &:last-child {
     margin-right: 0;
   }
+  .svg-icon {
+    width: 18px;
+    height: 18px;
+  }
 }
-.product-card-btn--compare {
-  background-image: url('../images/dest/icons/compare.png');
-}
-.product-card-btn--like {
-  background-image: url('../images/dest/icons/hart.png');
+.product-card-btn--active {
+  color: #6c6d6c;
 }
 
 .product-card-overlay {

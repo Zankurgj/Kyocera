@@ -14,7 +14,27 @@
         <div class="main-header-top">
             <div class="container main-header-top-inner">
                 <button class="main-header-top-btn">Регистрация</button>
-                <button class="main-header-top-btn">Вход</button>
+                <div class="signin-popup-wrapper">
+                    <button class="main-header-top-btn" onclick="onShowSignIn()">Вход</button>
+                    <div class="signin-popup" id="signinPopup">
+                        <form class="signin-popup-form">
+                            <p class="signin-popup-title">Вход в личный кабинет</p>
+                            <label class="signin-popup-input-wrapper">
+                                <span class="visually-hidden">Логин</span>
+                                <input type="text" class="signin-popup-input" placeholder="Логин">
+                            </label>
+                            <label class="signin-popup-input-wrapper">
+                                <span class="visually-hidden">Пароль</span>
+                                <input type="text" class="signin-popup-input" placeholder="Пароль">
+                            </label>
+                            <button class="btn--main signin-popup-btn" type="submit">Войти</button>
+                            <p class="signin-popup-text">
+                                Если вы не зарегистрированы. То вы легко можете
+                                <a href="#">зарегистрироваться</a>, заполнив небольшую форму. И в полной мере пользоваться нашими выгодными предложениями.
+                            </p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="main-header-middle">
@@ -23,9 +43,12 @@
                     <span class="visually-hidden">Главная страница Koycera</span>
                     <img src="./images/dest/icons/logo.png" alt="Логотип Koycera">
                 </a>
-                <label class="header-search-inpit-wrapper">
+                <form class="header-search-inpit-wrapper">
                     <input type="text" placeholder="Поиск товара" class="header-search-inpit">
-                </label>
+                    <button type="submit" class="header-search-btn">
+                        <span class="visually-hidden">поиск</span>
+                    </button>
+                </form>
                 <div class="main-header-text">
                     <p>График работы:
                         <br>ПН - ВС
@@ -33,9 +56,9 @@
                     </p>
                 </div>
                 <div class="main-header-text">
-                    <span>Контакты:</span> 
+                    <span>Контакты:</span>
                     <br>
-                    <a href="" tel:+7 999 99 99 "">Телефон: +7 999 99 99</a>
+                    <a 99="99" 999="999" href="" tel:+7="tel:+7" 99 ""="99" "">Телефон: +7 999 99 99</a>
                     <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
                 </div>
                 <button class="main-header-search-btn" onclick="onShowSearch()"></button>
@@ -44,9 +67,13 @@
                         <span class="main-header-basket-counter">2</span>
                     </a>
                     <div class="main-header-basket-text">
-                        <p>Товаров: <span>2</span>
+                        <p>Товаров:
+                            <span>2</span>
                         </p>
-                        <p>На сумму <span>102 500</span> руб.</p>
+                        <p>На сумму
+                            <span>102 500</span>
+                            руб.
+                        </p>
                     </div>
                     <div class="main-header-basket-inner">
                         <div class="main-header-basket-item-list">
@@ -103,49 +130,61 @@
                         </svg>
                         КАТАЛОГ ТОВАРОВ
                     </a>
-                    <button class="main-header-nav-item-icon-m" onclick="onShowSubMenu()">
-                    </button>
+                    <button class="main-header-nav-item-icon-m" onclick="onShowSubMenu()"></button>
                     <div class="main-header-nav-dropdown-inner">
                         <div class="container main-header-nav--container">
-                            <button class="main-header-nav-back" onclick="onShowSubMenu()">
-                            </button>
+                            <button class="main-header-nav-back" onclick="onShowSubMenu()"></button>
                             <div class="main-header-submenu">
                                 <div class="main-header-submenu-promo">
                                     <p>Благодаря широкой линейке устройств Kyocera вы сможете подобрать в нашем интернет магазине именно то, что будет отвечать нуждам вашего бизнеса.</p>
                                     <a href="#" class="btn btn--main main-header-submenu-promo-btn">Подобрать устройство</a>
                                 </div>
                                 <ul class="main-header-submenu-list">
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">Принтеры</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">Принтеры</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A4 ЧБ</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A4 ЧБ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A4 Цвет</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A4 Цвет</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A3 ЧБ</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A3 ЧБ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A3 Цвет</a>
-                                    </li>
-                                </ul>
-                                <ul class="main-header-submenu-list">
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">МФУ</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A4 ЧБ</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A4 Цвет</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A3 ЧБ</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A3 Цвет</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A3 Цвет</a>
                                     </li>
                                 </ul>
                                 <ul class="main-header-submenu-list">
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">Расходные материалы</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">МФУ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner">Тонер ЧБ</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A4 ЧБ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner-c">Тонер Цвет</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A4 Цвет</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--ink ">Чернила</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A3 ЧБ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A3 Цвет</a>
+                                    </li>
+                                </ul>
+                                <ul class="main-header-submenu-list">
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">Расходные материалы</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner">Тонер ЧБ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner-c">Тонер Цвет</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--ink ">Чернила</a>
                                     </li>
                                 </ul>
                             </div>
@@ -168,9 +207,9 @@
                     </div>
                     <div class="main-header-nav-col">
                         <div class="main-header-text main-header-text--mobile">
-                            <span>Контакты:</span> 
+                            <span>Контакты:</span>
                             <br>
-                            <a href="" tel:+7 999 99 99 "">Телефон: +7 999 99 99</a>
+                            <a 99="99" 999="999" href="" tel:+7="tel:+7" 99 ""="99" "">Телефон: +7 999 99 99</a>
                             <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
                         </div>
                     </div>
@@ -180,14 +219,14 @@
     </header>
     <div class="page">
 
-        <div class="container">
+        <div class="container breadcrumb-catalog-container">
 
 
             <ul class="breadcrumb-item-wrapper">
                 <li>
                     <a href="./main_page.html" class="breadcrumb-item">
-      Главная
-    </a>
+        Главная
+      </a>
                     /
                 </li>
 
@@ -195,103 +234,119 @@
                 <li>
                     <span href="#" aria-current="page" class="breadcrumb-item">
             Каталог
-        </span>
+          </span>
                 </li>
 
 
             </ul>
 
+            <button class="btn-popup-filter" onclick="onToggleFilter()">
+                <svg class="svg-icon">
+                    <use xlink:href="./images/sprites/svg/sprite.symbol.svg#filter"></use>
+                </svg>
+                <span class="visually-hidden">Фильтры</span>
+            </button>
         </div>
         <div class="page-catalog">
             <div class="container container--catalog">
-                <div class="row row--wrap catalog-inner">
+                <div class="row catalog-inner">
 
                     <div class="catalog-sidebar-col">
                         <aside class="catalog-sidebar">
+                            <button class="btn-popup-close catalog-sidebar-close" onclick="onToggleFilter()">
+                                <svg class="svg-icon">
+                                    <use xlink:href="./images/sprites/svg/sprite.symbol.svg#close"></use>
+                                </svg>
+                                <span class="visually-hidden">Закрыть</span>
+                            </button>
                             <p class="catalog-sidebar-head">ФИЛЬТРЫ</p>
-                            <div class="catalog-sidebar-block">
-                                <p class="catalog-sidebar-title">ТИП УСТРОЙСТВА</p>
-                                <label class="checkbox-wrapper catalog-sidebar-checkbox">
-                                    <input type="checkbox" class="checkbox-input">
-                                    <span class="checkbox"></span>
-                                    <span class="checkbox-text">Принтер</span>
-                                </label>
+                            <div class="catalog-sidebar-block-wrapper">
+                                <div class="catalog-sidebar-block">
+                                    <p class="catalog-sidebar-title">ТИП УСТРОЙСТВА</p>
+                                    <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                                        <input type="checkbox" class="checkbox-input">
+                                        <span class="checkbox"></span>
+                                        <span class="checkbox-text">Принтер</span>
+                                    </label>
 
-                                <label class="checkbox-wrapper catalog-sidebar-checkbox">
-                                    <input type="checkbox" class="checkbox-input" checked>
-                                    <span class="checkbox"></span>
-                                    <span class="checkbox-text">МФУ</span>
-                                </label>
-                            </div>
+                                    <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                                        <input type="checkbox" class="checkbox-input">
+                                        <span class="checkbox"></span>
+                                        <span class="checkbox-text">МФУ</span>
+                                    </label>
+                                </div>
 
-                            <div class="catalog-sidebar-block">
-                                <p class="catalog-sidebar-title">ЦВЕТНОСТЬ ПЕЧАТИ</p>
-                                <label class="checkbox-wrapper catalog-sidebar-checkbox">
-                                    <input type="checkbox" class="checkbox-input">
-                                    <span class="checkbox"></span>
-                                    <span class="checkbox-text">Чёрно - белая</span>
-                                </label>
+                                <div class="catalog-sidebar-block">
+                                    <p class="catalog-sidebar-title">ЦВЕТНОСТЬ ПЕЧАТИ</p>
+                                    <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                                        <input type="checkbox" class="checkbox-input">
+                                        <span class="checkbox"></span>
+                                        <span class="checkbox-text">Чёрно - белая</span>
+                                    </label>
 
-                                <label class="checkbox-wrapper catalog-sidebar-checkbox">
-                                    <input type="checkbox" class="checkbox-input" checked>
-                                    <span class="checkbox"></span>
-                                    <span class="checkbox-text">Цвет</span>
-                                </label>
-                            </div>
+                                    <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                                        <input type="checkbox" class="checkbox-input">
+                                        <span class="checkbox"></span>
+                                        <span class="checkbox-text">Цвет</span>
+                                    </label>
+                                </div>
 
-                            <div class="catalog-sidebar-block">
-                                <p class="catalog-sidebar-title">ФОРМАТ</p>
-                                <label class="checkbox-wrapper catalog-sidebar-checkbox">
-                                    <input type="checkbox" class="checkbox-input">
-                                    <span class="checkbox"></span>
-                                    <span class="checkbox-text">A4</span>
-                                </label>
+                                <div class="catalog-sidebar-block">
+                                    <p class="catalog-sidebar-title">ФОРМАТ</p>
+                                    <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                                        <input type="checkbox" class="checkbox-input">
+                                        <span class="checkbox"></span>
+                                        <span class="checkbox-text">A4</span>
+                                    </label>
 
-                                <label class="checkbox-wrapper catalog-sidebar-checkbox">
-                                    <input type="checkbox" class="checkbox-input" checked>
-                                    <span class="checkbox"></span>
-                                    <span class="checkbox-text">A3</span>
-                                </label>
-                            </div>
+                                    <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                                        <input type="checkbox" class="checkbox-input">
+                                        <span class="checkbox"></span>
+                                        <span class="checkbox-text">A3</span>
+                                    </label>
+                                </div>
 
-                            <div class="catalog-sidebar-block">
-                                <p class="catalog-sidebar-title">СКОРОСТЬ ПЕЧАТИ</p>
-                                <div class="catalog-range-wrapper">
-                                    <div class="catalog-range-inputs">
-                                        <label class="catalog-range-input-wrapper">
-                                            от
-                                            <input class="catalog-range-input" type="text" id="firstVal" readonly>
-                                        </label>
-                                        <label class="catalog-range-input-wrapper">
-                                            до
-                                            <input class="catalog-range-input" type="text" id="nextVal" readonly>
-                                        </label>
+                                <div class="catalog-sidebar-block">
+                                    <p class="catalog-sidebar-title">СКОРОСТЬ ПЕЧАТИ</p>
+                                    <div class="catalog-range-wrapper">
+                                        <div class="catalog-range-inputs">
+                                            <label class="catalog-range-input-wrapper">
+                                                от
+                                                <input class="catalog-range-input" type="text" id="firstVal" readonly="readonly">
+                                            </label>
+                                            <label class="catalog-range-input-wrapper">
+                                                до
+                                                <input class="catalog-range-input" type="text" id="nextVal" readonly="readonly">
+                                            </label>
+                                        </div>
+                                        <div class="catalog-range"></div>
                                     </div>
-                                    <div class="catalog-range"></div>
+                                </div>
+                                <div class="catalog-sidebar-block">
+                                    <p class="catalog-sidebar-title">ДВУСТОРОННЯЯ ПЕЧАТЬ</p>
+                                    <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                                        <input type="checkbox" class="checkbox-input">
+                                        <span class="checkbox"></span>
+                                        <span class="checkbox-text">Да</span>
+                                    </label>
+
+                                    <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                                        <input type="checkbox" class="checkbox-input">
+                                        <span class="checkbox"></span>
+                                        <span class="checkbox-text">Нет</span>
+                                    </label>
+
+                                    <label class="checkbox-wrapper catalog-sidebar-checkbox">
+                                        <input type="checkbox" class="checkbox-input">
+                                        <span class="checkbox"></span>
+                                        <span class="checkbox-text">Неважно</span>
+                                    </label>
+                                </div>
+                                <div class="catalog-sidebar-block catalog-sidebar-block--btns">
+                                    <button class="btn--main catalog-sidebar-btn" onclick="onClearFilter(this)" id="clearFilter">Очистить</button>
+                                    <button class="btn--main catalog-sidebar-btn" onclick="onSubmitFilter()">Применить</button>
                                 </div>
                             </div>
-
-                            <div class="catalog-sidebar-block">
-                                <p class="catalog-sidebar-title">ДВУСТОРОННЯЯ ПЕЧАТЬ</p>
-                                <label class="checkbox-wrapper catalog-sidebar-checkbox">
-                                    <input type="checkbox" class="checkbox-input">
-                                    <span class="checkbox"></span>
-                                    <span class="checkbox-text">Да</span>
-                                </label>
-
-                                <label class="checkbox-wrapper catalog-sidebar-checkbox">
-                                    <input type="checkbox" class="checkbox-input" checked>
-                                    <span class="checkbox"></span>
-                                    <span class="checkbox-text">Нет</span>
-                                </label>
-
-                                <label class="checkbox-wrapper catalog-sidebar-checkbox">
-                                    <input type="checkbox" class="checkbox-input">
-                                    <span class="checkbox"></span>
-                                    <span class="checkbox-text">Неважно</span>
-                                </label>
-                            </div>
-
                         </aside>
                     </div>
 
@@ -303,7 +358,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -311,13 +366,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -339,7 +401,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -347,13 +409,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -375,7 +444,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -383,13 +452,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -411,7 +487,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -419,13 +495,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -447,7 +530,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -455,13 +538,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -483,7 +573,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -491,13 +581,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -519,7 +616,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -527,13 +624,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -555,7 +659,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -563,13 +667,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -591,7 +702,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -599,13 +710,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -627,7 +745,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -635,13 +753,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -663,7 +788,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -671,13 +796,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -699,7 +831,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -707,13 +839,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -735,7 +874,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -743,13 +882,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -771,7 +917,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -779,13 +925,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -807,7 +960,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -815,13 +968,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>
@@ -843,7 +1003,7 @@
 
                                 <div class="product-card">
                                     <p class="product-card-category">
-                                        <span>Монохромное МФУ</span>
+                                        <span class="product-card-category-name">Монохромное МФУ</span>
                                         <span class="card-arrow card-arrow--product"></span>
                                     </p>
 
@@ -851,13 +1011,20 @@
                                         <img src="./images/dest/img/product_card1.png" alt="Продукт">
                                     </div>
                                     <p class="product-card-name">TASKalfa 3212i</p>
-                                    <p class="product-card-cost"><span>90 000</span>руб.</p>
+                                    <p class="product-card-cost">
+                                        <span>90 000</span>руб.</p>
 
                                     <div class="product-card-btns">
-                                        <button class="product-card-btn product-card-btn--compare">
+                                        <button class="product-card-btn product-card-btn--compare" onclick="">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                            </svg>
                                             <span class="visually-hidden">Сравнить</span>
                                         </button>
                                         <button class="product-card-btn product-card-btn--like">
+                                            <svg class="svg-icon">
+                                                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                            </svg>
                                             <span class="visually-hidden">Избранное</span>
                                         </button>
                                     </div>

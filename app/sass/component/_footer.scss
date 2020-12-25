@@ -37,6 +37,7 @@ a.main-footer-text {
   display: block;
   margin-bottom: 45px;
   img {
+    width: 167px;
     display: block;
   }
 }
@@ -78,6 +79,7 @@ a.main-footer-text {
     margin: 0;
   }
   img {
+    width: 159px;
     display: block;
   }
 }
@@ -100,8 +102,10 @@ a.main-footer-text {
   }
 }
 .main-footer-social--fb {
-  background-image: url('../images/dest/icons/social_fb.png');
+  background-image: url('../images/dest/icons/facebook.svg');
+  background-size: 42px;
 }
 .main-footer-social--inst {
-  background-image: url('../images/dest/icons/social_inst.png');
+  background-image: url('../images/dest/icons/instagram.svg');
+  background-size: 49px;
 }

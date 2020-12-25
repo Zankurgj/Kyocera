@@ -3,146 +3,169 @@
   <div class="page-product">
     <div class="container">
       {% from "app/njk/macro.njk" import breadcrumbs %}
-        {{ breadcrumbs([['Каталог'],['МФУ'],['Ecosys 2035 cdn']]) }}
+      {{ breadcrumbs([['Каталог'],['МФУ'],['Ecosys 2035 cdn']]) }}
     </div>
     <div class="container container--page-product page-product-inner">
       <div class="row row--wrap">
         <div class="product-slider-col">
-            <div class="product-slider-main">
-              {% for i in range(0, 6) %}
+          <div class="product-slider-main">
+            {% for i in range(0, 6) %}
+
+              {% if i === 1 %}
+                <div class="product-slide-main product-slide-main--video">
+                  <div class="product-slide-main-item product-slide-main-item--video">
+                    <video class="product-slide-main-item-video" preload="auto" loop="loop" muted="muted" playsinline="playsinline" width="700">
+                      <source type="video/mp4" src="./video/sample_video.mp4">
+                      Your browser doesn't support HTML5 video tag.
+                    </video>
+                  </div>
+                </div>
+              {% else %}
                 <div class="product-slide-main">
                   <div class="product-slide-main-item" style="background-image: url('./images/dest/img/product_slide.png');"></div>
-                </div>  
+                </div>
+              {% endif %}
               {% endfor%}
             </div>
             <div class="product-slider-nav slider--middel-arrow">
               {% for i in range(0, 6) %}
                 <div class="product-slide-nav">
-                  <div class="product-slide-nav-item" style="background-image: url('./images/dest/img/product_slide.png');">
-                  </div>
+                  <div class="product-slide-nav-item" style="background-image: url('./images/dest/img/product_slide.png');"></div>
                 </div>
-              {% endfor%}
-            </div>
-        </div>
-        <div class="product-description-col">
-          <p class="product-description-title">Цветное МФУ Ecosys 2035 cdn</p>
-          <div class="product-description-cost">
-            <p class="product-description-current-cost">
-              <span>12 500</span>₽
-            </p>
-            <p class="product-description-old-wrappper">
-              <span class="product-description-badge">Акция -10%</span>
-              <span class="product-description-old-cost">15 500 </span>
-            </p>
-          </div>
-          <div class="product-description-list">
-              <p class="product-description-list-title">Коротко о товаре:</p>
-              <ul>
-                <li><span>До 35 страниц формата А4 в минуту</span></li>
-                <li><span>Время выхода первой копии - 6,9 сек.</span></li>
-                <li><span>Качество печати - 1 200 точек на дюйм</span></li>
-                <li><span>Дуплекс для экономичной двусторонней печати</span></li>
-                <li><span>Возможность копирования двусторонних ID-карт на одной странице</span></li>
-                <li><span>Компактный дизайн и низкий уровень шума</span></li>
-                <li><span>Исключительно низкие затраты на печать в своем классе</span></li>
-              </ul>
-          </div>
-          <a href="#" class="btn btn--orange product-description-btn">Купить</a>
-        </div>
-      </div>
-    </div>
-    <div class="container container--page-product page-product-tabs-block">
-        <h3 class="h3-base page-product-tabs-block-h3 text-center">Характеристики</h3>
-        <div class="page-product-tabs">
-          <div class="page-product-tabs-title-block">
-            {% set tabsItem= [['Описание', '#productTab1'],['Общие','#productTab2'],['Обработка бумаги','#productTab3'],['Печать','#productTab4'],['Копирование','#productTab5'],['Сканирование','#productTab6'],['Факс','#productTab7']]%}
-            {% for text, tabId in tabsItem %}
-              <label class="product-tab-title-item">
-                {% if loop.first %}
-                  <input type="radio" checked class="product-tab-input js-tab-input" name="productTab" tabId="{{tabId}}" onchange="onShowTab(this)">
-                  {% else %}
-                  <input type="radio" class="product-tab-input js-tab-input" name="productTab" tabId="{{tabId}}" onchange="onShowTab(this)">
-                {% endif %}
-                <span class="product-tab-title">{{text}}</span>
-              </label>
-            {% endfor %}
-          </div>
-          <div class="page-product-tabs-inner">
-            <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab1">
-              <p class="base-text">
-                МФУ M2135dn и M2635dn - наиболее доступные модели нашей новой линейки устройств серии ECOSYS, однако не менее функциональные. Устройства отличаются чрезвычайной надежностью и предлагают отдельным пользователям и небольшим рабочим группам качественную черно-белую печать с разрешением до 1 200 точек на дюйм, двустороннюю печать, гигабитное сетевое соединение, а также высокую скорость сканирования и копирования. Вы можете разместить эти МФУ в офисах открытого типа, не опасаясь того, что устройства займут много места или станут источниками шума. Благодаря многочисленным опциям для обработки бумаги, устройства можно настраивать под любые задачи.
-              </p>
-            </div>
-            <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab2">
-              <p class="base-text page-product-title">Тип устройства</p>
-              <p class="base-text">МОНОХРОМНЫЕ МФУ ФОРМАТА A4</p>
-
-              <p class="base-text page-product-title">Скорость печати</p>
-              <p class="base-text">До 35 страниц формата А4 в минуту</p>
-
-              <p class="base-text page-product-title">Время выхода первой страницы</p>
-              <p class="base-text">До 17 секунд</p>
-
-              <p class="base-text page-product-title">Потребление электроэнергии</p>
-              <p class="base-text">Копирование/печать: 661 Вт <br> В режиме ожидания: 21 Вт <br> Спящий режим: 1 Вт</p>
-
-              <p class="base-text page-product-title">Стандартная гарантия</p>
-              <p class="base-text">Стандартная гарантия - 2 года. Гарантия KYOCERA на барабан и проявитель – 3 года или макс. 100 000 страниц (в зависимости от того, что наступит раньше), при условии эксплуатации устройства и ухода за ним в соответствии с инструкциями по техническому обслуживанию.</p>
-            </div>
-            <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab3">
-              <div class="row row--wrap">
-                <div class="page-product-tabs-col2">
-                  <p class="base-text page-product-title">Входная емкость</p>
-                  <p class="base-text">Универсальный податчик на 100 листов плотностью 60-220 г/м² и форматов A4, A5, A6, B5, B6, Letter, Legal, Custom (от 70 x 148 до 216 x 356 мм). Универсальная кассета для бумаги на 250 листов плотностью 60-163 г/м² и форматов A4, A5, A6, B5, Letter, Legal, Custom (от 105 x 148 до 216 x 356 мм). Максимальный объем подачи бумаги с дополнительным оборудованием: 850 листов</p>
-
-                  <p class="base-text page-product-title">Дуплекс</p>
-                  <p class="base-text">Двусторонняя печать на бумаге плотностью 60-163 г/м² и форматов A4, A5, B5, Letter, Legal</p>
-
-                  <p class="base-text page-product-title">Устройство автоматической подачи оригиналов</p>
-                  <p class="base-text">50 листов плотностью 50-160 г/м² и форматов A4, A5, A6, B5, B6, Letter, Legal, Custom (от 100 x 148 до 216 x 356 мм)</p>
-                </div>
-                <div class="page-product-tabs-col2">
-                  <p class="base-text page-product-title">Макс. обьем подачи бумаги с дополнительными устройствами</p>
-                  <p class="base-text">850 листов</p>
-
-                  <p class="base-text page-product-title">Выходной лоток</p>
-                  <p class="base-text">Макс. 150 листов лицевой стороной вниз с датчиком заполнения бумаги</p>
-                </div>
+                {% endfor%}
               </div>
             </div>
-            <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab4">
-              <p class="base-text">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. At officiis velit quae odio molestias consectetur ad quasi dolores. Odio rem consequatur nobis et exercitationem, architecto a ratione officiis aliquam veritatis possimus nulla commodi debitis vel provident porro quis perspiciatis, eius eligendi est. Quos exercitationem minus aliquid natus mollitia iste labore ratione soluta, doloribus fuga voluptatibus explicabo, est vero. Quos officia, veritatis veniam quaerat molestias delectus illo quo possimus! Quis, dolores dolor perspiciatis sunt velit consectetur, soluta saepe error odit repellat, autem illo maiores repudiandae. Assumenda expedita neque, quos, maiores quaerat saepe placeat et ad accusantium explicabo vel suscipit. Placeat, cum.
-              </p>
-            </div>
-            <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab5">
-              <p class="base-text">
-                МФУ M2135dn и M2635dn - наиболее доступные модели нашей новой линейки устройств серии ECOSYS, однако не менее функциональные. Устройства отличаются чрезвычайной надежностью и предлагают отдельным пользователям и небольшим рабочим группам качественную черно-белую печать с разрешением до 1 200 точек на дюйм, двустороннюю печать, гигабитное сетевое соединение, а также высокую скорость сканирования и копирования. Вы можете разместить эти МФУ в офисах открытого типа, не опасаясь того, что устройства займут много места или станут источниками шума. Благодаря многочисленным опциям для обработки бумаги, устройства можно настраивать под любые задачи.
-              </p>
-            </div>
-            <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab6">
-              <p class="base-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto exercitationem atque in itaque, magnam enim rerum pariatur adipisci rem. Culpa enim a nobis repellat accusamus modi! Nostrum sapiente iste laborum! Distinctio sed similique, doloribus, itaque perferendis animi dolores temporibus eveniet esse corporis inventore minima qui veritatis sunt eaque molestiae iusto?
-              </p>
-            </div>
-            <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab7">
-              <p class="base-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sapiente perspiciatis blanditiis, placeat, id aliquid eos nemo quis necessitatibus expedita facilis hic iure neque praesentium voluptates accusamus dolores iusto cum vero harum, accusantium suscipit repellat saepe quidem! Assumenda cum dolor, deleniti aperiam tempora rem, eos illo cumque autem quam enim maiores error eius suscipit, libero numquam fuga quidem vel odio possimus magni. Mollitia pariatur praesentium quidem voluptate hic quod beatae, quam at illum nisi molestiae deserunt, earum impedit? Culpa sed rem cupiditate porro impedit maiores ipsa quibusdam neque, fugit quas laudantium consectetur possimus earum odio alias assumenda molestias quidem quis ipsam deserunt illo itaque dolore obcaecati dolores? Voluptas voluptates consectetur culpa amet, iure accusantium mollitia voluptatum dolor velit repellat ipsam sapiente autem odio! Deserunt voluptatum veritatis excepturi nihil placeat, cum officiis dicta numquam! Rem odit non tempore, maxime vel quis veritatis voluptatibus dolore perspiciatis assumenda qui. Recusandae cumque natus vero. Blanditiis corrupti vitae ut porro. Nobis, porro? Nam vel voluptatum error suscipit eos id labore dolore nulla excepturi tempore assumenda, officiis dignissimos omnis quibusdam magni autem, natus obcaecati rem explicabo! Beatae ex placeat alias libero quia, praesentium suscipit nam blanditiis, fugiat vitae inventore sunt deserunt necessitatibus soluta ad rerum autem.
-              </p>
+            <div class="product-description-col">
+              <p class="product-description-title">Цветное МФУ Ecosys 2035 cdn</p>
+              <div class="product-description-cost">
+                <p class="product-description-current-cost">
+                  <span>12 500</span>₽
+                </p>
+                <p class="product-description-old-wrappper">
+                  <span class="product-description-badge">Акция -10%</span>
+                  <span class="product-description-old-cost">15 500
+                  </span>
+                </p>
+              </div>
+              <div class="product-description-list">
+                <p class="product-description-list-title">Коротко о товаре:</p>
+                <ul>
+                  <li>
+                    <span>До 35 страниц формата А4 в минуту</span></li>
+                  <li>
+                    <span>Время выхода первой копии - 6,9 сек.</span></li>
+                  <li>
+                    <span>Качество печати - 1 200 точек на дюйм</span></li>
+                  <li>
+                    <span>Дуплекс для экономичной двусторонней печати</span></li>
+                  <li>
+                    <span>Возможность копирования двусторонних ID-карт на одной странице</span></li>
+                  <li>
+                    <span>Компактный дизайн и низкий уровень шума</span></li>
+                  <li>
+                    <span>Исключительно низкие затраты на печать в своем классе</span></li>
+                </ul>
+              </div>
+              <a href="#" class="btn btn--orange product-description-btn">Купить</a>
             </div>
           </div>
         </div>
-    </div>
-    <div class="container">
-      <h3 class="h3-base page-product-recommend-h3 text-center">C этим товаром покупают</h3>
-      <div class="product-slider slider--middel-arrow-black">
-        {% for i in range(0, 7) %}
-          <div class="product-slide">
-            {% from "app/njk/macro.njk" import productCard %}
-            {{ productCard(true, true, "./images/dest/img/product_card2.png", "Чёрный тонер", "TK-1120 для FS1160DN", "4 800") }}
+        <div class="container container--page-product page-product-tabs-block">
+          <h3 class="h3-base page-product-tabs-block-h3 text-center">Характеристики</h3>
+          <div class="page-product-tabs">
+            <div class="page-product-tabs-title-block">
+              {% set tabsItem= [['Описание', '#productTab1'],['Общие','#productTab2'],['Обработка бумаги','#productTab3'],['Печать','#productTab4'],['Копирование','#productTab5'],['Сканирование','#productTab6'],['Факс','#productTab7']]%}
+              {% for text, tabId in tabsItem %}
+                <label class="product-tab-title-item">
+                  {% if loop.first %}
+                    <input type="radio" checked="checked" class="product-tab-input js-tab-input" name="productTab" tabid="{{tabId}}" onchange="onShowTab(this)">
+                  {% else %}
+                    <input type="radio" class="product-tab-input js-tab-input" name="productTab" tabid="{{tabId}}" onchange="onShowTab(this)">
+                  {% endif %}
+                  <span class="product-tab-title">{{text}}</span>
+                </label>
+              {% endfor %}
+            </div>
+            <div class="page-product-tabs-inner">
+              <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab1">
+                <p class="base-text">
+                  МФУ M2135dn и M2635dn - наиболее доступные модели нашей новой линейки устройств серии ECOSYS, однако не менее функциональные. Устройства отличаются чрезвычайной надежностью и предлагают отдельным пользователям и небольшим рабочим группам качественную черно-белую печать с разрешением до 1 200 точек на дюйм, двустороннюю печать, гигабитное сетевое соединение, а также высокую скорость сканирования и копирования. Вы можете разместить эти МФУ в офисах открытого типа, не опасаясь того, что устройства займут много места или станут источниками шума. Благодаря многочисленным опциям для обработки бумаги, устройства можно настраивать под любые задачи.
+                </p>
+              </div>
+              <div class="page-product-tabs-item page-product-tabs-item--common" data-tab-name="productTab" id="productTab2">
+                <p class="base-text page-product-title">Тип устройства</p>
+                <p class="base-text">МОНОХРОМНЫЕ МФУ ФОРМАТА A4</p>
+
+                <p class="base-text page-product-title">Скорость печати</p>
+                <p class="base-text">До 35 страниц формата А4 в минуту</p>
+
+                <p class="base-text page-product-title">Время выхода первой страницы</p>
+                <p class="base-text">До 17 секунд</p>
+
+                <p class="base-text page-product-title">Потребление электроэнергии</p>
+                <p class="base-text">Копирование/печать: 661 Вт
+                  <br>
+                  В режиме ожидания: 21 Вт
+                  <br>
+                  Спящий режим: 1 Вт</p>
+
+                <p class="base-text page-product-title">Стандартная гарантия</p>
+                <p class="base-text">Стандартная гарантия - 2 года. Гарантия KYOCERA на барабан и проявитель – 3 года или макс. 100 000 страниц (в зависимости от того, что наступит раньше), при условии эксплуатации устройства и ухода за ним в соответствии с инструкциями по техническому обслуживанию.</p>
+              </div>
+              <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab3">
+                <div class="row row--wrap">
+                  <div class="page-product-tabs-col2">
+                    <p class="base-text page-product-title">Входная емкость</p>
+                    <p class="base-text">Универсальный податчик на 100 листов плотностью 60-220 г/м² и форматов A4, A5, A6, B5, B6, Letter, Legal, Custom (от 70 x 148 до 216 x 356 мм). Универсальная кассета для бумаги на 250 листов плотностью 60-163 г/м² и форматов A4, A5, A6, B5, Letter, Legal, Custom (от 105 x 148 до 216 x 356 мм). Максимальный объем подачи бумаги с дополнительным оборудованием: 850 листов</p>
+
+                    <p class="base-text page-product-title">Дуплекс</p>
+                    <p class="base-text">Двусторонняя печать на бумаге плотностью 60-163 г/м² и форматов A4, A5, B5, Letter, Legal</p>
+
+                    <p class="base-text page-product-title">Устройство автоматической подачи оригиналов</p>
+                    <p class="base-text">50 листов плотностью 50-160 г/м² и форматов A4, A5, A6, B5, B6, Letter, Legal, Custom (от 100 x 148 до 216 x 356 мм)</p>
+                  </div>
+                  <div class="page-product-tabs-col2">
+                    <p class="base-text page-product-title">Макс. обьем подачи бумаги с дополнительными устройствами</p>
+                    <p class="base-text">850 листов</p>
+
+                    <p class="base-text page-product-title">Выходной лоток</p>
+                    <p class="base-text">Макс. 150 листов лицевой стороной вниз с датчиком заполнения бумаги</p>
+                  </div>
+                </div>
+              </div>
+              <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab4">
+                <p class="base-text">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. At officiis velit quae odio molestias consectetur ad quasi dolores. Odio rem consequatur nobis et exercitationem, architecto a ratione officiis aliquam veritatis possimus nulla commodi debitis vel provident porro quis perspiciatis, eius eligendi est. Quos exercitationem minus aliquid natus mollitia iste labore ratione soluta, doloribus fuga voluptatibus explicabo, est vero. Quos officia, veritatis veniam quaerat molestias delectus illo quo possimus! Quis, dolores dolor perspiciatis sunt velit consectetur, soluta saepe error odit repellat, autem illo maiores repudiandae. Assumenda expedita neque, quos, maiores quaerat saepe placeat et ad accusantium explicabo vel suscipit. Placeat, cum.
+                </p>
+              </div>
+              <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab5">
+                <p class="base-text">
+                  МФУ M2135dn и M2635dn - наиболее доступные модели нашей новой линейки устройств серии ECOSYS, однако не менее функциональные. Устройства отличаются чрезвычайной надежностью и предлагают отдельным пользователям и небольшим рабочим группам качественную черно-белую печать с разрешением до 1 200 точек на дюйм, двустороннюю печать, гигабитное сетевое соединение, а также высокую скорость сканирования и копирования. Вы можете разместить эти МФУ в офисах открытого типа, не опасаясь того, что устройства займут много места или станут источниками шума. Благодаря многочисленным опциям для обработки бумаги, устройства можно настраивать под любые задачи.
+                </p>
+              </div>
+              <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab6">
+                <p class="base-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto exercitationem atque in itaque, magnam enim rerum pariatur adipisci rem. Culpa enim a nobis repellat accusamus modi! Nostrum sapiente iste laborum! Distinctio sed similique, doloribus, itaque perferendis animi dolores temporibus eveniet esse corporis inventore minima qui veritatis sunt eaque molestiae iusto?
+                </p>
+              </div>
+              <div class="page-product-tabs-item" data-tab-name="productTab" id="productTab7">
+                <p class="base-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sapiente perspiciatis blanditiis, placeat, id aliquid eos nemo quis necessitatibus expedita facilis hic iure neque praesentium voluptates accusamus dolores iusto cum vero harum, accusantium suscipit repellat saepe quidem! Assumenda cum dolor, deleniti aperiam tempora rem, eos illo cumque autem quam enim maiores error eius suscipit, libero numquam fuga quidem vel odio possimus magni. Mollitia pariatur praesentium quidem voluptate hic quod beatae, quam at illum nisi molestiae deserunt, earum impedit? Culpa sed rem cupiditate porro impedit maiores ipsa quibusdam neque, fugit quas laudantium consectetur possimus earum odio alias assumenda molestias quidem quis ipsam deserunt illo itaque dolore obcaecati dolores? Voluptas voluptates consectetur culpa amet, iure accusantium mollitia voluptatum dolor velit repellat ipsam sapiente autem odio! Deserunt voluptatum veritatis excepturi nihil placeat, cum officiis dicta numquam! Rem odit non tempore, maxime vel quis veritatis voluptatibus dolore perspiciatis assumenda qui. Recusandae cumque natus vero. Blanditiis corrupti vitae ut porro. Nobis, porro? Nam vel voluptatum error suscipit eos id labore dolore nulla excepturi tempore assumenda, officiis dignissimos omnis quibusdam magni autem, natus obcaecati rem explicabo! Beatae ex placeat alias libero quia, praesentium suscipit nam blanditiis, fugiat vitae inventore sunt deserunt necessitatibus soluta ad rerum autem.
+                </p>
+              </div>
+            </div>
           </div>
-        {% endfor %}
+        </div>
+        <div class="container">
+          <h3 class="h3-base page-product-recommend-h3 text-center">C этим товаром покупают</h3>
+          <div class="product-slider slider--middel-arrow-black">
+            {% for i in range(0, 7) %}
+              <div class="product-slide">
+                {% from "app/njk/macro.njk" import productCard %}
+                {{ productCard(true, true, "./images/dest/img/product_card2.png", "Чёрный тонер", "TK-1120 для FS1160DN", "4 800") }}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-{% endblock %}
+    {% endblock %}

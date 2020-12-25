@@ -17,15 +17,95 @@
   min-height: 30px;
   background-color: #fff;
 }
+.signin-popup-wrapper {
+  position: relative;
+  border-left: 1px solid $textcolor;
+}
+.signin-popup {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  padding: 22px 44px;
+  width: 285px;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity $base-duration $base-timing,
+    transform $base-duration $base-timing,
+    visibility $base-duration $base-timing;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    right: 20px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 9px 9px 9px;
+    border-color: transparent transparent #fff transparent;
+  }
+}
+.signin-popup--show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity $base-duration $base-timing,
+    transform $base-duration $base-timing,
+    visibility $base-duration $base-timing;
+}
+.signin-popup-form {
+  display: flex;
+  flex-direction: column;
+}
+.signin-popup-title {
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.signin-popup-input-wrapper {
+  width: 100%;
+  margin-bottom: 12px;
+}
+.signin-popup-input {
+  width: 100%;
+  color: #000;
+  padding: 6px 8px 5px 8px;
+  border: 1px solid #0a9bcd;
+  border-radius: 3px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  &::placeholder {
+    color: #828282;
+  }
+}
+.signin-popup-btn {
+  align-self: flex-end;
+  margin-bottom: 12px;
+}
+.signin-popup-text {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #000000;
+  a {
+    color: #f06400;
+    text-decoration: underline;
+  }
+}
 .main-header-top-btn {
   font-size: rem(14);
   font-weight: 300;
   padding: 0 10px;
   &:hover {
     opacity: 0.8;
-  }
-  &:first-child {
-    border-right: 1px solid $textcolor;
   }
   &:last-child {
     padding: 0 0 0 10px;
@@ -65,6 +145,7 @@
   }
 }
 .header-search-inpit-wrapper {
+  position: relative;
   margin-right: 65px;
   @media screen and (max-width: 1100px) {
     margin-right: 25px;
@@ -92,14 +173,25 @@
   width: 100%;
   background-color: #f5f5f5;
   border: 1px solid #dcdcdc;
-  padding: 7px 23px 3px 18px;
+  padding: 7px 24px 3px 18px;
   font-size: rem(14);
   color: $textcolor;
-  background-repeat: no-repeat;
-  background-position: center right 6px;
-  background-image: url('../images/dest/icons/search.png');
   &::placeholder {
     color: #757575;
+  }
+}
+.header-search-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 24px;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../images/dest/icons/search.png');
+  background-size: 17px;
+  &:hover {
+    opacity: 0.8;
   }
 }
 .main-header-text {
@@ -126,8 +218,16 @@
 }
 .main-header-nav-col {
   margin-left: 20px;
+  @media screen and (max-width: $mobile-bp) {
+    margin-left: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
   &:first-child {
     margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
   }
 }
 .main-header-nav-row {
@@ -296,11 +396,11 @@
   display: block;
   width: 42px;
   height: 30px;
-  background-image: url('../images/dest/icons/basket.png');
+  background-image: url('../images/dest/icons/basket.svg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center bottom;
+  background-size: 42px;
   margin-right: 10px;
-  background-size: contain;
   @media screen and (max-width: $mobile-bp) {
     width: 26px;
     height: 26px;
@@ -311,8 +411,8 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 16px;
-  top: 0px;
+  left: 14px;
+  top: -2px;
   width: 16px;
   height: 16px;
   background-color: #f06400;

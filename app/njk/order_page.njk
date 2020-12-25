@@ -2,7 +2,7 @@
 {% block content %}
   <div class="container">
     {% from "app/njk/macro.njk" import breadcrumbs %}
-      {{ breadcrumbs([['Корзина'],['Оформление заказа']]) }}
+    {{ breadcrumbs([['Корзина'],['Оформление заказа']]) }}
   </div>
   <div class="page-order page--image">
     <h3 class="h3-base page-order-h3 text-center">Оформление заказа</h3>
@@ -15,18 +15,56 @@
               <h5 class="h5-base order-h5">Получатель</h5>
               <div class="row row--wrap">
                 <label class="input-thin-wrapper order-form-col2">
-                  <input type="text" class="input-thin" placeholder="Имя*" reqared>
+                  <input type="text" class="input-thin" placeholder="Имя*" reqared="reqared">
                 </label>
                 <label class="input-thin-wrapper order-form-col2">
-                  <input type="text" class="input-thin" placeholder="Фамилия*" reqared>
+                  <input type="text" class="input-thin" placeholder="Фамилия*" reqared="reqared">
                 </label>
                 <label class="input-thin-wrapper order-form-col2">
-                  <input type="text" class="input-thin" placeholder="Номер телефона*" reqared>
+                  <input type="text" class="input-thin" placeholder="Номер телефона*" reqared="reqared">
                 </label>
                 <label class="input-thin-wrapper order-form-col2">
-                  <input type="text" class="input-thin" placeholder="Улица*" reqared>
+                  <input type="text" class="input-thin" placeholder="Телефон, если не дозвонимся" reqared="reqared">
                   <p class="input-thin-msg">Не обязательно</p>
                 </label>
+              </div>
+            </div>
+
+            <div class="order-form-block">
+              <h5 class="h5-base order-h5">Из моих получателей:</h5>
+              <div class="order-recipients-block">
+                <div class="radio-border-big-wrapper">
+                  <button class="radio-border-big-btn" type="button">редактировать</button>
+                  <label class="radio-border-big-label">
+                    <input type="radio" name="recipients" checked="checked" class="radio-border-big-input">
+                    <span class="radio-border-big-head">
+                      <span class="radio-border-big-input-fake"></span>
+                      <span class="radio-border-big-title">Дом</span>
+                    </span>
+                    <span class="radio-border-big-text">Иван Иванович</span>
+                    <span class="radio-border-big-text">+7 919 320 99 99</span>
+                    <span class="radio-border-big-text">г. Москва, ул. Московская, д.100, корп. 150, подъезд 2, кв. 15</span>
+                  </label>
+                </div>
+
+                <div class="radio-border-big-wrapper">
+                  <button class="radio-border-big-btn" type="button">редактировать</button>
+                  <label class="radio-border-big-label">
+                    <input type="radio" name="recipients" checked="checked" class="radio-border-big-input">
+                    <span class="radio-border-big-head">
+                      <span class="radio-border-big-input-fake"></span>
+                      <span class="radio-border-big-title">Дом</span>
+                    </span>
+                    <span class="radio-border-big-text">Иван Иванович</span>
+                    <span class="radio-border-big-text">+7 919 320 99 99</span>
+                    <span class="radio-border-big-text">г. Москва, ул. Московская, д.100, корп. 150, подъезд 2, кв. 15</span>
+                  </label>
+                </div>
+
+                <button class="add-recipients-btn">
+                  <span class="add-recipients-btn-icon">+</span>
+                  <span class="add-recipients-btn-text">Добавить нового получателя</span>
+                </button>
               </div>
             </div>
 
@@ -36,36 +74,39 @@
                 <div class="order-form-col1">
                   <div class="radio-double-wrapper order-radio-double-wrapper">
                     <label>
-                      <input type="radio" name="method" class="radio-double-input" checked>
+                      <input type="radio" name="method" class="radio-double-input" onchange="onToggleDelivery('orderPickup')">
                       <span class="radio-double-btn radio-double-btn--left">Самовывоз</span>
                     </label>
                     <label>
-                      <input type="radio" name="method" class="radio-double-input">
+                      <input type="radio" name="method" class="radio-double-input" onchange="onToggleDelivery('orderDelivery')" checked="checked">
                       <span class="radio-double-btn radio-double-btn--right">Доставка</span>
                     </label>
                   </div>
                 </div>
-                <label class="input-thin-wrapper order-form-col2">
-                  <input type="text" class="input-thin" placeholder="Город*" reqared>
-                </label>
-                <label class="input-thin-wrapper order-form-col2">
-                  <input type="text" class="input-thin" placeholder="Улица*" reqared>
-                </label>
-                <label class="input-thin-wrapper order-form-col5">
-                  <input type="text" class="input-thin" placeholder="Дом*" reqared>
-                </label>
-                <label class="input-thin-wrapper order-form-col5">
-                  <input type="text" class="input-thin" placeholder="Строение">
-                </label>
-                <label class="input-thin-wrapper order-form-col5">
-                  <input type="text" class="input-thin" placeholder="Корпус">
-                </label>
-                <label class="input-thin-wrapper order-form-col5">
-                  <input type="text" class="input-thin" placeholder="Подъезд">
-                </label>
-                <label class="input-thin-wrapper order-form-col5">
-                  <input type="text" class="input-thin" placeholder="Квартира">
-                </label>
+                <div class="order-form-delivery order-form-delivery--js" id="orderPickup"></div>
+                <div class="row row--wrap order-form-delivery order-form-delivery--js show" id="orderDelivery">
+                  <label class="input-thin-wrapper order-form-col2">
+                    <input type="text" class="input-thin" placeholder="Город*" reqared="reqared">
+                  </label>
+                  <label class="input-thin-wrapper order-form-col2">
+                    <input type="text" class="input-thin" placeholder="Улица*" reqared="reqared">
+                  </label>
+                  <label class="input-thin-wrapper order-form-col5">
+                    <input type="text" class="input-thin" placeholder="Дом*" reqared="reqared">
+                  </label>
+                  <label class="input-thin-wrapper order-form-col5">
+                    <input type="text" class="input-thin" placeholder="Строение">
+                  </label>
+                  <label class="input-thin-wrapper order-form-col5">
+                    <input type="text" class="input-thin" placeholder="Корпус">
+                  </label>
+                  <label class="input-thin-wrapper order-form-col5">
+                    <input type="text" class="input-thin" placeholder="Подъезд">
+                  </label>
+                  <label class="input-thin-wrapper order-form-col5">
+                    <input type="text" class="input-thin" placeholder="Квартира">
+                  </label>
+                </div>
               </div>
             </div>
 
@@ -74,7 +115,7 @@
               <div class="row row--wrap">
                 <div class="order-form-col1">
                   <label class="border-radio-wrapper">
-                    <input type="radio" class="border-radio-input" checked name="delivery">
+                    <input type="radio" class="border-radio-input" checked="checked" name="delivery">
                     <span class="border-radio-input-fake"></span>
                     <span class="border-radio-text">Стандартная доставка</span>
                     <span class="border-radio-price">300₽</span>
@@ -92,7 +133,7 @@
                 <div class="order-form-col1">
                   <p class="order-form-text-sep">Время доставки</p>
                   <label class="radio-btn-wrapper">
-                    <input type="radio" class="radio-btn-input" checked name="time">
+                    <input type="radio" class="radio-btn-input" checked="checked" name="time">
                     <span class="radio-btn">с 9 до 18 часов</span>
                   </label>
 
@@ -112,7 +153,7 @@
             <div class="order-form-block">
               <h5 class="h5-base order-h5">Оплата</h5>
               <label class="border-radio-input-wrapper-big">
-                <input type="radio" class="border-radio-input" name="pay" checked>
+                <input type="radio" class="border-radio-input" name="pay" checked="checked">
                 <span class="border-radio-input-fake"></span>
                 <span class="border-radio-text">Наличными</span>
               </label>
@@ -134,7 +175,9 @@
 
             <div class="order-form-block">
               <p class="order-form-total-text">3 товара</p>
-              <p class="order-form-total-price"><span class="order-form-total-price-text">Итого: &nbsp;</span> 195 300 ₽</p>
+              <p class="order-form-total-price">
+                <span class="order-form-total-price-text">Итого: &nbsp;</span>
+                195 300 ₽</p>
               <button type="submit" class="btn--main order-form-submit-btn">Оформить заказ</button>
             </div>
           </form>
@@ -144,17 +187,22 @@
             <p class="order-sidebar-title order-sidebar-top">В заказе</p>
             <p class="order-sidebar-subtitle order-sidebar-top">3 позиции:</p>
             <div class="order-sidebar-block">
-              <p class="order-sidebar-subtitle">Цветное МФУ<br> Ecosys 2035 cdn</p>
-              <p class="order-sidebar-text">12 500 ₽ - 2шт </p>
+              <p class="order-sidebar-subtitle">Цветное МФУ<br>
+                Ecosys 2035 cdn</p>
+              <p class="order-sidebar-text">12 500 ₽ - 2шт
+              </p>
             </div>
 
             <div class="order-sidebar-block">
-              <p class="order-sidebar-subtitle">Монохромное МФУ<br> Taskalfa 3212i</p>
-              <p class="order-sidebar-text">90 000 ₽ - 2шт </p>
+              <p class="order-sidebar-subtitle">Монохромное МФУ<br>
+                Taskalfa 3212i</p>
+              <p class="order-sidebar-text">90 000 ₽ - 2шт
+              </p>
             </div>
             <div class="order-sidebar-delivery">
               <p class="order-sidebar-delivery-title">Стандартная доставка</p>
-              <p class="order-sidebar-delivery-text">300 ₽ </p>
+              <p class="order-sidebar-delivery-text">300 ₽
+              </p>
             </div>
             <div class="order-sidebar-total">
               <span class="order-sidebar-total-text">Итого:</span>

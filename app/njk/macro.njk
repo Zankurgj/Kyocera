@@ -1,17 +1,7 @@
-{% macro productCard
-(
-  badge="false",
-  descount="false",
-  img="./images/dest/img/product.png",
-  category="Монохромное МФУ",
-  name="TASKalfa 3212i",
-  cost="90 000",
-  oldCost="100 000"
-  )
-%}
+{% macro productCard(badge = "false", descount = "false", img = "./images/dest/img/product.png", category = "Монохромное МФУ", name = "TASKalfa 3212i", cost = "90 000", oldCost = "100 000") %}
   <div class="product-card">
     <p class="product-card-category">
-      <span>{{category}}</span>
+      <span class="product-card-category-name">{{category}}</span>
       <span class="card-arrow card-arrow--product"></span>
     </p>
     {% if badge === true %}
@@ -21,15 +11,22 @@
       <img src="{{img}}" alt="Продукт">
     </div>
     <p class="product-card-name">{{name}}</p>
-    <p class="product-card-cost"><span>{{cost}}</span>руб.</p>
+    <p class="product-card-cost">
+      <span>{{cost}}</span>руб.</p>
     {% if descount === true %}
       <p class="product-card-cost-strike">{{oldCost}}</p>
     {% endif %}
     <div class="product-card-btns">
-      <button class="product-card-btn product-card-btn--compare">
+      <button class="product-card-btn product-card-btn--compare" onclick="">
+        <svg class="svg-icon">
+          <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+        </svg>
         <span class="visually-hidden">Сравнить</span>
       </button>
       <button class="product-card-btn product-card-btn--like">
+        <svg class="svg-icon">
+          <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+        </svg>
         <span class="visually-hidden">Избранное</span>
       </button>
     </div>
@@ -45,17 +42,11 @@
   </div>
 {% endmacro %}
 
-{% macro newsCard
-(
-  img="./images/dest/img/news1.png",
-  date="17/06/2020",
-  title="Kyocera представила новые устройства для печати цветных изображений.",
-  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis"
-  )
-%}
+{% macro newsCard(img = "./images/dest/img/news-2.png", date = "17/06/2020", title = "Kyocera представила новые устройства для печати цветных изображений.", text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis") %}
   <div class="news-card">
     <div class="news-card-img" style="background-image: url('{{img}}');">
-      <span class="news-card-more">Подробнее <span class="card-arrow card-arrow--news"></span></span>
+      <span class="news-card-more">Подробнее
+        <span class="card-arrow card-arrow--news"></span></span>
     </div>
     <p class="news-card-date">{{date}}</p>
     <p class="news-card-title">{{title}}</p>
@@ -63,30 +54,29 @@
   </div>
 {% endmacro %}
 
-{% macro breadcrumbs(breadcrumbsItems)
-%}
-<ul class="breadcrumb-item-wrapper">
-  <li>
-    <a href="./main_page.html" class="breadcrumb-item">
-      Главная
-    </a>
-    /
-  </li>
-  {% for item in breadcrumbsItems %}
-    {% if not loop.last %}
-      <li>
-        <a href="#" class="breadcrumb-item">
-          {{item}}
-        </a>
-        /
-      </li>
-      {% else %}
-      <li>
-        <span href="#" aria-current="page" class="breadcrumb-item">
+{% macro breadcrumbs(breadcrumbsItems) %}
+  <ul class="breadcrumb-item-wrapper">
+    <li>
+      <a href="./main_page.html" class="breadcrumb-item">
+        Главная
+      </a>
+      /
+    </li>
+    {% for item in breadcrumbsItems %}
+      {% if not loop.last %}
+        <li>
+          <a href="#" class="breadcrumb-item">
             {{item}}
-        </span>
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+          </a>
+          /
+        </li>
+      {% else %}
+        <li>
+          <span href="#" aria-current="page" class="breadcrumb-item">
+            {{item}}
+          </span>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 {% endmacro %}

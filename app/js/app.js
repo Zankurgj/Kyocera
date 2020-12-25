@@ -13,6 +13,27 @@ document.addEventListener('DOMContentLoaded', function () {
   $('#nextVal').val($('.catalog-range').slider('values', 1));
 
   setActiveTab();
+  $(document).on('click', function (e) {
+    if ($(e.target).closest($('.signin-popup-wrapper')).length) return;
+    $('#signinPopup').removeClass('signin-popup--show');
+  });
+
+  $('.product-card-btn').on('click', function (e) {
+    $(this).toggleClass('product-card-btn--active');
+  });
+
+  $('.checkbox-input').on('change', function (e) {
+    const allCheckbox = document.querySelectorAll('.checkbox-input');
+    const clearFilterBtn = document.querySelector('#clearFilter');
+    for (let i = 0; i <= allCheckbox.length; i++) {
+      if (!allCheckbox[i].checked) {
+        clearFilterBtn.classList.remove('show');
+      } else {
+        clearFilterBtn.classList.add('show');
+        return;
+      }
+    }
+  });
 });
 
 $('#mainSlider').slick({
@@ -73,7 +94,21 @@ $('.product-slider-main').slick({
   fade: true,
   asNavFor: '.product-slider-nav',
 });
-
+$('.product-slider-main').on(
+  'afterChange',
+  function (event, slick, currentSlide) {
+    pauseAllProductVideo();
+    if ($('.slick-current').hasClass('product-slide-main--video')) {
+      $('.slick-current video').get(0).play();
+    }
+  }
+);
+const pauseAllProductVideo = () => {
+  const allVideo = document.querySelectorAll('.product-slide-main-item-video');
+  for (let i = 0; i < allVideo.length; i++) {
+    allVideo[i].pause();
+  }
+};
 $('.product-slider-nav').slick({
   slidesToShow: 4,
   slidesToScroll: 1,
@@ -137,4 +172,51 @@ const onShowSubMenu = () => {
 const onToggleMobileMenu = () => {
   document.querySelector('.main-header-bottom').classList.toggle('show');
   document.querySelector('body').classList.toggle('body--no-scroll');
+};
+const onShowSignIn = () => {
+  document.querySelector('#signinPopup').classList.toggle('signin-popup--show');
+};
+const onToggleFilter = () => {
+  document.querySelector('.catalog-sidebar-col').classList.toggle('show');
+  document.querySelector('body').classList.toggle('body--no-scroll');
+};
+
+const onClearFilter = (el) => {
+  const allCheckbox = document.querySelectorAll('.checkbox-input');
+  for (let i = 0; i < allCheckbox.length; i++) {
+    allCheckbox[i].checked = false;
+  }
+  el.classList.remove('show');
+};
+
+const onSubmitFilter = () => {
+  if (checkMobile()) {
+    onToggleFilter();
+  }
+};
+
+const checkMobile = () => {
+  const mobileBp = 992;
+  if (window.innerWidth <= mobileBp) {
+    return true;
+  }
+  return false;
+};
+
+const onCheckSeries = (series) => {
+  document.querySelector('.materials-model-container').classList.add('show');
+};
+const onCheckModel = (modelName) => {
+  document
+    .querySelector('.container-materials-reccomend')
+    .classList.add('show');
+  document.querySelector('#modelName').innerHTML = modelName;
+};
+
+const onToggleDelivery = (idTab) => {
+  const allTabs = document.querySelectorAll('.order-form-delivery--js');
+  for (let i = 0; i < allTabs.length; i++) {
+    allTabs[i].classList.remove('show');
+  }
+  document.querySelector(`#${idTab}`).classList.add('show');
 };

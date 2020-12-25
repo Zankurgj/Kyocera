@@ -9,7 +9,9 @@
   text-align: center;
 }
 .page-materials-head-text {
-  margin-bottom: 80px;
+  max-width: 523px;
+  text-align: center;
+  margin: 0 auto 80px auto;
 }
 .series-h2 {
   margin-bottom: 50px;
@@ -61,9 +63,14 @@
   margin-bottom: 50px;
 }
 .materials-model-container {
+  display: none;
   margin-bottom: 74px;
   max-width: 988px;
+  &.show {
+    display: block;
+  }
 }
+
 .materials-model-block {
   display: flex;
   flex-wrap: wrap;
@@ -104,6 +111,10 @@
 }
 .container-materials-reccomend {
   max-width: 988px;
+  display: none;
+  &.show {
+    display: block;
+  }
 }
 .materials-reccomend-h2 {
   margin-bottom: 70px;

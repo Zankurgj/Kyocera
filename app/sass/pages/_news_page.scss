@@ -13,6 +13,11 @@
   margin-right: 20px;
   margin-bottom: 20px;
   max-width: 100%;
+  @media screen and (max-width: $mobile-bp) {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
 }
 .page-news-block {
   .base-text {

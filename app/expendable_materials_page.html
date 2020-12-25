@@ -14,7 +14,27 @@
         <div class="main-header-top">
             <div class="container main-header-top-inner">
                 <button class="main-header-top-btn">Регистрация</button>
-                <button class="main-header-top-btn">Вход</button>
+                <div class="signin-popup-wrapper">
+                    <button class="main-header-top-btn" onclick="onShowSignIn()">Вход</button>
+                    <div class="signin-popup" id="signinPopup">
+                        <form class="signin-popup-form">
+                            <p class="signin-popup-title">Вход в личный кабинет</p>
+                            <label class="signin-popup-input-wrapper">
+                                <span class="visually-hidden">Логин</span>
+                                <input type="text" class="signin-popup-input" placeholder="Логин">
+                            </label>
+                            <label class="signin-popup-input-wrapper">
+                                <span class="visually-hidden">Пароль</span>
+                                <input type="text" class="signin-popup-input" placeholder="Пароль">
+                            </label>
+                            <button class="btn--main signin-popup-btn" type="submit">Войти</button>
+                            <p class="signin-popup-text">
+                                Если вы не зарегистрированы. То вы легко можете
+                                <a href="#">зарегистрироваться</a>, заполнив небольшую форму. И в полной мере пользоваться нашими выгодными предложениями.
+                            </p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="main-header-middle">
@@ -23,9 +43,12 @@
                     <span class="visually-hidden">Главная страница Koycera</span>
                     <img src="./images/dest/icons/logo.png" alt="Логотип Koycera">
                 </a>
-                <label class="header-search-inpit-wrapper">
+                <form class="header-search-inpit-wrapper">
                     <input type="text" placeholder="Поиск товара" class="header-search-inpit">
-                </label>
+                    <button type="submit" class="header-search-btn">
+                        <span class="visually-hidden">поиск</span>
+                    </button>
+                </form>
                 <div class="main-header-text">
                     <p>График работы:
                         <br>ПН - ВС
@@ -33,9 +56,9 @@
                     </p>
                 </div>
                 <div class="main-header-text">
-                    <span>Контакты:</span> 
+                    <span>Контакты:</span>
                     <br>
-                    <a href="" tel:+7 999 99 99 "">Телефон: +7 999 99 99</a>
+                    <a 99="99" 999="999" href="" tel:+7="tel:+7" 99 ""="99" "">Телефон: +7 999 99 99</a>
                     <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
                 </div>
                 <button class="main-header-search-btn" onclick="onShowSearch()"></button>
@@ -44,9 +67,13 @@
                         <span class="main-header-basket-counter">2</span>
                     </a>
                     <div class="main-header-basket-text">
-                        <p>Товаров: <span>2</span>
+                        <p>Товаров:
+                            <span>2</span>
                         </p>
-                        <p>На сумму <span>102 500</span> руб.</p>
+                        <p>На сумму
+                            <span>102 500</span>
+                            руб.
+                        </p>
                     </div>
                     <div class="main-header-basket-inner">
                         <div class="main-header-basket-item-list">
@@ -103,49 +130,61 @@
                         </svg>
                         КАТАЛОГ ТОВАРОВ
                     </a>
-                    <button class="main-header-nav-item-icon-m" onclick="onShowSubMenu()">
-                    </button>
+                    <button class="main-header-nav-item-icon-m" onclick="onShowSubMenu()"></button>
                     <div class="main-header-nav-dropdown-inner">
                         <div class="container main-header-nav--container">
-                            <button class="main-header-nav-back" onclick="onShowSubMenu()">
-                            </button>
+                            <button class="main-header-nav-back" onclick="onShowSubMenu()"></button>
                             <div class="main-header-submenu">
                                 <div class="main-header-submenu-promo">
                                     <p>Благодаря широкой линейке устройств Kyocera вы сможете подобрать в нашем интернет магазине именно то, что будет отвечать нуждам вашего бизнеса.</p>
                                     <a href="#" class="btn btn--main main-header-submenu-promo-btn">Подобрать устройство</a>
                                 </div>
                                 <ul class="main-header-submenu-list">
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">Принтеры</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">Принтеры</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A4 ЧБ</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A4 ЧБ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A4 Цвет</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A4 Цвет</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A3 ЧБ</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A3 ЧБ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A3 Цвет</a>
-                                    </li>
-                                </ul>
-                                <ul class="main-header-submenu-list">
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">МФУ</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A4 ЧБ</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A4 Цвет</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A3 ЧБ</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A3 Цвет</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A3 Цвет</a>
                                     </li>
                                 </ul>
                                 <ul class="main-header-submenu-list">
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">Расходные материалы</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">МФУ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner">Тонер ЧБ</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A4 ЧБ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner-c">Тонер Цвет</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A4 Цвет</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--ink ">Чернила</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A3 ЧБ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A3 Цвет</a>
+                                    </li>
+                                </ul>
+                                <ul class="main-header-submenu-list">
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">Расходные материалы</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner">Тонер ЧБ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner-c">Тонер Цвет</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--ink ">Чернила</a>
                                     </li>
                                 </ul>
                             </div>
@@ -168,9 +207,9 @@
                     </div>
                     <div class="main-header-nav-col">
                         <div class="main-header-text main-header-text--mobile">
-                            <span>Контакты:</span> 
+                            <span>Контакты:</span>
                             <br>
-                            <a href="" tel:+7 999 99 99 "">Телефон: +7 999 99 99</a>
+                            <a 99="99" 999="999" href="" tel:+7="tel:+7" 99 ""="99" "">Телефон: +7 999 99 99</a>
                             <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
                         </div>
                     </div>
@@ -187,16 +226,16 @@
                 <ul class="breadcrumb-item-wrapper">
                     <li>
                         <a href="./main_page.html" class="breadcrumb-item">
-      Главная
-    </a>
+        Главная
+      </a>
                         /
                     </li>
 
 
                     <li>
                         <a href="#" class="breadcrumb-item">
-          Каталог
-        </a>
+            Каталог
+          </a>
                         /
                     </li>
 
@@ -205,7 +244,7 @@
                     <li>
                         <span href="#" aria-current="page" class="breadcrumb-item">
             Подбор расходных материалов
-        </span>
+          </span>
                     </li>
 
 
@@ -214,26 +253,27 @@
             </div>
             <div class="container">
                 <h1 class="h1-base page-materials-h1">ПОДБОР РАСХОДНЫХ МАТЕРИАЛОВ</h1>
-                <p class="base-text text-center page-materials-head-text">Воспользуйтесь данным помошником, для того чтобы подобрать оригинальные расходные материалы для своего устройства</p>
+                <p class="base-text text-center page-materials-head-text">Воспользуйтесь данным помошником, для того чтобы подобрать оригинальные расходные материалы для своего устройства
+                </p>
             </div>
             <div class="container">
                 <h2 class="h2-base normalcase text-center series-h2">Выберите серию печатающего устройства</h2>
                 <div class="materials-series-block row">
                     <label class="materials-series-item">
                         <img src="./images/dest/img/series1.png" alt="FS">
-                        <input type="radio" class="materials-series-input" name="series">
+                        <input type="radio" class="materials-series-input" name="series" onchange="onCheckSeries('FS')">
                         <span class="materials-series-text">FS</span>
                     </label>
 
                     <label class="materials-series-item">
                         <img src="./images/dest/img/series2.png" alt="Ecosys">
-                        <input type="radio" class="materials-series-input" name="series">
+                        <input type="radio" class="materials-series-input" name="series" onchange="onCheckSeries('Ecosys')">
                         <span class="materials-series-text">Ecosys</span>
                     </label>
 
                     <label class="materials-series-item">
                         <img src="./images/dest/img/series3.png" alt="TASKalfa">
-                        <input type="radio" class="materials-series-input" name="series">
+                        <input type="radio" class="materials-series-input" name="series" onchange="onCheckSeries('TASKalfa')">
                         <span class="materials-series-text">TASKalfa</span>
                     </label>
                 </div>
@@ -244,58 +284,69 @@
                 <div class="materials-model-block">
 
                     <label class="materials-model-item">
-                        <input type="radio" class="materials-model-input" name="model">
-                        <span class="materials-model-text"> ECOSYS M2235dn</span>
+                        <input type="radio" class="materials-model-input" name="model" onchange="onCheckModel('ECOSYS M2235dn')">
+                        <span class="materials-model-text">
+              ECOSYS M2235dn</span>
                     </label>
 
                     <label class="materials-model-item">
-                        <input type="radio" class="materials-model-input" name="model">
-                        <span class="materials-model-text"> ECOSYS M2235dn</span>
+                        <input type="radio" class="materials-model-input" name="model" onchange="onCheckModel('ECOSYS M2235dn')">
+                        <span class="materials-model-text">
+              ECOSYS M2235dn</span>
                     </label>
 
                     <label class="materials-model-item">
-                        <input type="radio" class="materials-model-input" name="model">
-                        <span class="materials-model-text"> ECOSYS M2235dn</span>
+                        <input type="radio" class="materials-model-input" name="model" onchange="onCheckModel('ECOSYS M2235dn')">
+                        <span class="materials-model-text">
+              ECOSYS M2235dn</span>
                     </label>
 
                     <label class="materials-model-item">
-                        <input type="radio" class="materials-model-input" name="model">
-                        <span class="materials-model-text"> ECOSYS M2235dn</span>
+                        <input type="radio" class="materials-model-input" name="model" onchange="onCheckModel('ECOSYS M2235dn')">
+                        <span class="materials-model-text">
+              ECOSYS M2235dn</span>
                     </label>
 
                     <label class="materials-model-item">
-                        <input type="radio" class="materials-model-input" name="model">
-                        <span class="materials-model-text"> ECOSYS M2235dn</span>
+                        <input type="radio" class="materials-model-input" name="model" onchange="onCheckModel('ECOSYS M2235dn')">
+                        <span class="materials-model-text">
+              ECOSYS M2235dn</span>
                     </label>
 
                     <label class="materials-model-item">
-                        <input type="radio" class="materials-model-input" name="model">
-                        <span class="materials-model-text"> ECOSYS M2235dn</span>
+                        <input type="radio" class="materials-model-input" name="model" onchange="onCheckModel('ECOSYS M2235dn')">
+                        <span class="materials-model-text">
+              ECOSYS M2235dn</span>
                     </label>
 
                     <label class="materials-model-item">
-                        <input type="radio" class="materials-model-input" name="model">
-                        <span class="materials-model-text"> ECOSYS M2235dn</span>
+                        <input type="radio" class="materials-model-input" name="model" onchange="onCheckModel('ECOSYS M2235dn')">
+                        <span class="materials-model-text">
+              ECOSYS M2235dn</span>
                     </label>
 
                     <label class="materials-model-item">
-                        <input type="radio" class="materials-model-input" name="model">
-                        <span class="materials-model-text"> ECOSYS M2235dn</span>
+                        <input type="radio" class="materials-model-input" name="model" onchange="onCheckModel('ECOSYS M2235dn')">
+                        <span class="materials-model-text">
+              ECOSYS M2235dn</span>
                     </label>
 
                     <label class="materials-model-item">
-                        <input type="radio" class="materials-model-input" name="model">
-                        <span class="materials-model-text"> ECOSYS M2235dn</span>
+                        <input type="radio" class="materials-model-input" name="model" onchange="onCheckModel('ECOSYS M2235dn')">
+                        <span class="materials-model-text">
+              ECOSYS M2235dn</span>
                     </label>
 
                     <label class="materials-model-item">
-                        <input type="radio" class="materials-model-input" name="model">
-                        <span class="materials-model-text"> ECOSYS M2235dn</span>
+                        <input type="radio" class="materials-model-input" name="model" onchange="onCheckModel('ECOSYS M2235dn')">
+                        <span class="materials-model-text">
+              ECOSYS M2235dn</span>
                     </label>
 
                     <label class="materials-model-item">
-                        <input type="radio" class="materials-model-input" name="model">
-                        <span class="materials-model-text"> ECOSYS M2235dn</span>
+                        <input type="radio" class="materials-model-input" name="model" onchange="onCheckModel('ECOSYS M2235dn')">
+                        <span class="materials-model-text">
+              ECOSYS M2235dn</span>
                     </label>
 
                 </div>
@@ -303,7 +354,9 @@
             </div>
 
             <div class="container container-materials-reccomend">
-                <h2 class="h2-base normalcase text-center materials-reccomend-h2">К модели <span>ECOSYS M5521cdw</span> подходят</h2>
+                <h2 class="h2-base normalcase text-center materials-reccomend-h2">К модели
+        <span id="modelName"></span>
+        подходят</h2>
                 <div class="materials-reccomend-block">
 
                     <div class="materials-reccomend-col">
@@ -311,7 +364,7 @@
 
                         <div class="product-card">
                             <p class="product-card-category">
-                                <span>Чёрный тонер</span>
+                                <span class="product-card-category-name">Чёрный тонер</span>
                                 <span class="card-arrow card-arrow--product"></span>
                             </p>
 
@@ -319,13 +372,20 @@
                                 <img src="./images/dest/img/product_card2.png" alt="Продукт">
                             </div>
                             <p class="product-card-name">TK-1120 для FS1160DN</p>
-                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+                            <p class="product-card-cost">
+                                <span>4 800</span>руб.</p>
 
                             <div class="product-card-btns">
-                                <button class="product-card-btn product-card-btn--compare">
+                                <button class="product-card-btn product-card-btn--compare" onclick="">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                    </svg>
                                     <span class="visually-hidden">Сравнить</span>
                                 </button>
                                 <button class="product-card-btn product-card-btn--like">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                    </svg>
                                     <span class="visually-hidden">Избранное</span>
                                 </button>
                             </div>
@@ -347,7 +407,7 @@
 
                         <div class="product-card">
                             <p class="product-card-category">
-                                <span>Чёрный тонер</span>
+                                <span class="product-card-category-name">Чёрный тонер</span>
                                 <span class="card-arrow card-arrow--product"></span>
                             </p>
 
@@ -355,13 +415,20 @@
                                 <img src="./images/dest/img/product_card2.png" alt="Продукт">
                             </div>
                             <p class="product-card-name">TK-1120 для FS1160DN</p>
-                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+                            <p class="product-card-cost">
+                                <span>4 800</span>руб.</p>
 
                             <div class="product-card-btns">
-                                <button class="product-card-btn product-card-btn--compare">
+                                <button class="product-card-btn product-card-btn--compare" onclick="">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                    </svg>
                                     <span class="visually-hidden">Сравнить</span>
                                 </button>
                                 <button class="product-card-btn product-card-btn--like">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                    </svg>
                                     <span class="visually-hidden">Избранное</span>
                                 </button>
                             </div>
@@ -383,7 +450,7 @@
 
                         <div class="product-card">
                             <p class="product-card-category">
-                                <span>Чёрный тонер</span>
+                                <span class="product-card-category-name">Чёрный тонер</span>
                                 <span class="card-arrow card-arrow--product"></span>
                             </p>
 
@@ -391,13 +458,20 @@
                                 <img src="./images/dest/img/product_card2.png" alt="Продукт">
                             </div>
                             <p class="product-card-name">TK-1120 для FS1160DN</p>
-                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+                            <p class="product-card-cost">
+                                <span>4 800</span>руб.</p>
 
                             <div class="product-card-btns">
-                                <button class="product-card-btn product-card-btn--compare">
+                                <button class="product-card-btn product-card-btn--compare" onclick="">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                    </svg>
                                     <span class="visually-hidden">Сравнить</span>
                                 </button>
                                 <button class="product-card-btn product-card-btn--like">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                    </svg>
                                     <span class="visually-hidden">Избранное</span>
                                 </button>
                             </div>
@@ -419,7 +493,7 @@
 
                         <div class="product-card">
                             <p class="product-card-category">
-                                <span>Чёрный тонер</span>
+                                <span class="product-card-category-name">Чёрный тонер</span>
                                 <span class="card-arrow card-arrow--product"></span>
                             </p>
 
@@ -427,13 +501,20 @@
                                 <img src="./images/dest/img/product_card2.png" alt="Продукт">
                             </div>
                             <p class="product-card-name">TK-1120 для FS1160DN</p>
-                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+                            <p class="product-card-cost">
+                                <span>4 800</span>руб.</p>
 
                             <div class="product-card-btns">
-                                <button class="product-card-btn product-card-btn--compare">
+                                <button class="product-card-btn product-card-btn--compare" onclick="">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                    </svg>
                                     <span class="visually-hidden">Сравнить</span>
                                 </button>
                                 <button class="product-card-btn product-card-btn--like">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                    </svg>
                                     <span class="visually-hidden">Избранное</span>
                                 </button>
                             </div>
@@ -455,7 +536,7 @@
 
                         <div class="product-card">
                             <p class="product-card-category">
-                                <span>Чёрный тонер</span>
+                                <span class="product-card-category-name">Чёрный тонер</span>
                                 <span class="card-arrow card-arrow--product"></span>
                             </p>
 
@@ -463,13 +544,20 @@
                                 <img src="./images/dest/img/product_card2.png" alt="Продукт">
                             </div>
                             <p class="product-card-name">TK-1120 для FS1160DN</p>
-                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+                            <p class="product-card-cost">
+                                <span>4 800</span>руб.</p>
 
                             <div class="product-card-btns">
-                                <button class="product-card-btn product-card-btn--compare">
+                                <button class="product-card-btn product-card-btn--compare" onclick="">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                    </svg>
                                     <span class="visually-hidden">Сравнить</span>
                                 </button>
                                 <button class="product-card-btn product-card-btn--like">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                    </svg>
                                     <span class="visually-hidden">Избранное</span>
                                 </button>
                             </div>
@@ -491,7 +579,7 @@
 
                         <div class="product-card">
                             <p class="product-card-category">
-                                <span>Чёрный тонер</span>
+                                <span class="product-card-category-name">Чёрный тонер</span>
                                 <span class="card-arrow card-arrow--product"></span>
                             </p>
 
@@ -499,13 +587,20 @@
                                 <img src="./images/dest/img/product_card2.png" alt="Продукт">
                             </div>
                             <p class="product-card-name">TK-1120 для FS1160DN</p>
-                            <p class="product-card-cost"><span>4 800</span>руб.</p>
+                            <p class="product-card-cost">
+                                <span>4 800</span>руб.</p>
 
                             <div class="product-card-btns">
-                                <button class="product-card-btn product-card-btn--compare">
+                                <button class="product-card-btn product-card-btn--compare" onclick="">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#compare"></use>
+                                    </svg>
                                     <span class="visually-hidden">Сравнить</span>
                                 </button>
                                 <button class="product-card-btn product-card-btn--like">
+                                    <svg class="svg-icon">
+                                        <use xlink:href="./images/sprites/svg/sprite.symbol.svg#like"></use>
+                                    </svg>
                                     <span class="visually-hidden">Избранное</span>
                                 </button>
                             </div>

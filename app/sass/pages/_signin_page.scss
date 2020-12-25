@@ -33,6 +33,12 @@
     text-align: center;
   }
 }
+.signin-form-title--icon {
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' height='22' viewBox='0 0 22 22' width='22' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m11 .333984c1.4145 0 2.771.561903 3.7712 1.562096 1.0002 1.0002 1.5621 2.35675 1.5621 3.77124s-.5619 2.77104-1.5621 3.77123c-1.0002 1.00015-2.3567 1.56215-3.7712 1.56215-1.41451 0-2.77106-.562-3.77126-1.56215-1.00019-1.00019-1.56209-2.35674-1.56209-3.77123s.5619-2.77104 1.56209-3.77124c1.0002-1.000193 2.35675-1.562096 3.77126-1.562096zm0 13.333316c5.8933 0 10.6666 2.3867 10.6666 5.3334v2.6666h-21.333287v-2.6666c0-2.9467 4.773337-5.3334 10.666687-5.3334z' fill='%23000'/%3E%3C/svg%3E");
+  padding-left: 30px;
+}
 .signin-input-wrapper {
   display: block;
   width: 100%;

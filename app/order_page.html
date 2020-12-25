@@ -14,7 +14,27 @@
         <div class="main-header-top">
             <div class="container main-header-top-inner">
                 <button class="main-header-top-btn">Регистрация</button>
-                <button class="main-header-top-btn">Вход</button>
+                <div class="signin-popup-wrapper">
+                    <button class="main-header-top-btn" onclick="onShowSignIn()">Вход</button>
+                    <div class="signin-popup" id="signinPopup">
+                        <form class="signin-popup-form">
+                            <p class="signin-popup-title">Вход в личный кабинет</p>
+                            <label class="signin-popup-input-wrapper">
+                                <span class="visually-hidden">Логин</span>
+                                <input type="text" class="signin-popup-input" placeholder="Логин">
+                            </label>
+                            <label class="signin-popup-input-wrapper">
+                                <span class="visually-hidden">Пароль</span>
+                                <input type="text" class="signin-popup-input" placeholder="Пароль">
+                            </label>
+                            <button class="btn--main signin-popup-btn" type="submit">Войти</button>
+                            <p class="signin-popup-text">
+                                Если вы не зарегистрированы. То вы легко можете
+                                <a href="#">зарегистрироваться</a>, заполнив небольшую форму. И в полной мере пользоваться нашими выгодными предложениями.
+                            </p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="main-header-middle">
@@ -23,9 +43,12 @@
                     <span class="visually-hidden">Главная страница Koycera</span>
                     <img src="./images/dest/icons/logo.png" alt="Логотип Koycera">
                 </a>
-                <label class="header-search-inpit-wrapper">
+                <form class="header-search-inpit-wrapper">
                     <input type="text" placeholder="Поиск товара" class="header-search-inpit">
-                </label>
+                    <button type="submit" class="header-search-btn">
+                        <span class="visually-hidden">поиск</span>
+                    </button>
+                </form>
                 <div class="main-header-text">
                     <p>График работы:
                         <br>ПН - ВС
@@ -33,9 +56,9 @@
                     </p>
                 </div>
                 <div class="main-header-text">
-                    <span>Контакты:</span> 
+                    <span>Контакты:</span>
                     <br>
-                    <a href="" tel:+7 999 99 99 "">Телефон: +7 999 99 99</a>
+                    <a 99="99" 999="999" href="" tel:+7="tel:+7" 99 ""="99" "">Телефон: +7 999 99 99</a>
                     <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
                 </div>
                 <button class="main-header-search-btn" onclick="onShowSearch()"></button>
@@ -44,9 +67,13 @@
                         <span class="main-header-basket-counter">2</span>
                     </a>
                     <div class="main-header-basket-text">
-                        <p>Товаров: <span>2</span>
+                        <p>Товаров:
+                            <span>2</span>
                         </p>
-                        <p>На сумму <span>102 500</span> руб.</p>
+                        <p>На сумму
+                            <span>102 500</span>
+                            руб.
+                        </p>
                     </div>
                     <div class="main-header-basket-inner">
                         <div class="main-header-basket-item-list">
@@ -103,49 +130,61 @@
                         </svg>
                         КАТАЛОГ ТОВАРОВ
                     </a>
-                    <button class="main-header-nav-item-icon-m" onclick="onShowSubMenu()">
-                    </button>
+                    <button class="main-header-nav-item-icon-m" onclick="onShowSubMenu()"></button>
                     <div class="main-header-nav-dropdown-inner">
                         <div class="container main-header-nav--container">
-                            <button class="main-header-nav-back" onclick="onShowSubMenu()">
-                            </button>
+                            <button class="main-header-nav-back" onclick="onShowSubMenu()"></button>
                             <div class="main-header-submenu">
                                 <div class="main-header-submenu-promo">
                                     <p>Благодаря широкой линейке устройств Kyocera вы сможете подобрать в нашем интернет магазине именно то, что будет отвечать нуждам вашего бизнеса.</p>
                                     <a href="#" class="btn btn--main main-header-submenu-promo-btn">Подобрать устройство</a>
                                 </div>
                                 <ul class="main-header-submenu-list">
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">Принтеры</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">Принтеры</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A4 ЧБ</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A4 ЧБ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A4 Цвет</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A4 Цвет</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A3 ЧБ</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A3 ЧБ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A3 Цвет</a>
-                                    </li>
-                                </ul>
-                                <ul class="main-header-submenu-list">
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">МФУ</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A4 ЧБ</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A4 Цвет</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A3 ЧБ</a>
-                                    </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A3 Цвет</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A3 Цвет</a>
                                     </li>
                                 </ul>
                                 <ul class="main-header-submenu-list">
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--title">Расходные материалы</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">МФУ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner">Тонер ЧБ</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A4 ЧБ</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner-c">Тонер Цвет</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A4 Цвет</a>
                                     </li>
-                                    <li><a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--ink ">Чернила</a>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A3 ЧБ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A3 Цвет</a>
+                                    </li>
+                                </ul>
+                                <ul class="main-header-submenu-list">
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">Расходные материалы</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner">Тонер ЧБ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner-c">Тонер Цвет</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--ink ">Чернила</a>
                                     </li>
                                 </ul>
                             </div>
@@ -168,9 +207,9 @@
                     </div>
                     <div class="main-header-nav-col">
                         <div class="main-header-text main-header-text--mobile">
-                            <span>Контакты:</span> 
+                            <span>Контакты:</span>
                             <br>
-                            <a href="" tel:+7 999 99 99 "">Телефон: +7 999 99 99</a>
+                            <a 99="99" 999="999" href="" tel:+7="tel:+7" 99 ""="99" "">Телефон: +7 999 99 99</a>
                             <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
                         </div>
                     </div>
@@ -186,16 +225,16 @@
             <ul class="breadcrumb-item-wrapper">
                 <li>
                     <a href="./main_page.html" class="breadcrumb-item">
-      Главная
-    </a>
+        Главная
+      </a>
                     /
                 </li>
 
 
                 <li>
                     <a href="#" class="breadcrumb-item">
-          Корзина
-        </a>
+            Корзина
+          </a>
                     /
                 </li>
 
@@ -204,7 +243,7 @@
                 <li>
                     <span href="#" aria-current="page" class="breadcrumb-item">
             Оформление заказа
-        </span>
+          </span>
                 </li>
 
 
@@ -222,18 +261,56 @@
                                 <h5 class="h5-base order-h5">Получатель</h5>
                                 <div class="row row--wrap">
                                     <label class="input-thin-wrapper order-form-col2">
-                                        <input type="text" class="input-thin" placeholder="Имя*" reqared>
+                                        <input type="text" class="input-thin" placeholder="Имя*" reqared="reqared">
                                     </label>
                                     <label class="input-thin-wrapper order-form-col2">
-                                        <input type="text" class="input-thin" placeholder="Фамилия*" reqared>
+                                        <input type="text" class="input-thin" placeholder="Фамилия*" reqared="reqared">
                                     </label>
                                     <label class="input-thin-wrapper order-form-col2">
-                                        <input type="text" class="input-thin" placeholder="Номер телефона*" reqared>
+                                        <input type="text" class="input-thin" placeholder="Номер телефона*" reqared="reqared">
                                     </label>
                                     <label class="input-thin-wrapper order-form-col2">
-                                        <input type="text" class="input-thin" placeholder="Улица*" reqared>
+                                        <input type="text" class="input-thin" placeholder="Телефон, если не дозвонимся" reqared="reqared">
                                         <p class="input-thin-msg">Не обязательно</p>
                                     </label>
+                                </div>
+                            </div>
+
+                            <div class="order-form-block">
+                                <h5 class="h5-base order-h5">Из моих получателей:</h5>
+                                <div class="order-recipients-block">
+                                    <div class="radio-border-big-wrapper">
+                                        <button class="radio-border-big-btn" type="button">редактировать</button>
+                                        <label class="radio-border-big-label">
+                                            <input type="radio" name="recipients" checked="checked" class="radio-border-big-input">
+                                            <span class="radio-border-big-head">
+                      <span class="radio-border-big-input-fake"></span>
+                                            <span class="radio-border-big-title">Дом</span>
+                                            </span>
+                                            <span class="radio-border-big-text">Иван Иванович</span>
+                                            <span class="radio-border-big-text">+7 919 320 99 99</span>
+                                            <span class="radio-border-big-text">г. Москва, ул. Московская, д.100, корп. 150, подъезд 2, кв. 15</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="radio-border-big-wrapper">
+                                        <button class="radio-border-big-btn" type="button">редактировать</button>
+                                        <label class="radio-border-big-label">
+                                            <input type="radio" name="recipients" checked="checked" class="radio-border-big-input">
+                                            <span class="radio-border-big-head">
+                      <span class="radio-border-big-input-fake"></span>
+                                            <span class="radio-border-big-title">Дом</span>
+                                            </span>
+                                            <span class="radio-border-big-text">Иван Иванович</span>
+                                            <span class="radio-border-big-text">+7 919 320 99 99</span>
+                                            <span class="radio-border-big-text">г. Москва, ул. Московская, д.100, корп. 150, подъезд 2, кв. 15</span>
+                                        </label>
+                                    </div>
+
+                                    <button class="add-recipients-btn">
+                                        <span class="add-recipients-btn-icon">+</span>
+                                        <span class="add-recipients-btn-text">Добавить нового получателя</span>
+                                    </button>
                                 </div>
                             </div>
 
@@ -243,36 +320,39 @@
                                     <div class="order-form-col1">
                                         <div class="radio-double-wrapper order-radio-double-wrapper">
                                             <label>
-                                                <input type="radio" name="method" class="radio-double-input" checked>
+                                                <input type="radio" name="method" class="radio-double-input" onchange="onToggleDelivery('orderPickup')">
                                                 <span class="radio-double-btn radio-double-btn--left">Самовывоз</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="method" class="radio-double-input">
+                                                <input type="radio" name="method" class="radio-double-input" onchange="onToggleDelivery('orderDelivery')" checked="checked">
                                                 <span class="radio-double-btn radio-double-btn--right">Доставка</span>
                                             </label>
                                         </div>
                                     </div>
-                                    <label class="input-thin-wrapper order-form-col2">
-                                        <input type="text" class="input-thin" placeholder="Город*" reqared>
-                                    </label>
-                                    <label class="input-thin-wrapper order-form-col2">
-                                        <input type="text" class="input-thin" placeholder="Улица*" reqared>
-                                    </label>
-                                    <label class="input-thin-wrapper order-form-col5">
-                                        <input type="text" class="input-thin" placeholder="Дом*" reqared>
-                                    </label>
-                                    <label class="input-thin-wrapper order-form-col5">
-                                        <input type="text" class="input-thin" placeholder="Строение">
-                                    </label>
-                                    <label class="input-thin-wrapper order-form-col5">
-                                        <input type="text" class="input-thin" placeholder="Корпус">
-                                    </label>
-                                    <label class="input-thin-wrapper order-form-col5">
-                                        <input type="text" class="input-thin" placeholder="Подъезд">
-                                    </label>
-                                    <label class="input-thin-wrapper order-form-col5">
-                                        <input type="text" class="input-thin" placeholder="Квартира">
-                                    </label>
+                                    <div class="order-form-delivery order-form-delivery--js" id="orderPickup"></div>
+                                    <div class="row row--wrap order-form-delivery order-form-delivery--js show" id="orderDelivery">
+                                        <label class="input-thin-wrapper order-form-col2">
+                                            <input type="text" class="input-thin" placeholder="Город*" reqared="reqared">
+                                        </label>
+                                        <label class="input-thin-wrapper order-form-col2">
+                                            <input type="text" class="input-thin" placeholder="Улица*" reqared="reqared">
+                                        </label>
+                                        <label class="input-thin-wrapper order-form-col5">
+                                            <input type="text" class="input-thin" placeholder="Дом*" reqared="reqared">
+                                        </label>
+                                        <label class="input-thin-wrapper order-form-col5">
+                                            <input type="text" class="input-thin" placeholder="Строение">
+                                        </label>
+                                        <label class="input-thin-wrapper order-form-col5">
+                                            <input type="text" class="input-thin" placeholder="Корпус">
+                                        </label>
+                                        <label class="input-thin-wrapper order-form-col5">
+                                            <input type="text" class="input-thin" placeholder="Подъезд">
+                                        </label>
+                                        <label class="input-thin-wrapper order-form-col5">
+                                            <input type="text" class="input-thin" placeholder="Квартира">
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
 
@@ -281,7 +361,7 @@
                                 <div class="row row--wrap">
                                     <div class="order-form-col1">
                                         <label class="border-radio-wrapper">
-                                            <input type="radio" class="border-radio-input" checked name="delivery">
+                                            <input type="radio" class="border-radio-input" checked="checked" name="delivery">
                                             <span class="border-radio-input-fake"></span>
                                             <span class="border-radio-text">Стандартная доставка</span>
                                             <span class="border-radio-price">300₽</span>
@@ -299,7 +379,7 @@
                                     <div class="order-form-col1">
                                         <p class="order-form-text-sep">Время доставки</p>
                                         <label class="radio-btn-wrapper">
-                                            <input type="radio" class="radio-btn-input" checked name="time">
+                                            <input type="radio" class="radio-btn-input" checked="checked" name="time">
                                             <span class="radio-btn">с 9 до 18 часов</span>
                                         </label>
 
@@ -319,7 +399,7 @@
                             <div class="order-form-block">
                                 <h5 class="h5-base order-h5">Оплата</h5>
                                 <label class="border-radio-input-wrapper-big">
-                                    <input type="radio" class="border-radio-input" name="pay" checked>
+                                    <input type="radio" class="border-radio-input" name="pay" checked="checked">
                                     <span class="border-radio-input-fake"></span>
                                     <span class="border-radio-text">Наличными</span>
                                 </label>
@@ -341,7 +421,9 @@
 
                             <div class="order-form-block">
                                 <p class="order-form-total-text">3 товара</p>
-                                <p class="order-form-total-price"><span class="order-form-total-price-text">Итого: &nbsp;</span> 195 300 ₽</p>
+                                <p class="order-form-total-price">
+                                    <span class="order-form-total-price-text">Итого: &nbsp;</span>
+                                    195 300 ₽</p>
                                 <button type="submit" class="btn--main order-form-submit-btn">Оформить заказ</button>
                             </div>
                         </form>
@@ -353,17 +435,20 @@
                             <div class="order-sidebar-block">
                                 <p class="order-sidebar-subtitle">Цветное МФУ
                                     <br>Ecosys 2035 cdn</p>
-                                <p class="order-sidebar-text">12 500 ₽ - 2шт</p>
+                                <p class="order-sidebar-text">12 500 ₽ - 2шт
+                                </p>
                             </div>
 
                             <div class="order-sidebar-block">
                                 <p class="order-sidebar-subtitle">Монохромное МФУ
                                     <br>Taskalfa 3212i</p>
-                                <p class="order-sidebar-text">90 000 ₽ - 2шт</p>
+                                <p class="order-sidebar-text">90 000 ₽ - 2шт
+                                </p>
                             </div>
                             <div class="order-sidebar-delivery">
                                 <p class="order-sidebar-delivery-title">Стандартная доставка</p>
-                                <p class="order-sidebar-delivery-text">300 ₽</p>
+                                <p class="order-sidebar-delivery-text">300 ₽
+                                </p>
                             </div>
                             <div class="order-sidebar-total">
                                 <span class="order-sidebar-total-text">Итого:</span>
