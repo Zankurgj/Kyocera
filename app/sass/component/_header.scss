@@ -404,6 +404,8 @@
   @media screen and (max-width: $mobile-bp) {
     width: 26px;
     height: 26px;
+    background-size: 36px;
+    background-position: center bottom -3px;
   }
 }
 .main-header-basket-counter {
@@ -422,7 +424,8 @@
   font-weight: bold;
   line-height: 1;
   @media screen and (max-width: $mobile-bp) {
-    left: 8px;
+    left: 7px;
+    top: 0;
     width: 14px;
     height: 14px;
     font-size: rem(8);
