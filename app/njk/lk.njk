@@ -1,0 +1,97 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <div class="container">
+    {% from "app/njk/macro.njk" import breadcrumbs %}
+    {{ breadcrumbs([['Личный кабинет']]) }}
+  </div>
+  <div class="page-lk page--image">
+    <h3 class="h3-base page-lk-h3 text-center">Личный кабинет</h3>
+    <div class="container container--lk">
+      <h5 class="h5-base lk-recipients-h5">Мои получатели:</h5>
+      <div class="row row-add-recipients">
+        <div class="row row--wrap">
+          {% for i in range(0, 3) %}
+            <div class="lk-recipients-col">
+              <div class="radio-border-big-wrapper">
+                <button class="radio-border-big-btn" type="button">редактировать</button>
+                <label class="radio-border-big-label">
+                  <input type="radio" name="recipients" checked="checked" class="radio-border-big-input">
+                  <span class="radio-border-big-head">
+                    <span class="radio-border-big-input-fake"></span>
+                    <span class="radio-border-big-title">Дом</span>
+                  </span>
+                  <span class="radio-border-big-text">Иван Иванович</span>
+                  <span class="radio-border-big-text">+7 919 320 99 99</span>
+                  <span class="radio-border-big-text">г. Москва, ул. Московская, д.100, корп. 150, подъезд 2, кв. 15</span>
+                </label>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <button class="add-recipients-btn add-recipients-btn--lk">
+          <span class="add-recipients-btn-icon">+</span>
+          <span class="add-recipients-btn-text">Добавить</span>
+        </button>
+      </div>
+    </div>
+    <div class="container container--lk">
+      <div class="lk-title-wrapper">
+        <h5 class="h5-base">Мои заказы:</h5>
+        <a href="#" class="btn--main lk-title-btn">История заказов</a>
+      </div>
+      <div class="row row--wrap">
+        {% for i in range(0, 3) %}
+          <div class="lk-order-col">
+            <div class="lk-order-item lk-order-item--success">
+              <div class="lk-order-item-desc">
+                <p class="lk-order-item-title">
+                  <span class="lk-order-item-title-underline">Заказ #235175</span>
+                  <span>от 03.19.2020</span>
+                </p>
+                <p class="lk-order-item-subtitle">Оплачен. Заказ выполнен</p>
+              </div>
+              <p class="lk-order-item-cost">195 300 ₽</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="container container--lk">
+      <div class="lk-title-wrapper">
+        <h5 class="h5-base">Мои данные:</h5>
+      </div>
+      <div class="row row--wrap">
+        <div class="lk-data-col">
+
+          <div class="lk-data-item">
+            <div class="lk-data-item-img-block">
+              <img src="./images/dest/icons/avatar.svg" alt="Аватар">
+              <button class="lk-data-item-gray">добавить</button>
+            </div>
+            <div class="lk-data-item-block">
+              <div class="lk-data-item-head">
+                <span class="lk-data-item-name">Иван Иванов</span>
+                <button class="btn--orange-underline lk-data-item-orange">редактировать</button>
+              </div>
+              <p class="lk-data-item-text">ivanov@mail.ru</p>
+              <p class="lk-data-item-text">+7 919 958 20 36</p>
+              <button class="btn--orange-underline lk-data-item-orange">Изменить пароль</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="container container--lk">
+      <div class="lk-title-wrapper">
+        <h5 class="h5-base">Мои бонусные баллы:</h5>
+      </div>
+      <div class="row">
+        <p class="lk-bonus">Ваш бонусный баланс:
+          <span>1236</span>
+          баллов</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

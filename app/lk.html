@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Kyocera</title>
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" href="img/favicon.png" /> -->
+    <link rel="stylesheet" href="css/app.min.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="main-header-top">
+            <div class="container main-header-top-inner">
+                <button class="main-header-top-btn">Регистрация</button>
+                <div class="signin-popup-wrapper">
+                    <button class="main-header-top-btn" onclick="onShowSignIn()">Вход</button>
+                    <div class="signin-popup" id="signinPopup">
+                        <form class="signin-popup-form">
+                            <p class="signin-popup-title">Вход в личный кабинет</p>
+                            <label class="signin-popup-input-wrapper">
+                                <span class="visually-hidden">Логин</span>
+                                <input type="text" class="signin-popup-input" placeholder="Логин">
+                            </label>
+                            <label class="signin-popup-input-wrapper">
+                                <span class="visually-hidden">Пароль</span>
+                                <input type="text" class="signin-popup-input" placeholder="Пароль">
+                            </label>
+                            <button class="btn--main signin-popup-btn" type="submit">Войти</button>
+                            <p class="signin-popup-text">
+                                Если вы не зарегистрированы. То вы легко можете
+                                <a href="#">зарегистрироваться</a>, заполнив небольшую форму. И в полной мере пользоваться нашими выгодными предложениями.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-header-middle">
+            <div class="container main-header-middle-inner">
+                <a href="#" class="main-header-logo">
+                    <span class="visually-hidden">Главная страница Koycera</span>
+                    <img src="./images/dest/icons/logo.png" alt="Логотип Koycera">
+                </a>
+                <form class="header-search-inpit-wrapper">
+                    <input type="text" placeholder="Поиск товара" class="header-search-inpit">
+                    <button type="submit" class="header-search-btn">
+                        <span class="visually-hidden">поиск</span>
+                    </button>
+                </form>
+                <div class="main-header-text">
+                    <p>График работы:
+                        <br>ПН - ВС
+                        <br>с 9:00 - 18.00
+                    </p>
+                </div>
+                <div class="main-header-text">
+                    <span>Контакты:</span>
+                    <br>
+                    <a href="tel:+7 999 99 99">Телефон: +7 999 99 99</a>
+                    <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
+                </div>
+                <button class="main-header-search-btn" onclick="onShowSearch()"></button>
+                <div class="main-header-basket main-header-basket--dropdown">
+                    <a href="#" class="main-header-basket-link">
+                        <span class="main-header-basket-counter">2</span>
+                    </a>
+                    <div class="main-header-basket-text">
+                        <p>Товаров:
+                            <span>2</span>
+                        </p>
+                        <p>На сумму
+                            <span>102 500</span>
+                            руб.
+                        </p>
+                    </div>
+                    <div class="main-header-basket-inner">
+                        <div class="main-header-basket-item-list">
+                            <a href="#" class="main-header-basket-item">
+                                <div class="main-header-basket-item-img">
+                                    <img src="./images/dest/img/product1.png" alt="Продукт">
+                                </div>
+                                <div class="main-header-basket-item-text">
+                                    <p class="main-header-basket-item-title">Цветное МФУ</p>
+                                    <p class="main-header-basket-item-desc">Ecosys 2035 cdn</p>
+                                    <p class="main-header-basket-item-cost">
+                                        12 500 ₽
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="main-header-basket-item">
+                                <div class="main-header-basket-item-img">
+                                    <img src="./images/dest/img/product2.png" alt="Продукт">
+                                </div>
+                                <div class="main-header-basket-item-text">
+                                    <p class="main-header-basket-item-title">Монохромное МФУ</p>
+                                    <p class="main-header-basket-item-desc">TASKalfa 3212i</p>
+                                    <p class="main-header-basket-item-cost">
+                                        90 000 ₽
+                                        <span class="main-header-basket-item-cost-discount">100 000 ₽</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="main-header-basket-sum">
+                            <div class="main-header-basket-sum-text">
+                                <p>Итого:</p>
+                                <span class="main-header-basket-sum-cost">102 500 ₽</span>
+                                <span class="main-header-basket-sum-cost-discount">112 500 ₽</span>
+                            </div>
+                            <a href="#" class="btn btn--main main-header-basket-btn">В корзину</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-hamburger main-header-hamburger" onclick="onToggleMobileMenu()">
+                    <span class="btn-hamburger-icon"></span>
+                    <span class="visually-hidden">меню</span>
+                </button>
+            </div>
+        </div>
+        <div class="main-header-bottom">
+            <nav class="container main-header-nav">
+                <div class="main-header-nav-dropdown">
+                    <a href="#" class="main-header-nav-item main-header-nav-item--icon main-header-nav-item--accent">
+                        <svg class="svg-icon main-header-nav-item-icon">
+                            <use xlink:href="./images/sprites/svg/sprite.symbol.svg#catalog"></use>
+                        </svg>
+                        КАТАЛОГ ТОВАРОВ
+                    </a>
+                    <button class="main-header-nav-item-icon-m" onclick="onShowSubMenu()"></button>
+                    <div class="main-header-nav-dropdown-inner">
+                        <div class="container main-header-nav--container">
+                            <button class="main-header-nav-back" onclick="onShowSubMenu()"></button>
+                            <div class="main-header-submenu">
+                                <div class="main-header-submenu-promo">
+                                    <p>Благодаря широкой линейке устройств Kyocera вы сможете подобрать в нашем интернет магазине именно то, что будет отвечать нуждам вашего бизнеса.</p>
+                                    <a href="#" class="btn btn--main main-header-submenu-promo-btn">Подобрать устройство</a>
+                                </div>
+                                <ul class="main-header-submenu-list">
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">Принтеры</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A4 ЧБ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A4 Цвет</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A3 ЧБ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A3 Цвет</a>
+                                    </li>
+                                </ul>
+                                <ul class="main-header-submenu-list">
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">МФУ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A4 ЧБ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A4 Цвет</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A3 ЧБ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A3 Цвет</a>
+                                    </li>
+                                </ul>
+                                <ul class="main-header-submenu-list">
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--title">Расходные материалы</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner">Тонер ЧБ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner-c">Тонер Цвет</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--ink ">Чернила</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="main-header-nav-item">РЕШЕНИЯ</a>
+                <a href="#" class="main-header-nav-item">АКЦИИ</a>
+                <a href="#" class="main-header-nav-item">ДОСТАВКА И ОПЛАТА</a>
+                <a href="#" class="main-header-nav-item">НОВОСТИ</a>
+                <a href="#" class="main-header-nav-item">О МАГАЗИНЕ</a>
+                <a href="#" class="main-header-nav-item">КОНТАКТЫ</a>
+                <div class="row row--wrap main-header-nav-row">
+                    <div class="main-header-nav-col">
+                        <div class="main-header-text main-header-text--mobile">
+                            <p>График работы:
+                                <br>ПН - ВС с 9:00 - 18.00
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main-header-nav-col">
+                        <div class="main-header-text main-header-text--mobile">
+                            <span>Контакты:</span>
+                            <br>
+                            <a 99="99" 999="999" href="" tel:+7="tel:+7" 99 ""="99" "">Телефон: +7 999 99 99</a>
+                            <a href="mailto:info@shop.ru">Email: info@shop.ru</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="page">
+
+        <div class="container">
+
+
+            <ul class="breadcrumb-item-wrapper">
+                <li>
+                    <a href="./main_page.html" class="breadcrumb-item">
+        Главная
+      </a>
+                    /
+                </li>
+
+
+                <li>
+                    <span href="#" aria-current="page" class="breadcrumb-item">
+            Личный кабинет
+          </span>
+                </li>
+
+
+            </ul>
+
+        </div>
+        <div class="page-lk page--image">
+            <h3 class="h3-base page-lk-h3 text-center">Личный кабинет</h3>
+            <div class="container container--lk">
+                <h5 class="h5-base lk-recipients-h5">Мои получатели:</h5>
+                <div class="row row-add-recipients">
+                    <div class="row row--wrap">
+
+                        <div class="lk-recipients-col">
+                            <div class="radio-border-big-wrapper">
+                                <button class="radio-border-big-btn" type="button">редактировать</button>
+                                <label class="radio-border-big-label">
+                                    <input type="radio" name="recipients" checked="checked" class="radio-border-big-input">
+                                    <span class="radio-border-big-head">
+                    <span class="radio-border-big-input-fake"></span>
+                                    <span class="radio-border-big-title">Дом</span>
+                                    </span>
+                                    <span class="radio-border-big-text">Иван Иванович</span>
+                                    <span class="radio-border-big-text">+7 919 320 99 99</span>
+                                    <span class="radio-border-big-text">г. Москва, ул. Московская, д.100, корп. 150, подъезд 2, кв. 15</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="lk-recipients-col">
+                            <div class="radio-border-big-wrapper">
+                                <button class="radio-border-big-btn" type="button">редактировать</button>
+                                <label class="radio-border-big-label">
+                                    <input type="radio" name="recipients" checked="checked" class="radio-border-big-input">
+                                    <span class="radio-border-big-head">
+                    <span class="radio-border-big-input-fake"></span>
+                                    <span class="radio-border-big-title">Дом</span>
+                                    </span>
+                                    <span class="radio-border-big-text">Иван Иванович</span>
+                                    <span class="radio-border-big-text">+7 919 320 99 99</span>
+                                    <span class="radio-border-big-text">г. Москва, ул. Московская, д.100, корп. 150, подъезд 2, кв. 15</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="lk-recipients-col">
+                            <div class="radio-border-big-wrapper">
+                                <button class="radio-border-big-btn" type="button">редактировать</button>
+                                <label class="radio-border-big-label">
+                                    <input type="radio" name="recipients" checked="checked" class="radio-border-big-input">
+                                    <span class="radio-border-big-head">
+                    <span class="radio-border-big-input-fake"></span>
+                                    <span class="radio-border-big-title">Дом</span>
+                                    </span>
+                                    <span class="radio-border-big-text">Иван Иванович</span>
+                                    <span class="radio-border-big-text">+7 919 320 99 99</span>
+                                    <span class="radio-border-big-text">г. Москва, ул. Московская, д.100, корп. 150, подъезд 2, кв. 15</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="add-recipients-btn add-recipients-btn--lk">
+                        <span class="add-recipients-btn-icon">+</span>
+                        <span class="add-recipients-btn-text">Добавить</span>
+                    </button>
+                </div>
+            </div>
+            <div class="container container--lk">
+                <div class="lk-title-wrapper">
+                    <h5 class="h5-base">Мои заказы:</h5>
+                    <a href="#" class="btn--main lk-title-btn">История заказов</a>
+                </div>
+                <div class="row row--wrap">
+
+                    <div class="lk-order-col">
+                        <div class="lk-order-item lk-order-item--success">
+                            <div class="lk-order-item-desc">
+                                <p class="lk-order-item-title">
+                                    <span class="lk-order-item-title-underline">Заказ #235175</span>
+                                    <span>от 03.19.2020</span>
+                                </p>
+                                <p class="lk-order-item-subtitle">Оплачен. Заказ выполнен</p>
+                            </div>
+                            <p class="lk-order-item-cost">195 300 ₽</p>
+                        </div>
+                    </div>
+
+                    <div class="lk-order-col">
+                        <div class="lk-order-item lk-order-item--success">
+                            <div class="lk-order-item-desc">
+                                <p class="lk-order-item-title">
+                                    <span class="lk-order-item-title-underline">Заказ #235175</span>
+                                    <span>от 03.19.2020</span>
+                                </p>
+                                <p class="lk-order-item-subtitle">Оплачен. Заказ выполнен</p>
+                            </div>
+                            <p class="lk-order-item-cost">195 300 ₽</p>
+                        </div>
+                    </div>
+
+                    <div class="lk-order-col">
+                        <div class="lk-order-item lk-order-item--success">
+                            <div class="lk-order-item-desc">
+                                <p class="lk-order-item-title">
+                                    <span class="lk-order-item-title-underline">Заказ #235175</span>
+                                    <span>от 03.19.2020</span>
+                                </p>
+                                <p class="lk-order-item-subtitle">Оплачен. Заказ выполнен</p>
+                            </div>
+                            <p class="lk-order-item-cost">195 300 ₽</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container container--lk">
+                <div class="lk-title-wrapper">
+                    <h5 class="h5-base">Мои данные:</h5>
+                </div>
+                <div class="row row--wrap">
+                    <div class="lk-data-col">
+
+                        <div class="lk-data-item">
+                            <div class="lk-data-item-img-block">
+                                <img src="./images/dest/icons/avatar.svg" alt="Аватар">
+                                <button class="lk-data-item-gray">добавить</button>
+                            </div>
+                            <div class="lk-data-item-block">
+                                <div class="lk-data-item-head">
+                                    <span class="lk-data-item-name">Иван Иванов</span>
+                                    <button class="btn--orange-underline lk-data-item-orange">редактировать</button>
+                                </div>
+                                <p class="lk-data-item-text">ivanov@mail.ru</p>
+                                <p class="lk-data-item-text">+7 919 958 20 36</p>
+                                <button class="btn--orange-underline lk-data-item-orange">Изменить пароль</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container container--lk">
+                <div class="lk-title-wrapper">
+                    <h5 class="h5-base">Мои бонусные баллы:</h5>
+                </div>
+                <div class="row">
+                    <p class="lk-bonus">Ваш бонусный баланс:
+                        <span>1236</span>
+                        баллов
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row row--wrap main-footer-inner">
+                <div class="main-footer-col">
+                    <a href="#" class="main-footer-logo">
+                        <img src="./images/dest/icons/footer_logo.png" alt="Логотип">
+                    </a>
+                    <div class="main-footer-address">
+                        <p class="main-footer-text">
+                            Единый Call Center
+                            <br>Бесплатные звонки по всей Росии
+                            <br>
+                            <a class="main-footer-text" href="tel:+7 999 99 99"><strong>8 800 888 88 88</strong></a>
+                        </p>
+                    </div>
+                    <div class="main-footer-email">
+                        <p class="main-footer-text">
+                            Наша электронная почта
+                            <br>
+                            <a class="main-footer-text" href="mailto:info@kyocera-shop.ru"><strong>info@kyocera-shop.ru</strong></a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="main-footer-col">
+                    <p class="main-footer-title">КАТАЛОГ</p>
+                    <ul class="main-footer-list">
+                        <li><a href="#" class="main-footer-text">Принтеры</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">МФУ</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Расходные материалы</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Опции</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Решения</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Акции</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Бонусы</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="main-footer-col">
+                    <p class="main-footer-title">ИНТЕРНЕТ - МАГАЗИН</p>
+                    <ul class="main-footer-list">
+                        <li><a href="#" class="main-footer-text">Как сделать заказ</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Доставка и оплата</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Условия возврата и обменаы</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Корпоративные продажи</a>
+                        </li>
+                        <li><a href="#" class="main-footer-text">Кредит в интернет-магазине</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="main-footer-col">
+                    <p class="main-footer-title">СПОСОБЫ ОПЛАТЫ</p>
+                    <div class="main-footer-payment">
+                        <img src="./images/dest/icons/payment.png" alt="Платежные системы">
+                    </div>
+                </div>
+                <div class="main-footer-col">
+                    <div class="main-footer-social-block">
+                        <a href="#" class="main-footer-social main-footer-social--fb" target="_blank"><span class="visually-hidden">Фейсбук</span></a>
+                        <a href="#" class="main-footer-social main-footer-social--inst" target="_blank"><span class="visually-hidden">Инстаграм</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>
