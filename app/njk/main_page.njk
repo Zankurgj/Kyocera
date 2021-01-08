@@ -1,131 +1,135 @@
 {% extends "app/njk/layout/main.njk" %}
 {% block content %}
-<section class="main-slider-wrapper">
-  <div class="main-slider-arrow-wrapper container">
-    <button class="slider-arrow-main slider-arrow--main-prew">
-      <span class="visually-hidden">Предыдущий слайд</span>
-    </button>
-    <button class="slider-arrow-main slider-arrow--main-next">
-      <span class="visually-hidden">Следующий слайд</span>
-    </button>
-  </div>
-  <div class="main-slider" id="mainSlider">
+  <section class="main-slider-wrapper">
+    <div class="main-slider-arrow-wrapper container">
+      <button class="slider-arrow-main slider-arrow--main-prew">
+        <span class="visually-hidden">Предыдущий слайд</span>
+      </button>
+      <button class="slider-arrow-main slider-arrow--main-next">
+        <span class="visually-hidden">Следующий слайд</span>
+      </button>
+    </div>
+    <div class="main-slider" id="mainSlider">
       {% for i in range(0, 3) %}
-        <div class="main-slider-slide" style="background-image: url('./images/dest/img/banner.png');">
-        </div>
+        <div class="main-slider-slide" style="background-image: url('./images/dest/img/banner.png');"></div>
       {% endfor %}
-  </div>
-</section>
-<section class="main-services">
-  <div class="container">
-    <div class="main-services-inner row row--wrap">
+    </div>
+  </section>
+  <section class="main-services">
+    <div class="container">
+      <div class="main-services-inner row row--wrap">
 
-      <div class="main-services-col">
-        <a href="#" class="main-services-item main-services-item--green">
+        <div class="main-services-col">
+          <a href="#" class="main-services-item main-services-item--green">
             <div class="main-services-item-text">
               <p class="main-services-title">Подборка устройств для домашнего офиса</p>
               <p class="main-services-text">Выберите себе устройство, которое идеально подойдёт для домашнего офиса</p>
-              <span class="main-services-link">Подробнее </span>
+              <span class="main-services-link">Подробнее
+              </span>
             </div>
             <div class="main-services-item-img">
               <img src="./images/dest/img/services1.png" alt="Продукт">
             </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <div class="main-services-col">
-        <a href="#" class="main-services-item main-services-item--blue">
+        <div class="main-services-col">
+          <a href="#" class="main-services-item main-services-item--blue">
             <div class="main-services-item-text">
               <p class="main-services-title">Подборка устройств для нужд маркетинга</p>
               <p class="main-services-text">Выберите себе устройство, которое идеально подойдёт для отдела маркетинга</p>
-              <span class="main-services-link">Подробнее </span>
+              <span class="main-services-link">Подробнее
+              </span>
             </div>
             <div class="main-services-item-img">
               <img src="./images/dest/img/services2.png" alt="Продукт">
             </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <div class="main-services-col">
-        <a href="#" class="main-services-item main-services-item--black">
+        <div class="main-services-col">
+          <a href="#" class="main-services-item main-services-item--black">
             <div class="main-services-item-text">
               <p class="main-services-title">Поиск расходных материалов</p>
               <p class="main-services-text">Подбирите оригинальные расходные материалы для своего устройста</p>
-              <span class="main-services-link">Подробнее </span>
+              <span class="main-services-link">Подробнее
+              </span>
             </div>
             <div class="main-services-item-img">
               <img src="./images/dest/img/services3.png" alt="Продукт">
             </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-    </div>
-  </div>
-</section>
-<section class="main-reccomend">
-  <div class="container">
-    <h1 class="h1-base main-page-h1">ПОПУЛЯРНЫЕ ПРЕДЛОЖЕНИЯ</h1>
-    <div class="main-reccomend-inner">
-      <div class="product-slider slider--top-arrow">
-        {% for i in range(0, 7) %}
-          <div class="product-slide">
-            {% from "app/njk/macro.njk" import productCard %}
-            {{ productCard(true, true, "./images/dest/img/product_card1.png") }}
-          </div>
-        {% endfor %}
       </div>
     </div>
-  </div>
-</section>
-
-<section class="main-new">
-  <div class="container">
-    <h1 class="h1-base main-page-h1">НОВИНКИ</h1>
-    <div class="main-new-inner">
-      <div class="product-slider slider--top-arrow">
-        {% for i in range(0, 7) %}
-          <div class="product-slide">
-            {% from "app/njk/macro.njk" import productCard %}
-            {{ productCard(false, false, "./images/dest/img/product.png", "Цветное МФУ", "Ecosys 2035 cdn", "12 500") }}
-          </div>
-        {% endfor %}
+  </section>
+  <section class="main-reccomend">
+    <div class="container">
+      <h1 class="h1-base main-page-h1">ПОПУЛЯРНЫЕ ПРЕДЛОЖЕНИЯ</h1>
+      <div class="main-reccomend-inner">
+        <div class="product-slider slider--top-arrow">
+          {% for i in range(0, 7) %}
+            <div class="product-slide">
+              {% from "app/njk/macro.njk" import productCard %}
+              {{ productCard(true, true, "./images/dest/img/product_card1.png") }}
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="main-promo">
-  <div class="main-promo-text-block container row">
+  <section class="main-new">
+    <div class="container">
+      <h1 class="h1-base main-page-h1">НОВИНКИ</h1>
+      <div class="main-new-inner">
+        <div class="product-slider slider--top-arrow">
+          {% for i in range(0, 7) %}
+            <div class="product-slide">
+              {% from "app/njk/macro.njk" import productCard %}
+              {{ productCard(false, false, "./images/dest/img/product.png", "Цветное МФУ", "Ecosys 2035 cdn", "12 500") }}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="main-promo">
+    <div class="main-promo-text-block container row">
       <div class="main-promo-col-text">
-        <p class="main-promo-text">Решения для роста <br> вашего бизнеса</p>
+        <p class="main-promo-text">Решения для роста
+          <br>
+          вашего бизнеса</p>
         <a href="#" class="btn btn--main main-promo-btn">Узнать больше</a>
       </div>
     </div>
-</section>
+  </section>
 
-<section class="main-popular">
-  <div class="container">
-    <h1 class="h1-base main-page-h1">НОВИНКИ</h1>
-    <div class="product-slider slider--top-arrow">
-      {% for i in range(0, 7) %}
-        <div class="product-slide">
-          {% from "app/njk/macro.njk" import productCard %}
-          {{ productCard(false, false, "./images/dest/img/product_card2.png", "Чёрный тонер", "TK-1120 для FS1160DN", "4 800") }}
-        </div>
-      {% endfor %}
+  <section class="main-popular">
+    <div class="container">
+      <h1 class="h1-base main-page-h1">НОВИНКИ</h1>
+      <div class="product-slider slider--top-arrow">
+        {% for i in range(0, 7) %}
+          <div class="product-slide">
+            {% from "app/njk/macro.njk" import productCard %}
+            {{ productCard(false, false, "./images/dest/img/product_card2.png", "Чёрный тонер", "TK-1120 для FS1160DN", "4 800") }}
+          </div>
+        {% endfor %}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="main-features">
-  <div class="container">
-    <div class="row row--wrap">
-      {% set featuresItem= [['1', 'Официальный <br> дилер Kyocera'],['2', 'Сервисная <br> поддержка 24/7'], ['3', 'Гарантия <br> качества'], ['4', 'Быстрая <br> доставка']]%}
+  <section class="main-features">
+    <div class="container">
+      <div class="row row--wrap">
+        {% set featuresItem= [['1', 'Официальный <br> дилер Kyocera'],['2', 'Сервисная <br> поддержка 24/7'], ['3', 'Гарантия <br> качества'], ['4', 'Быстрая <br> доставка']]%}
         {% for img, text in featuresItem %}
           <div class="main-features-col">
             <div class="main-features-item">
               <div class="main-features-icon">
-                <img src="./images/dest/icons/features_icon{{img}}.svg">
+                <img src="./images/dest/icons/features_icon{{img}}.svg" alt="featuresItem">
               </div>
               <div class="main-features-text">
                 <p>{{text| safe}}</p>
@@ -133,36 +137,36 @@
             </div>
           </div>
         {% endfor %}
+      </div>
     </div>
-  </div>
-</section>
-<section class="main-news">
+  </section>
+  <section class="main-news">
     <div class="container">
       <h1 class="h1-base main-news-h1">НОВОСТИ</h1>
       <div class="main-news-slider slider--top-arrow" id="newsSlider">
-          {% for i in range(0, 7) %}
-            <a href="#" class="main-news-slide">
-              {% from "app/njk/macro.njk" import newsCard %}
-                {{ newsCard() }}
-            </a>
-          {% endfor %}
+        {% for i in range(0, 7) %}
+          <a href="#" class="main-news-slide">
+            {% from "app/njk/macro.njk" import newsCard %}
+            {{ newsCard() }}
+          </a>
+        {% endfor %}
       </div>
     </div>
-</section>
-<section class="newsletter">
-  <div class="container">
-    <form class="newsletter-form">
-      <p class="newsletter-title">
-        РАССЫЛКА
-      </p>
-      <div class="newsletter-form-wrapper">
-        <label class="newsletter-input-wrapper">
-          <input type="text" class="newsletter-input" placeholder="Введите email">
-        </label>
-        <button class="newsletter-btn" type="submit">Подписаться</button>
-      </div>
-      <p class="newsletter-text">Подпишитесь на нашу рассылку и узнайте, как экономить на печати. Получая анонсы всех акций и выгодных предложений!</p>
-    </form>
-  </div>
-</section>
+  </section>
+  <section class="newsletter">
+    <div class="container">
+      <form class="newsletter-form">
+        <p class="newsletter-title">
+          РАССЫЛКА
+        </p>
+        <div class="newsletter-form-wrapper">
+          <label class="newsletter-input-wrapper">
+            <input type="text" class="newsletter-input" placeholder="Введите email">
+          </label>
+          <button class="newsletter-btn" type="submit">Подписаться</button>
+        </div>
+        <p class="newsletter-text">Подпишитесь на нашу рассылку и узнайте, как экономить на печати. Получая анонсы всех акций и выгодных предложений!</p>
+      </form>
+    </div>
+  </section>
 {% endblock %}

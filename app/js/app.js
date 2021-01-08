@@ -218,5 +218,21 @@ const onToggleDelivery = (idTab) => {
   for (let i = 0; i < allTabs.length; i++) {
     allTabs[i].classList.remove('show');
   }
-  document.querySelector(`#${idTab}`).classList.add('show');
+  if (idTab === 'orderDelivery') {
+    const deliveryBlocks = document.querySelectorAll(
+      '.order-form-delivery-block--js'
+    );
+    for (let i = 0; i < deliveryBlocks.length; i++) {
+      deliveryBlocks[i].classList.add('show');
+    }
+  } else {
+    document.querySelector(`#orderPickup`).classList.add('show');
+  }
+};
+
+const onShowPromocode = (el) => {
+  el.classList.add('hide');
+  console.log(el);
+  document.querySelector('#basketPromocode').classList.add('show');
+  document.querySelector('#promocode').focus();
 };

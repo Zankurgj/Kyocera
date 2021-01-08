@@ -31,6 +31,11 @@
   flex-basis: calc(50% - 26px);
   max-width: calc(50% - 26px);
   margin-right: 26px;
+  @media screen and (max-width: $mobile-bp) {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
   &:last-child {
     margin-right: 0;
   }
@@ -38,6 +43,9 @@
 .order-form {
   .input-thin-wrapper {
     margin-bottom: 10px;
+    @media screen and (max-width: $mobile-bp) {
+      margin-bottom: 20px;
+    }
   }
 }
 .order-form-col1 {
@@ -296,12 +304,19 @@
   color: #282828;
 }
 .order-form-delivery {
-  display: none;
-  &.show {
-    display: flex;
-  }
+  display: flex;
 }
-
 .order-recipients-block {
   display: inline-block;
+}
+.row--order {
+  @media screen and (max-width: $mobile-bp) {
+    flex-direction: column;
+  }
+}
+.order-form-delivery-block--js {
+  display: none;
+  &.show {
+    display: block;
+  }
 }

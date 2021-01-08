@@ -13,7 +13,7 @@
             <h4 class="h4-base order-h4">Контактные данные</h4>
             <div class="order-form-block">
               <h5 class="h5-base order-h5">Получатель</h5>
-              <div class="row row--wrap">
+              <div class="row row--order row--wrap">
                 <label class="input-thin-wrapper order-form-col2">
                   <input type="text" class="input-thin" placeholder="Имя*" reqared="reqared">
                 </label>
@@ -84,33 +84,36 @@
                   </div>
                 </div>
                 <div class="order-form-delivery order-form-delivery--js" id="orderPickup"></div>
-                <div class="row row--wrap order-form-delivery order-form-delivery--js show" id="orderDelivery">
-                  <label class="input-thin-wrapper order-form-col2">
-                    <input type="text" class="input-thin" placeholder="Город*" reqared="reqared">
-                  </label>
-                  <label class="input-thin-wrapper order-form-col2">
-                    <input type="text" class="input-thin" placeholder="Улица*" reqared="reqared">
-                  </label>
-                  <label class="input-thin-wrapper order-form-col5">
-                    <input type="text" class="input-thin" placeholder="Дом*" reqared="reqared">
-                  </label>
-                  <label class="input-thin-wrapper order-form-col5">
-                    <input type="text" class="input-thin" placeholder="Строение">
-                  </label>
-                  <label class="input-thin-wrapper order-form-col5">
-                    <input type="text" class="input-thin" placeholder="Корпус">
-                  </label>
-                  <label class="input-thin-wrapper order-form-col5">
-                    <input type="text" class="input-thin" placeholder="Подъезд">
-                  </label>
-                  <label class="input-thin-wrapper order-form-col5">
-                    <input type="text" class="input-thin" placeholder="Квартира">
-                  </label>
+                <div class="order-form-delivery--js order-form-delivery-block--js show">
+                  <div class="row row--wrap order-form-delivery">
+                    <label class="input-thin-wrapper order-form-col2">
+                      <input type="text" class="input-thin" placeholder="Город*" reqared="reqared">
+                    </label>
+                    <label class="input-thin-wrapper order-form-col2">
+                      <input type="text" class="input-thin" placeholder="Улица*" reqared="reqared">
+                    </label>
+                    <label class="input-thin-wrapper order-form-col5">
+                      <input type="text" class="input-thin" placeholder="Дом*" reqared="reqared">
+                    </label>
+                    <label class="input-thin-wrapper order-form-col5">
+                      <input type="text" class="input-thin" placeholder="Строение">
+                    </label>
+                    <label class="input-thin-wrapper order-form-col5">
+                      <input type="text" class="input-thin" placeholder="Корпус">
+                    </label>
+                    <label class="input-thin-wrapper order-form-col5">
+                      <input type="text" class="input-thin" placeholder="Подъезд">
+                    </label>
+                    <label class="input-thin-wrapper order-form-col5">
+                      <input type="text" class="input-thin" placeholder="Квартира">
+                    </label>
+                  </div>
                 </div>
+
               </div>
             </div>
 
-            <div class="order-form-block">
+            <div class="order-form-block order-form-delivery order-form-delivery-block--js order-form-delivery--js show">
               <h5 class="h5-base order-h5">Доставка</h5>
               <div class="row row--wrap">
                 <div class="order-form-col1">

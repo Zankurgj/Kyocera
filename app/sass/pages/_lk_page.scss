@@ -8,6 +8,9 @@
 .lk-recipients-col {
   flex: 0 0 auto;
   margin-right: 30px;
+  @media screen and (max-width: $mobile-bp) {
+    margin-right: 0;
+  }
 }
 .lk-recipients-h5 {
   margin-bottom: 26px;
@@ -21,6 +24,11 @@
   margin-top: 40px;
 }
 .row-add-recipients {
+  @media screen and (max-width: $mobile-bp) {
+    flex-direction: column;
+  }
+}
+.row--recipients {
   @media screen and (max-width: $mobile-bp) {
     flex-direction: column;
   }

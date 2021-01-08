@@ -502,7 +502,7 @@
   width: 100%;
   left: 0;
   top: 100%;
-  padding: 50px 0;
+  padding: 50px 0 0 0;
   background-color: #282828;
   color: #fff;
   opacity: 0;
@@ -598,7 +598,7 @@
 }
 .main-header-submenu {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   @media screen and (max-width: $mobile-bp) {
     flex-grow: 1;
     flex-direction: column;
@@ -609,16 +609,32 @@
 .main-header-submenu-promo {
   max-width: 255px;
   font-size: rem(14);
+  margin-right: 90px;
   @media screen and (max-width: $mobile-bp) {
     order: 4;
+    margin-right: 0;
+    margin-top: 30px;
+  }
+}
+.main-header-submenu-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  @media screen and (max-width: $mobile-bp) {
+    flex-direction: column;
   }
 }
 .main-header-submenu-promo-btn {
   margin-top: 12px;
 }
 .main-header-submenu-list {
+  max-width: 33%;
+  flex-basis: 33%;
+  margin-bottom: 36px;
   @media screen and (max-width: $mobile-bp) {
     margin-bottom: 20px;
+    max-width: 100%;
+    flex-basis: 100%;
   }
   li {
     margin-bottom: 10px;
@@ -645,28 +661,40 @@
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 16px;
-  padding-left: 20px;
+  padding-left: 24px;
 }
 .main-header-submenu-item--print {
-  background-image: url('../images/dest/icons/print.png');
+  background-image: url('../images/dest/icons/print.svg');
 }
 .main-header-submenu-item--print-c {
-  background-image: url('../images/dest/icons/print-c.png');
+  background-image: url('../images/dest/icons/print.svg');
 }
 .main-header-submenu-item--mfu {
-  background-image: url('../images/dest/icons/mfy.png');
+  background-image: url('../images/dest/icons/mfu.svg');
 }
 .main-header-submenu-item--mfu-c {
-  background-image: url('../images/dest/icons/mfy-c.png');
+  background-image: url('../images/dest/icons/mfu.svg');
 }
 .main-header-submenu-item--toner {
-  background-image: url('../images/dest/icons/toner.png');
+  background-image: url('../images/dest/icons/toner.svg');
 }
 .main-header-submenu-item--toner-c {
-  background-image: url('../images/dest/icons/toner-c.png');
+  background-image: url('../images/dest/icons/toner.svg');
 }
 .main-header-submenu-item--ink {
-  background-image: url('../images/dest/icons/ink.png');
+  background-image: url('../images/dest/icons/ink.svg');
+}
+.main-header-submenu-item--pen {
+  background-image: url('../images/dest/icons/pen.svg');
+}
+.main-header-submenu-item--kitchenware {
+  background-image: url('../images/dest/icons/kitchenware.svg');
+}
+.main-header-submenu-item--cup {
+  background-image: url('../images/dest/icons/cup.svg');
+}
+.main-header-submenu-item--knife {
+  background-image: url('../images/dest/icons/knife.svg');
 }
 
 .main-header-search-btn {

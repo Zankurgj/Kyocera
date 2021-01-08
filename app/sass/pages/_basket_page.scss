@@ -46,6 +46,20 @@
 }
 .basket-promocode-btn {
   margin-bottom: 30px;
+  &.hide {
+    display: none;
+  }
+}
+.basket-promocode-block {
+  margin-bottom: 30px;
+  display: none;
+  .input-thin-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  &.show {
+    display: block;
+  }
 }
 .basket-price {
   margin-bottom: 14px;
