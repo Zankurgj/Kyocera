@@ -36,7 +36,6 @@
   }
 }
 .main-slider-arrow-wrapper {
-  // position: relative;
   margin: 0 auto;
   width: 100%;
   z-index: 1;
@@ -52,6 +51,11 @@
   z-index: 2;
   &:hover {
     opacity: 0.8;
+  }
+  @media screen and (max-width: $mobile-bp) {
+    background-size: contain;
+    width: 18px;
+    height: 34px;
   }
 }
 .slider-arrow--main-prew {
@@ -74,11 +78,8 @@
   background-position: center;
   background-size: cover;
   padding-top: 32%;
-  // @media screen and (max-width: $mobile-bp) {
-  //   padding-top: 0;
-  //   height: 422px;
-  // }
 }
+
 .main-slider-slide-inner {
   display: flex;
   max-width: 1610px;
