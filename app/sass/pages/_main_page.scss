@@ -36,42 +36,48 @@
   }
 }
 .main-slider-arrow-wrapper {
-  position: relative;
+  // position: relative;
   margin: 0 auto;
+  width: 100%;
   z-index: 1;
 }
 .slider-arrow-main {
   position: absolute;
-  top: 200px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 32px;
   height: 48px;
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 2;
   &:hover {
     opacity: 0.8;
   }
 }
 .slider-arrow--main-prew {
-  left: 0;
-  background-image: url('../images/dest/icons/m-slider-prev.png');
+  left: 16px;
+  background-image: url("../images/dest/icons/m-slider-prev.png");
 }
 .slider-arrow--main-next {
-  right: 0;
-  background-image: url('../images/dest/icons/m-slider-next.png');
+  right: 16px;
+  background-image: url("../images/dest/icons/m-slider-next.png");
 }
 .main-slider {
-  height: 422px;
+  // height: 422px;
 }
 .main-slider-slide {
-  background-color: #e0e1e0;
+  // background-color: #e0e1e0;
+}
+.main-slider-slide-img {
+  width: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  height: 422px;
-  img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-  }
+  background-size: cover;
+  padding-top: 32%;
+  // @media screen and (max-width: $mobile-bp) {
+  //   padding-top: 0;
+  //   height: 422px;
+  // }
 }
 .main-slider-slide-inner {
   display: flex;
@@ -191,7 +197,7 @@
   padding-right: 32px;
   transition: opacity $base-timing $base-duration;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     top: 50%;
@@ -240,14 +246,14 @@
   }
   .slick-prev {
     right: 130px;
-    background-image: url('../images/dest/icons/product_prev.png');
+    background-image: url("../images/dest/icons/product_prev.png");
     @media screen and (max-width: $mobile-bp) {
       right: 80px;
     }
   }
   .slick-next {
     right: 0;
-    background-image: url('../images/dest/icons/product_next.png');
+    background-image: url("../images/dest/icons/product_next.png");
   }
 }
 .product-slide {
@@ -268,7 +274,7 @@
   background-repeat: no-repeat;
   background-position: center right;
   background-size: 100%;
-  background-image: url('../images/dest/img/promo_business.jpg');
+  background-image: url("../images/dest/img/promo_business.jpg");
   margin-bottom: 80px;
   min-height: 278px;
   @media screen and (max-width: 1200px) {
