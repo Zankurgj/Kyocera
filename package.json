@@ -27,8 +27,9 @@
   "dependencies": {
     "gulp-html-prettify": "0.0.1",
     "gulp-nunjucks-render": "^2.2.3",
-    "slick-carousel": "^1.8.1",
     "jquery-ui": "^1.12.1",
-    "jquery-ui-dist": "^1.12.1"
+    "jquery-ui-dist": "^1.12.1",
+    "picturefill": "^3.0.3",
+    "slick-carousel": "^1.8.1"
   }
 }
