@@ -4,10 +4,10 @@
   {% from "app/njk/macro.njk" import breadcrumbs %}
   {{ breadcrumbs([['Каталог']]) }}
   <button class="btn-popup-filter" onclick="onToggleFilter()">
+    <span class="btn-popup-filter-text">Фильтры</span>
     <svg class="svg-icon">
       <use xlink:href="./images/sprites/svg/sprite.symbol.svg#filter"></use>
     </svg>
-    <span class="visually-hidden">Фильтры</span>
   </button>
 </div>
 <div class="page-catalog">

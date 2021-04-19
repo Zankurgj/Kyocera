@@ -1,6 +1,6 @@
 .main-header {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   @media screen and (max-width: $mobile-bp) {
     position: fixed;
     top: 0;
