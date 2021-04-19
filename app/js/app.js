@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+  filterCatalogSpolierHandler();
 });
 
 $("#mainSlider").slick({
@@ -235,4 +236,12 @@ const onShowPromocode = (el) => {
   console.log(el);
   document.querySelector("#basketPromocode").classList.add("show");
   document.querySelector("#promocode").focus();
+};
+
+const filterCatalogSpolierHandler = () => {
+  $(".js--catalog-dd-btn").on("click", function (e) {
+    $(this).toggleClass("opened");
+    $(this).siblings(".js--dd-inner").slideToggle(200);
+    $(this).siblings(".js--dd-inner").toggleClass("opened");
+  });
 };

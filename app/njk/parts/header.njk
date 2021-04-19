@@ -18,7 +18,8 @@
             <button class="btn--main signin-popup-btn" type="submit">Войти</button>
             <p class="signin-popup-text">
               Если вы не зарегистрированы. То вы легко можете
-              <a href="#">зарегистрироваться</a>, заполнив небольшую форму. И в полной мере пользоваться нашими выгодными предложениями.
+              <a href="#">зарегистрироваться</a>, заполнив небольшую форму. И в полной мере пользоваться нашими
+              выгодными предложениями.
             </p>
           </form>
         </div>
@@ -58,39 +59,57 @@
         </a>
         <div class="main-header-basket-text">
           <p>Товаров:
-            <span>2</span></p>
+            <span>2</span>
+          </p>
           <p>На сумму
             <span>102 500</span>
-            руб.</p>
+            руб.
+          </p>
         </div>
         <div class="main-header-basket-inner">
           <div class="main-header-basket-item-list">
-            <a href="#" class="main-header-basket-item">
-              <div class="main-header-basket-item-img">
-                <img src="./images/dest/img/product1.png" alt="Продукт">
-              </div>
-              <div class="main-header-basket-item-text">
-                <p class="main-header-basket-item-title">Цветное МФУ</p>
-                <p class="main-header-basket-item-desc">Ecosys 2035 cdn</p>
-                <p class="main-header-basket-item-cost">
-                  12 500 ₽
-                </p>
-              </div>
-            </a>
+            <div class="main-header-basket-item-wrapper">
+              <button class="main-header-basket-item-close">
+                <svg class="svg-icon">
+                  <use xlink:href="./images/sprites/svg/sprite.symbol.svg#close"></use>
+                </svg>
+                <span class="visually-hidden">Удалить</span>
+              </button>
+              <a href="#" class="main-header-basket-item">
+                <div class="main-header-basket-item-img">
+                  <img src="./images/dest/img/product1.png" alt="Продукт">
+                </div>
+                <div class="main-header-basket-item-text">
+                  <p class="main-header-basket-item-title">Цветное МФУ</p>
+                  <p class="main-header-basket-item-desc">Ecosys 2035 cdn</p>
+                  <p class="main-header-basket-item-cost">
+                    12 500 ₽
+                  </p>
+                </div>
+              </a>
+            </div>
 
-            <a href="#" class="main-header-basket-item">
-              <div class="main-header-basket-item-img">
-                <img src="./images/dest/img/product2.png" alt="Продукт">
-              </div>
-              <div class="main-header-basket-item-text">
-                <p class="main-header-basket-item-title">Монохромное МФУ</p>
-                <p class="main-header-basket-item-desc">TASKalfa 3212i</p>
-                <p class="main-header-basket-item-cost">
-                  90 000 ₽
-                  <span class="main-header-basket-item-cost-discount">100 000 ₽</span>
-                </p>
-              </div>
-            </a>
+            <div class="main-header-basket-item-wrapper">
+              <button class="main-header-basket-item-close">
+                <svg class="svg-icon">
+                  <use xlink:href="./images/sprites/svg/sprite.symbol.svg#close"></use>
+                </svg>
+                <span class="visually-hidden">Удалить</span>
+              </button>
+              <a href="#" class="main-header-basket-item">
+                <div class="main-header-basket-item-img">
+                  <img src="./images/dest/img/product2.png" alt="Продукт">
+                </div>
+                <div class="main-header-basket-item-text">
+                  <p class="main-header-basket-item-title">Монохромное МФУ</p>
+                  <p class="main-header-basket-item-desc">TASKalfa 3212i</p>
+                  <p class="main-header-basket-item-cost">
+                    90 000 ₽
+                    <span class="main-header-basket-item-cost-discount">100 000 ₽</span>
+                  </p>
+                </div>
+              </a>
+            </div>
 
           </div>
           <div class="main-header-basket-sum">
@@ -124,7 +143,8 @@
             <button class="main-header-nav-back" onclick="onShowSubMenu()"></button>
             <div class="main-header-submenu">
               <div class="main-header-submenu-promo">
-                <p>Благодаря широкой линейке устройств Kyocera вы сможете подобрать в нашем интернет магазине именно то, что будет отвечать нуждам вашего бизнеса.</p>
+                <p>Благодаря широкой линейке устройств Kyocera вы сможете подобрать в нашем интернет магазине именно то,
+                  что будет отвечать нуждам вашего бизнеса.</p>
                 <a href="#" class="btn btn--main main-header-submenu-promo-btn">Подобрать устройство</a>
               </div>
               <div class="main-header-submenu-list-wrapper">
@@ -133,16 +153,24 @@
                     <a href="#" class="main-header-submenu-item main-header-submenu-item--title">Принтеры</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A4 ЧБ</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры
+                      A4 ЧБ</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A4 Цвет</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры
+                      A4 Цвет</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры A3 ЧБ</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print">Принтеры
+                      A3 ЧБ</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры A3 Цвет</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--print-c">Принтеры
+                      A3 Цвет</a>
                   </li>
                 </ul>
                 <ul class="main-header-submenu-list">
@@ -150,16 +178,24 @@
                     <a href="#" class="main-header-submenu-item main-header-submenu-item--title">МФУ</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A4 ЧБ</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ
+                      A4 ЧБ</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A4 Цвет</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ
+                      A4 Цвет</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ A3 ЧБ</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu">МФУ
+                      A3 ЧБ</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ A3 Цвет</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--mfu-c">МФУ
+                      A3 Цвет</a>
                   </li>
                 </ul>
                 <ul class="main-header-submenu-list">
@@ -167,13 +203,18 @@
                     <a href="#" class="main-header-submenu-item main-header-submenu-item--title">Расходные материалы</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner">Тонер ЧБ</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner">Тонер
+                      ЧБ</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner-c">Тонер Цвет</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--toner-c">Тонер
+                      Цвет</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--ink ">Чернила</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--ink ">Чернила</a>
                   </li>
                 </ul>
 
@@ -182,16 +223,21 @@
                     <a href="#" class="main-header-submenu-item main-header-submenu-item--title">Расходные материалы</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--knife">Ножи</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--knife">Ножи</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--cup">Термокружки</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--cup">Термокружки</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--kitchenware">Кухонная утварь</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--kitchenware">Кухонная
+                      утварь</a>
                   </li>
                   <li>
-                    <a href="#" class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--pen">Ручки</a>
+                    <a href="#"
+                      class="main-header-submenu-item main-header-submenu-item--icon main-header-submenu-item--pen">Ручки</a>
                   </li>
                 </ul>
               </div>

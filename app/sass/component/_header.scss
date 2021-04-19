@@ -38,7 +38,7 @@
     transform $base-duration $base-timing,
     visibility $base-duration $base-timing;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 100%;
     right: 20px;
@@ -188,7 +188,7 @@
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('../images/dest/icons/search.png');
+  background-image: url("../images/dest/icons/search.png");
   background-size: 17px;
   &:hover {
     opacity: 0.8;
@@ -292,7 +292,7 @@
     right: -20px;
   }
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 100%;
     right: 80px;
@@ -307,16 +307,35 @@
     }
   }
 }
-.main-header-basket-item {
-  display: flex;
+.main-header-basket-item-wrapper {
+  position: relative;
   margin-bottom: 20px;
   &:last-child {
     margin-bottom: 0;
   }
+}
+.main-header-basket-item {
+  display: flex;
   &:hover {
     .main-header-basket-item-text {
       opacity: 0.8;
     }
+  }
+}
+.main-header-basket-item-close {
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  &:hover {
+    opacity: 0.8;
+  }
+  .svg-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 }
 .main-header-basket-item-img {
@@ -396,7 +415,7 @@
   display: block;
   width: 42px;
   height: 30px;
-  background-image: url('../images/dest/icons/basket.svg');
+  background-image: url("../images/dest/icons/basket.svg");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 42px;
@@ -565,7 +584,7 @@
   height: 30px;
   padding-left: 10px;
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 10px;
     height: 10px;
@@ -584,7 +603,7 @@
   height: 30px;
   margin-bottom: 10px;
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 10px;
     height: 10px;
@@ -664,37 +683,37 @@
   padding-left: 24px;
 }
 .main-header-submenu-item--print {
-  background-image: url('../images/dest/icons/print.svg');
+  background-image: url("../images/dest/icons/print.svg");
 }
 .main-header-submenu-item--print-c {
-  background-image: url('../images/dest/icons/print.svg');
+  background-image: url("../images/dest/icons/print.svg");
 }
 .main-header-submenu-item--mfu {
-  background-image: url('../images/dest/icons/mfu.svg');
+  background-image: url("../images/dest/icons/mfu.svg");
 }
 .main-header-submenu-item--mfu-c {
-  background-image: url('../images/dest/icons/mfu.svg');
+  background-image: url("../images/dest/icons/mfu.svg");
 }
 .main-header-submenu-item--toner {
-  background-image: url('../images/dest/icons/toner.svg');
+  background-image: url("../images/dest/icons/toner.svg");
 }
 .main-header-submenu-item--toner-c {
-  background-image: url('../images/dest/icons/toner.svg');
+  background-image: url("../images/dest/icons/toner.svg");
 }
 .main-header-submenu-item--ink {
-  background-image: url('../images/dest/icons/ink.svg');
+  background-image: url("../images/dest/icons/ink.svg");
 }
 .main-header-submenu-item--pen {
-  background-image: url('../images/dest/icons/pen.svg');
+  background-image: url("../images/dest/icons/pen.svg");
 }
 .main-header-submenu-item--kitchenware {
-  background-image: url('../images/dest/icons/kitchenware.svg');
+  background-image: url("../images/dest/icons/kitchenware.svg");
 }
 .main-header-submenu-item--cup {
-  background-image: url('../images/dest/icons/cup.svg');
+  background-image: url("../images/dest/icons/cup.svg");
 }
 .main-header-submenu-item--knife {
-  background-image: url('../images/dest/icons/knife.svg');
+  background-image: url("../images/dest/icons/knife.svg");
 }
 
 .main-header-search-btn {
@@ -707,7 +726,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 18px;
-  background-image: url('../images/dest/icons/search.png');
+  background-image: url("../images/dest/icons/search.png");
   @media screen and (max-width: 520px) {
     display: block;
   }
