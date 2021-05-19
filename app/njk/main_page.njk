@@ -12,16 +12,35 @@
   <div class="main-slider" id="mainSlider">
     {% for i in range(0, 3) %}
     <div class="main-slider-slide">
-      <div class="main-slider-slide-img">
-        <picture>
-          <source srcset="http://195.26.178.17/upload/iblock/2cf/2cf674a48fe6e28ba280f370db8ce247.jpg,
-            smaller_retina.jpg 2x" media="(max-width: 767px)">
-          <source
-            srcset="http://195.26.178.17/upload/iblock/b12/b127317f0653a7817c94b91270aaff02.png, default_retina.jpg 2x">
-          <img
-            srcset="http://195.26.178.17/upload/iblock/b12/b127317f0653a7817c94b91270aaff02.png, default_retina.jpg 2x"
-            alt="баннер">
-        </picture>
+      <div class="container container--main-slider">
+        <div class="row row--wrap">
+          <div class="main-slider-col-text">
+            <img src="./images/dest/img/arrow_slider_img.png" aria-hidden="true" class="main-slider-arrow-img">
+            <p class="main-slider-title">
+              Лучшее предложение
+            </p>
+            <div class="main-slider-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis
+            </div>
+            <div class="main-slider-btn">
+              <a href="#" class="btn btn--main btn--main-slider">Кнопка</a>
+            </div>
+          </div>
+
+          <div class="main-slider-col-img">
+            <div class="main-slider-slide-img">
+              <picture>
+                <source
+                  srcset="./images/dest/img/slide_img_desktop@2x.jpg, ./images/dest/img/slide_img_desktop@2x.jpg 2x"
+                  media="(max-width: 992px)">
+                <source
+                  srcset="./images/dest/img/slide_img_desktop@2x.jpg, ./images/dest/img/slide_img_desktop@2x.jpg 2x">
+                <img srcset="./images/dest/img/slide_img_desktop.jpg, ./images/dest/img/slide_img_desktop@2x.jpg 2x"
+                  alt="баннер">
+              </picture>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     {% endfor %}
